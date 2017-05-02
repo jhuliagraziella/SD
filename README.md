@@ -12,4 +12,4 @@ Antes de terminar, o processo deve imprimir a mensagem resultante."
 
 A tarefa foi feita na linguagem C++, usando mutex para controle de concorrência. Há uma versão onde a ordem de execução das threads é cíclica e outra onde é aleatória.
 
-Obs: em C++ a função sleep() recebe como paramentro a quantidade de segundos e não de milisegundos, por isso sleep(1) ao invés de sleep(1000), como estava no exemplo.
+Obs: em C++ a função sleep() recebe como paramentro a quantidade de segundos e não de milisegundos, por isso foi usado sleep(1) ao invés de sleep(1000), como estava escrito no exemplo.
