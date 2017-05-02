@@ -42,7 +42,7 @@ int main () {
   printf("Digite uma mensagem: ");
   cin >> msg;
 
-  pthread_t* threads = (pthread_t*) malloc (q_thread* sizeof (pthread_t)); // aloca memoria p/ as threads
+  pthread_t* threads = (pthread_t*) malloc (q_thread* sizeof (pthread_t)); // aloca memoria pras threads
   pthread_mutex_init (&lock, NULL); // inicializa a lock    
     
   ult = 0;
@@ -58,6 +58,6 @@ int main () {
     pthread_join (threads [thread], NULL) ;
 
   pthread_mutex_destroy (&lock);    // destroi a lock
-  free (threads);                   // libera a memoria alocado p/ as threads
+  free (threads);                   // libera a memoria alocado pras threads
   return 0;
 }
