@@ -3,6 +3,7 @@
 
 using namespace std;
 
+int atu;              // identificador da thread q "deveria" rodar agora, de acordo com o proposto
 int ult;              // posicao do ultimo caractere da string q eh maiusculo
 int q_thread;         // quantidade de threads
 string msg;           // mensagem do usuario
@@ -14,20 +15,22 @@ void* run (void* aux) {
   int i = 0;
   while(msg[ult] >= 'a'){
     pthread_mutex_lock (&lock);
-
-    cout << "Thread " << id << ":\n";
-    cout << "Mensagem recebida: " << msg << "\n";
-    for(;i<msg.size();i++){
-      if(msg[i] >= 'a' && msg[i] <= 'z'){
-        msg[i] -= 32;
-        break;
+    
+    if(id == atu){
+      cout << "Thread " << id << ":\n";
+      cout << "Mensagem recebida: " << msg << "\n";
+      for(;i<msg.size();i++){
+        if(msg[i] >= 'a' && msg[i] <= 'z'){
+          msg[i] -= 32;
+          break;
+        }
       }
+      cout << "Nova mensagem: " << msg << "\n\n";
+      // sleep(1);
+      atu = (atu + 1) % q_thread;
     }
 
-    cout << "Nova mensagem: " << msg << "\n\n";
     pthread_mutex_unlock (&lock);
-
-    sleep(1);
   }
   return NULL;
 }
@@ -47,6 +50,7 @@ int main () {
     if(msg[i] >= 'a' && msg[i] <= 'z')
       ult = i;
   
+  atu = 0;
   for (long thread=0;thread<q_thread;thread++)
     pthread_create (&threads[thread], NULL, run, (void*) thread);
 
