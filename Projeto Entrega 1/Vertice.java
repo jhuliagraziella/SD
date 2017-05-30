@@ -17,7 +17,7 @@ public class Vertice {
         return this.id;
     }
 
-    public String getCor(){
+    public int getCor(){
         return this.cor;
     }
 
@@ -31,10 +31,10 @@ public class Vertice {
 
     public String getInformacoes(){
         String s = "";
-        s += "Nome: " + String.valueOf(va.getNome()) + "\n"
-        s += "Cor: " + String.valueOf(va.getCor()) + "\n"
-        s += "Peso: " + String.valueOf(va.getPeso()) + "\n"
-        s += "Descrição: " + va.getDescricao() + "\n";
+        s += "Nome: " + String.valueOf(this.id) + "\n";
+        s += "Cor: " + String.valueOf(this.cor) + "\n";
+        s += "Peso: " + String.valueOf(this.peso) + "\n";
+        s += "Descrição: " + this.descricao + "\n";
     
         return s;
     }
