@@ -1,5 +1,6 @@
 package sdEntrega1;
  
+import sdEntrega1.*;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
@@ -7,9 +8,6 @@ import org.apache.thrift.server.TServer.Args;
 import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.server.TThreadPoolServer;
  
-import sdEntrega1.*;
- 
-import java.util.HashMap;
  
 public class Servidor {
     public static Grafo handler;
