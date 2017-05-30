@@ -41,12 +41,12 @@ public class Aresta {
 
     public String getInformacoes(){
         String s = "";
-        s += "Id: " + String.valueOf(g[i][j].getId()) + "\n";
-        s += "Vertice 1: " + String.valueOf(g[i][j].getVa());
-        s += "Vertice 2: " + String.valueOf(g[i][j].getVb());
-        s += "Peso: " + String.valueOf(g[i][j].getPeso()) + "\n";
-        s += "Bidirecional: " + (g[i][j].isBidirecional() ? "sim" : "nao") + "\n";
-        s += "Descricao: " + g[i][j].getDescricao() + "\n";
+        s += "Id: " + String.valueOf(this.id) + "\n";
+        s += "Vertice 1: " + String.valueOf(this.va) + "\n";
+        s += "Vertice 2: " + String.valueOf(this.vb) + "\n";
+        s += "Peso: " + String.valueOf(this.peso) + "\n";
+        s += "Bidirecional: " + (this.bidirecional ? "sim" : "nao") + "\n";
+        s += "Descricao: " + this.descricao + "\n";
 
         return s;
     }
