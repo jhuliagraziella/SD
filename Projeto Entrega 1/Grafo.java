@@ -6,11 +6,11 @@ import org.apache.thrift.TException;
 public class Grafo implements sdEntrega1.Iface{
     public static Grafo instance = null;
 
-    Vertice vertices = new Vertice[200]; 
-    boolean verticesAtivos = new boolean[200]; 
+    Vertice vertices[] = new Vertice[200]; 
+    boolean verticesAtivos[] = new boolean[200]; 
 
-    Aresta arestas = new Aresta[200*200]; 
-    boolean arestasAtivas = new boolean[200*200]; 
+    Aresta arestas[] = new Aresta[200*200]; 
+    boolean arestasAtivas[] = new boolean[200*200]; 
 
     Aresta g[][] = new Aresta[200][200];
     
@@ -107,7 +107,7 @@ public class Grafo implements sdEntrega1.Iface{
         Vertice va = vertices[arestas[id].getVa()];
         Vertice vb = vertices[arestas[id].getVb()];
 
-        s += "Lista de vertices da aresta " + String.valueOf(id) + ":\n"
+        s += "Lista de vertices da aresta " + String.valueOf(id) + ":\n";
         s += "Vertice 1:\n" + va.getInformacoes() + "\n";
         s += "Vertice 2:\n" + vb.getInformacoes() + "\n";
     
@@ -137,7 +137,7 @@ public class Grafo implements sdEntrega1.Iface{
         String s = "";
         for(int i = 0; i < 200; i++){
             if(g[id][i] != null){
-                s += String.valueOf(contador++) + "o. vertice:\n"
+                s += String.valueOf(contador++) + "o. vertice:\n";
                 s += vertices[i].getInformacoes() + "\n";
             }
         }
