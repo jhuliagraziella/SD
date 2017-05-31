@@ -1,7 +1,11 @@
 package sdEntrega1;
 
-import sdEntrega1.*;
 import org.apache.thrift.TException;
+import java.util.HashMap;
+import sdEntrega1.*;
+ 
+import java.util.Scanner;
+import java.util.*;
  
 public class Grafo implements sdEntrega1.Iface{
     public static Grafo instance = null;
