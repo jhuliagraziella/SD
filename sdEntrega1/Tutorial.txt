@@ -1,0 +1,10 @@
+WINDOS:
+
+Diretorio principal:
+
+javac -cp "jars\*;" gen-java\sdEntrega1\sdEntrega1.java
+javac -cp "jars\*;" Vertice.java
+...
+
+java -cp "jars\*;" trabalhopt1/Servidor
+java -cp "jars\*;" trabalhopt1/Cliente
