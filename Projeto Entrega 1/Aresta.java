@@ -5,7 +5,7 @@ public class Aresta {
     double peso;
     boolean bidirecional;
     String descricao;
-
+	
     public Aresta(int id, int va, int vb, double peso, boolean bidirecional, String descricao){
         this.id = id;
         this.va = va;

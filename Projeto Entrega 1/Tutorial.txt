@@ -1,0 +1,6 @@
+no diretorio principal
+
+javac -cp jars/libthrift-0.10.0.jar:jars/slf4j-api-1.7.12.jar:jars/httpclient-4.4.1.jar:jars/httpcore-4.4.1.jar:jars/commons-logging-1.2.jar:jars/commons-codec-1.9.jar:gen-java -d gen-java/sdEntrega1/ gen-java/sdEntrega1/sdEntrega1.java 
+
+javac -cp jars/libthrift-0.10.0.jar:jars/slf4j-api-1.7.12.jar:jars/httpclient-4.4.1.jar:jars/httpcore-4.4.1.jar:jars/commons-logging-1.2.jar:jars/commons-codec-1.9.jar:gen-java -d . *.java
+
