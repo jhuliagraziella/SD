@@ -1,4 +1,4 @@
-namespace java package sdEntrega1
+namespace java sdEntrega1
 
 service sdEntrega1{
     bool existeVertice(1: i32 id),
