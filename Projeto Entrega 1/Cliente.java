@@ -6,7 +6,7 @@ import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
-import trabalhopt1.*;
+import sdEntrega1.*;
  
 public class Cliente {
     public static void imprimeMenu(){
@@ -46,14 +46,14 @@ public class Cliente {
             transport.open();
      
             TProtocol protocol = new  TBinaryProtocol(transport);
-            trabalhopt1.Client client = new trabalhopt1.Client(protocol);
+            sdEntrega1.Client client = new sdEntrega1.Client(protocol);
 
             Scanner sc = new Scanner(System.in);
-            
+            int op;
             do {
                 imprimeMenu();
 
-                int op, op2, id, cor, va, vb, bid;
+                int op2, id, cor, va, vb, bid;
                 double peso;
                 String descricao;
 

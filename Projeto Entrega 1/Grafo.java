@@ -123,7 +123,7 @@ public class Grafo implements sdEntrega1.Iface{
         for(int i = 0; i < 200; i++){
             if(g[id][i] != null){
                 s += String.valueOf(contador++) + "a. aresta:\n";
-                s += g[i][j].getInformacoes() + "\n"; 
+                s += g[id][i].getInformacoes() + "\n"; 
             }
         }
         return s;
