@@ -91,7 +91,7 @@ public class Grafo implements sdEntrega1.Iface{
 
         if(arestas[id].isBidirecional()){
             g[va][vb] = null;
-            g[va][vb] = null;
+            g[vb][va] = null;
         }
         else
             g[va][vb] = null;
