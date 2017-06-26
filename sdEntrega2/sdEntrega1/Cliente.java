@@ -20,6 +20,7 @@ public class Cliente {
         System.out.println("| 7 - Listar vertices adjacentes a um vertice  |");
         System.out.println("| 8 - Modificar um vertice                     |");
         System.out.println("| 9 - Modificar uma aresta                     |");
+        System.out.println("| 10 - Menor caminho entre dois vertices       |");
         System.out.println("| 0 - Finalizar o programa                     |");
         System.out.println(" ----------------------------------------------");
     }
@@ -211,6 +212,21 @@ public class Cliente {
                                     System.out.println("Opcao invalida.");
                             }
                         } while(op2 < 0 || op2 > 2);
+                        break;
+
+                    // menor caminho entre 2 vertices
+                    case 10:
+                        System.out.print("Digite o id do vertice 1: "); va = sc.nextInt();
+                        System.out.print("Digite o id do vertice 2: "); vb = sc.nextInt();
+
+                        double ans = client.menorCaminho(va, vb);
+
+                        if(ans == -2)
+                            System.out.println("Nao foi possivel encontrar o menor caminho entre o par de vertices especificado.");
+                        else if(ans == -1)
+                            System.out.println("Nao ha nenhum caminho entre o par de vertices especificado.");
+                        else 
+                            System.out.println("O menor caminho entre os vertices " + va + " e " + vb + " eh: " + ans);
                         break;
 
                     // end
