@@ -42,13 +42,20 @@ public class Cliente {
     }
     public static void main(String [] args) {
         try {
-            TTransport transport = new TSocket("localhost", 9090);
-            transport.open();
-     
-            TProtocol protocol = new  TBinaryProtocol(transport);
-            sdEntrega1.Client client = new sdEntrega1.Client(protocol);
-
+            TTransport transport;
+            TProtocol protocol;
+            sdEntrega1.Client client;
+        
+            System.out.println("Id do servidor ao qual deseja conectar: ");
             Scanner sc = new Scanner(System.in);
+            int porta = sc.nextInt();
+
+            transport = new TSocket("localhost", 9090+porta);
+            transport.open();
+
+            protocol = new TBinaryProtocol(transport);
+            client = new sdEntrega1.Client(protocol);
+
             int op;
             do {
                 imprimeMenu();
@@ -67,7 +74,7 @@ public class Cliente {
                         System.out.print("Digite o peso do novo vertice: "); peso = sc.nextDouble();
                         System.out.print("Digite a descricao do novo vertice: "); sc.nextLine(); descricao = sc.nextLine();
 
-                        if(client.addVertice(id, cor, peso, descricao))
+                        if(client.addVertice(id, cor, peso, descricao, true))
                             System.out.println("Vertice adicionado com sucesso.");
                         else
                             System.out.println("Nao foi possivel adicionar o vertice.");
@@ -81,7 +88,7 @@ public class Cliente {
                         System.out.print("Digite 1 se a aresta for bidirecional ou 0, caso contrario: "); bid = sc.nextInt();
                         System.out.print("Digite a descricao da nova aresta: "); sc.nextLine();  descricao = sc.nextLine();
 
-                        if(client.addAresta(id, va, vb, peso, (bid == 1), descricao))
+                        if(client.addAresta(id, va, vb, peso, (bid == 1), descricao, true))
                             System.out.println("Aresta adicionada com sucesso.");
                         else
                             System.out.println("Nao foi possivel adicionar a aresta.");
@@ -90,7 +97,7 @@ public class Cliente {
                     case 3: // remover vertice
                         System.out.print("Digite o id do vertice que deseja remover: "); id = sc.nextInt();
 
-                        if(client.removeAresta(id))
+                        if(client.removeAresta(id, true))
                             System.out.println("Vertice deletado com sucesso.");
                         else
                             System.out.println("Nao foi possivel remover o vertice.");
@@ -99,7 +106,7 @@ public class Cliente {
                     case 4: // remover aresta
                         System.out.print("Digite o id da aresta que deseja remover: "); id = sc.nextInt();
 
-                        if(client.removeAresta(id))
+                        if(client.removeAresta(id, true))
                             System.out.println("Aresta deletada com sucesso.");
                         else
                             System.out.println("Nao foi possivel remover a aresta.");
@@ -107,17 +114,17 @@ public class Cliente {
 
                     case 5: // listar vertices de aresta
                         System.out.print("Digite o id da aresta: "); id = sc.nextInt();
-                        System.out.println(client.listaVerticesDeAresta(id));
+                        System.out.println(client.listaVerticesDeAresta(id, true));
                         break;
 
                     case 6: // listar arestas de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
-                        System.out.println(client.listaArestasDeVertice(id));
+                        System.out.println(client.listaArestasDeVertice(id, true));
                         break;
 
                     case 7: // listar vertices vizinhos de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
-                        System.out.println(client.listaVerticesVizinhos(id));
+                        System.out.println(client.listaVerticesVizinhos(id, true));
                         break;
 
                     case 8: // modificar vertice
@@ -131,7 +138,7 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite a nova cor do vertice: "); cor = sc.nextInt();
                                     
-                                    if(client.setCorVertice(id, cor))
+                                    if(client.setCorVertice(id, cor, true))
                                         System.out.println("A cor do vertice " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a cor do vertice " + id);
@@ -141,7 +148,7 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite o nova peso do vertice: "); peso = sc.nextDouble();
                                     
-                                    if(client.setPesoVertice(id, peso))
+                                    if(client.setPesoVertice(id, peso, true))
                                         System.out.println("O peso do vertice " + id + " foi alterado com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar o peso do vertice " + id);
@@ -151,7 +158,7 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite a nova descricao do vertice: "); sc.nextLine(); descricao = sc.nextLine();
 
-                                    if(client.setDescricaoVertice(id, descricao))
+                                    if(client.setDescricaoVertice(id, descricao, true))
                                         System.out.println("A descricao do vertice " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a descricao do vertice " + id);
@@ -180,7 +187,7 @@ public class Cliente {
                                     System.out.print("Digite o id da aresta: "); id = sc.nextInt();
                                     System.out.print("Digite o novo peso da aresta: "); peso = sc.nextDouble();
 
-                                    if(client.setPesoAresta(id, peso))
+                                    if(client.setPesoAresta(id, peso, true))
                                         System.out.println("O peso da aresta " + id + " foi alterado com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar o peso da aresta " + id);
@@ -190,7 +197,7 @@ public class Cliente {
                                     System.out.print("Digite o id da aresta: "); id = sc.nextInt();
                                     System.out.print("Digite a nova descricao da aresta: "); sc.nextLine(); descricao = sc.nextLine();
 
-                                    if(client.setDescricaoAresta(id, descricao))
+                                    if(client.setDescricaoAresta(id, descricao, true))
                                         System.out.println("A descricao da aresta " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a descricao da aresta " + id);
