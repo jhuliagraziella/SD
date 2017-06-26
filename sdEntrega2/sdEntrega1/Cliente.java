@@ -119,12 +119,12 @@ public class Cliente {
 
                     case 6: // listar arestas de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
-                        System.out.println(client.listaArestasDeVertice(id, true));
+                        System.out.println(client.listaArestasDeVertice(id));
                         break;
 
                     case 7: // listar vertices vizinhos de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
-                        System.out.println(client.listaVerticesVizinhos(id, true));
+                        System.out.println(client.listaVerticesVizinhos(id));
                         break;
 
                     case 8: // modificar vertice

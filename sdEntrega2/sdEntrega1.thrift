@@ -22,15 +22,19 @@ service sdEntrega1{
 
     Vertice getVertice(1: i32 id, 2: bool redirect),
     Aresta getAresta(1: i32 id, 2: bool redirect),
+
+    list<Aresta> getArestas(),
     
     bool addVertice(1: i32 id, 2: i32 cor, 3: double peso, 4: string descricao, 5: bool redirect),
     bool addAresta(1: i32 id, 2: i32 va, 3: i32 vb, 4: double peso, 5: bool bidirecional, 6: string descricao, 7:bool redirect),
     bool removeVertice(1: i32 id, 2: bool redirect),
     bool removeAresta(1: i32 id, 2: bool redirect),
 
+    void removeArestasVizinhas(1: i32 v, 2: bool redirect),
+
     string listaVerticesDeAresta(1: i32 id, 2: bool redirect),
-    string listaArestasDeVertice(1: i32 id, 2: bool redirect),
-    string listaVerticesVizinhos(1: i32 id, 2: bool redirect),
+    string listaArestasDeVertice(1: i32 id),
+    string listaVerticesVizinhos(1: i32 id),
 
     bool setCorVertice(1: i32 id, 2: i32 cor, 3: bool redirect),
     bool setPesoVertice(1: i32 id, 2: double peso, 3: bool redirect),

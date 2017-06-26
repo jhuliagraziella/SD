@@ -15,7 +15,7 @@ public class Grafo implements sdEntrega1.Iface{
     int id;
     Set<Vertice> v;
     Set<Aresta> a;
-    Set<Aresta> g[];
+    static double dist[];
 
     int numServers;
 
@@ -25,11 +25,8 @@ public class Grafo implements sdEntrega1.Iface{
 
         v = new HashSet<Vertice>();
         a = new HashSet<Aresta>();
-        g = new HashSet[300];
-
-        for(int i = 0; i < 300; i++)
-            g[i] = new HashSet<Aresta>();
-    }
+        dist = new double[300];
+   }
 
     public synchronized sdEntrega1.Client getClient(int id) throws TException{
         TTransport transport = new TSocket("localhost", 9090+id);
@@ -107,11 +104,6 @@ public class Grafo implements sdEntrega1.Iface{
         Aresta nova = new Aresta(id, va, vb, peso, bidirecional, descricao);
 
         a.add(nova);
-        g[va].add(nova);
-
-        if(bidirecional)
-            g[vb].add(nova);
-
         return true;
     }
 
@@ -163,6 +155,19 @@ public class Grafo implements sdEntrega1.Iface{
         return null;
     }
 
+    public synchronized void removeArestasVizinhas(int v, boolean redirect) throws TException{
+        if(redirect)
+            for(int i=1;i<this.numServers;i++)
+                getClient((this.id+i) % this.numServers).removeArestasVizinhas(v, false);
+
+        Iterator<Aresta> it = a.iterator();
+        while(it.hasNext()){
+            Aresta i = it.next();
+            if(i.getVa() == v || i.getVb() == v)
+                this.removeAresta(i.getId(), true);
+        }
+    }
+
     public synchronized boolean removeVertice(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
@@ -178,12 +183,7 @@ public class Grafo implements sdEntrega1.Iface{
         if(!this.existeVertice(id, false))
             return false;
 
-        Iterator<Aresta> it = g[id].iterator();
-        while(it.hasNext()){
-            Aresta i = it.next();
-            this.removeAresta(i.getId(), true);
-        }
-
+        removeArestasVizinhas(id, true);
         v.remove(this.getVertice(id, false));
 
         return true;
@@ -204,31 +204,8 @@ public class Grafo implements sdEntrega1.Iface{
         if(!this.existeAresta(id, false))
             return false;
 
-        Aresta i = this.getAresta(id, false);
-
-        int va = i.getVa();
-        Iterator<Aresta> it = g[va].iterator();
-        while(it.hasNext()){
-            Aresta j = it.next();
-            if(j.getId() == id){
-                g[va].remove(j);
-                break;
-            }
-        }
-        if(i.isBidirecional()){
-            int vb = i.getVb();
-            it = g[vb].iterator();
-
-            while(it.hasNext()){
-                Aresta j = it.next();
-                if(j.getId() == id){
-                    g[vb].remove(j);
-                    break;
-                }
-            }
-        }
-
-        a.remove(i);
+        a.remove(this.getAresta(id, false));
+        
         return true;
     }
 
@@ -258,60 +235,60 @@ public class Grafo implements sdEntrega1.Iface{
         return s;
     }
 
-    public synchronized String listaArestasDeVertice(int id, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    String resp = getClient((this.id+i) % this.numServers).listaArestasDeVertice(id, false);
-                    if(resp != "")
-                        return resp;
-                }
-            }
-            return "";
-        }
-
-        if(!this.existeVertice(id, false))
+    public synchronized String listaArestasDeVertice(int id) throws TException{
+        if(this.existeVertice(id, true))
             return "Vertice inexistente.";
+
+        Set<Aresta> todas = this.a;
+        for(int i=1;i<this.numServers;i++){
+            List<Aresta> aux = getClient((this.id+1) % this.numServers).getArestas();
+            Iterator<Aresta> it = aux.iterator();
+            while(it.hasNext()){
+                Aresta j = it.next();
+                todas.add(j);
+            }
+        }
 
         int contador = 1;
         String s = "";
-        Iterator<Aresta> it = g[id].iterator();
+        Iterator<Aresta> it = todas.iterator();
         while(it.hasNext()){
             Aresta i = it.next();
-            s += String.valueOf(contador++) + "a. aresta:\n";
-            s += i.getInformacoes() + "\n"; 
+            if(i.getVa() == id || (i.getVb() == id && i.isBidirecional())){
+                s += String.valueOf(contador++) + "a. aresta:\n";
+                s += i.getInformacoes() + "\n"; 
+            }
         }
 
         if(contador == 1)
-            return "Nao ha arestas adjacentes a esse vertice.\n";
+            return "O vertice nao possui arestas incidentes.";
 
         return s;
     }
 
-    // MARCADOR
-    public synchronized String listaVerticesVizinhos(int id, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    String resp = getClient((this.id+i) % this.numServers).listaVerticesVizinhos(id, false);
-                    if(resp != "")
-                        return resp;
-                }
-            }
-            return "";
-        }
-        if(!this.existeVertice(id, false))
+    public synchronized String listaVerticesVizinhos(int id) throws TException{
+        if(!this.existeVertice(id, true))
             return "Vertice inexistente.";
+
+        Set<Aresta> todas = this.a;
+        for(int i=1;i<this.numServers;i++){
+            List<Aresta> aux = getClient((this.id+1) % this.numServers).getArestas();
+            Iterator<Aresta> it = aux.iterator();
+            while(it.hasNext()){
+                Aresta j = it.next();
+                todas.add(j);
+            }
+        }
 
         int contador = 1;
         String s = "";
-        Iterator<Aresta> it = g[id].iterator();
+        Iterator<Aresta> it = todas.iterator();
         while(it.hasNext()){
             Aresta i = it.next();
-            Vertice viz = this.getVertice(i.getVa() == id ? i.getVb() : i.getVa(), true);
-
-            s += String.valueOf(contador++) + "o. vertice:\n";
-            s += viz.getInformacoes() + "\n";
+            if(i.getVa() == id)
+                s += String.valueOf(contador++) + "o. vertice:\n" + this.getVertice(i.getVb(), true).getInformacoes() + "\n";
+            else if(i.getVb() == id && i.isBidirecional())
+                s += String.valueOf(contador++) + "o. vertice:\n" + this.getVertice(i.getVa(), true).getInformacoes() + "\n";
         }
 
         if(contador == 1)
@@ -413,5 +390,67 @@ public class Grafo implements sdEntrega1.Iface{
 
         this.getAresta(id, false).setDescricao(descricao);
         return true;
+    }
+
+    public synchronized double menorCaminho(int va, int vb) throws TException{
+        if(!existeVertice(va, true) || !existeVertice(vb, true)) // nao existe um dos vertices
+            return -2;
+
+        int inf = 0x3f3f3f3f;
+        for(int i=0;i<300;i++)
+            dist[i] = inf;
+        
+        Set<Aresta> todas = this.a;
+        for(int i=1;i<this.numServers;i++){
+            List<Aresta> aux = getClient((this.id+1) % this.numServers).getArestas();
+            Iterator<Aresta> it = aux.iterator();
+            while(it.hasNext()){
+                Aresta j = it.next();
+                todas.add(j);
+            }
+        }
+
+        Comparator<Integer> comparator = new DistComparator();
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(300, comparator);    
+    
+        dist[va] = 0;
+        pq.add(va);
+
+        while (pq.size() != 0){
+            int i = pq.remove();
+
+            Iterator<Aresta> it = todas.iterator();
+            while(it.hasNext()){
+                Aresta aij = it.next();
+                int j = -1;
+
+                if(aij.getVa() == i) j = aij.getVb();
+                else if(aij.getVb() == i && aij.isBidirecional()) j = aij.getVa();
+
+                double c = aij.getPeso();
+
+                if(j != -1 && dist[j] > dist[i] + c){
+                    dist[j] = dist[i] + c;
+                    pq.add(j);
+                }
+            }
+        }
+    
+        return (dist[vb] < inf) ? dist[vb] : -1.0;
+    }
+
+    public synchronized List<Aresta> getArestas(){
+        return new ArrayList<Aresta>(this.a);
+    }
+
+    public static double getDist(int id){
+        return dist[id];
+    }
+}
+
+class DistComparator implements Comparator<Integer>{
+    @Override
+    public int compare(Integer x, Integer y){
+        return (Grafo.getDist(x) > Grafo.getDist(y)) ? 1 : -1;
     }
 }
