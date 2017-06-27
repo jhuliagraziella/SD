@@ -22,13 +22,13 @@ public class sdEntrega1 {
 
     public java.util.List<Aresta> getArestasAdjacentes(int id) throws org.apache.thrift.TException;
 
-    public boolean addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean removeVertice(int id, boolean redirect) throws org.apache.thrift.TException;
+    public int removeVertice(int id, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean removeAresta(int id, boolean redirect) throws org.apache.thrift.TException;
+    public int removeAresta(int id, boolean redirect) throws org.apache.thrift.TException;
 
     public void removeArestasVizinhas(int v, boolean redirect) throws org.apache.thrift.TException;
 
@@ -38,15 +38,15 @@ public class sdEntrega1 {
 
     public java.lang.String listaVerticesVizinhos(int id) throws org.apache.thrift.TException;
 
-    public boolean setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException;
+    public int setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
+    public int setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
+    public int setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
     public double menorCaminho(int va, int vb) throws org.apache.thrift.TException;
 
@@ -64,13 +64,13 @@ public class sdEntrega1 {
 
     public void getArestasAdjacentes(int id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler) throws org.apache.thrift.TException;
 
-    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
     public void removeArestasVizinhas(int v, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException;
 
@@ -80,15 +80,15 @@ public class sdEntrega1 {
 
     public void listaVerticesVizinhos(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
 
-    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
     public void menorCaminho(int va, int vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
 
@@ -233,7 +233,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getArestasAdjacentes failed: unknown result");
     }
 
-    public boolean addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_addVertice(id, cor, peso, descricao, redirect);
       return recv_addVertice();
@@ -250,7 +250,7 @@ public class sdEntrega1 {
       sendBase("addVertice", args);
     }
 
-    public boolean recv_addVertice() throws org.apache.thrift.TException
+    public int recv_addVertice() throws org.apache.thrift.TException
     {
       addVertice_result result = new addVertice_result();
       receiveBase(result, "addVertice");
@@ -260,7 +260,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "addVertice failed: unknown result");
     }
 
-    public boolean addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_addAresta(id, va, vb, peso, bidirecional, descricao, redirect);
       return recv_addAresta();
@@ -279,7 +279,7 @@ public class sdEntrega1 {
       sendBase("addAresta", args);
     }
 
-    public boolean recv_addAresta() throws org.apache.thrift.TException
+    public int recv_addAresta() throws org.apache.thrift.TException
     {
       addAresta_result result = new addAresta_result();
       receiveBase(result, "addAresta");
@@ -289,7 +289,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "addAresta failed: unknown result");
     }
 
-    public boolean removeVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public int removeVertice(int id, boolean redirect) throws org.apache.thrift.TException
     {
       send_removeVertice(id, redirect);
       return recv_removeVertice();
@@ -303,7 +303,7 @@ public class sdEntrega1 {
       sendBase("removeVertice", args);
     }
 
-    public boolean recv_removeVertice() throws org.apache.thrift.TException
+    public int recv_removeVertice() throws org.apache.thrift.TException
     {
       removeVertice_result result = new removeVertice_result();
       receiveBase(result, "removeVertice");
@@ -313,7 +313,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "removeVertice failed: unknown result");
     }
 
-    public boolean removeAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public int removeAresta(int id, boolean redirect) throws org.apache.thrift.TException
     {
       send_removeAresta(id, redirect);
       return recv_removeAresta();
@@ -327,7 +327,7 @@ public class sdEntrega1 {
       sendBase("removeAresta", args);
     }
 
-    public boolean recv_removeAresta() throws org.apache.thrift.TException
+    public int recv_removeAresta() throws org.apache.thrift.TException
     {
       removeAresta_result result = new removeAresta_result();
       receiveBase(result, "removeAresta");
@@ -428,7 +428,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaVerticesVizinhos failed: unknown result");
     }
 
-    public boolean setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException
+    public int setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException
     {
       send_setCorVertice(id, cor, redirect);
       return recv_setCorVertice();
@@ -443,7 +443,7 @@ public class sdEntrega1 {
       sendBase("setCorVertice", args);
     }
 
-    public boolean recv_setCorVertice() throws org.apache.thrift.TException
+    public int recv_setCorVertice() throws org.apache.thrift.TException
     {
       setCorVertice_result result = new setCorVertice_result();
       receiveBase(result, "setCorVertice");
@@ -453,7 +453,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setCorVertice failed: unknown result");
     }
 
-    public boolean setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public int setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       send_setPesoVertice(id, peso, redirect);
       return recv_setPesoVertice();
@@ -468,7 +468,7 @@ public class sdEntrega1 {
       sendBase("setPesoVertice", args);
     }
 
-    public boolean recv_setPesoVertice() throws org.apache.thrift.TException
+    public int recv_setPesoVertice() throws org.apache.thrift.TException
     {
       setPesoVertice_result result = new setPesoVertice_result();
       receiveBase(result, "setPesoVertice");
@@ -478,7 +478,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setPesoVertice failed: unknown result");
     }
 
-    public boolean setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_setDescricaoVertice(id, descricao, redirect);
       return recv_setDescricaoVertice();
@@ -493,7 +493,7 @@ public class sdEntrega1 {
       sendBase("setDescricaoVertice", args);
     }
 
-    public boolean recv_setDescricaoVertice() throws org.apache.thrift.TException
+    public int recv_setDescricaoVertice() throws org.apache.thrift.TException
     {
       setDescricaoVertice_result result = new setDescricaoVertice_result();
       receiveBase(result, "setDescricaoVertice");
@@ -503,7 +503,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setDescricaoVertice failed: unknown result");
     }
 
-    public boolean setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public int setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       send_setPesoAresta(id, peso, redirect);
       return recv_setPesoAresta();
@@ -518,7 +518,7 @@ public class sdEntrega1 {
       sendBase("setPesoAresta", args);
     }
 
-    public boolean recv_setPesoAresta() throws org.apache.thrift.TException
+    public int recv_setPesoAresta() throws org.apache.thrift.TException
     {
       setPesoAresta_result result = new setPesoAresta_result();
       receiveBase(result, "setPesoAresta");
@@ -528,7 +528,7 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setPesoAresta failed: unknown result");
     }
 
-    public boolean setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_setDescricaoAresta(id, descricao, redirect);
       return recv_setDescricaoAresta();
@@ -543,7 +543,7 @@ public class sdEntrega1 {
       sendBase("setDescricaoAresta", args);
     }
 
-    public boolean recv_setDescricaoAresta() throws org.apache.thrift.TException
+    public int recv_setDescricaoAresta() throws org.apache.thrift.TException
     {
       setDescricaoAresta_result result = new setDescricaoAresta_result();
       receiveBase(result, "setDescricaoAresta");
@@ -767,20 +767,20 @@ public class sdEntrega1 {
       }
     }
 
-    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       addVertice_call method_call = new addVertice_call(id, cor, peso, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class addVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class addVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private int cor;
       private double peso;
       private java.lang.String descricao;
       private boolean redirect;
-      public addVertice_call(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public addVertice_call(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.cor = cor;
@@ -801,7 +801,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -811,14 +811,14 @@ public class sdEntrega1 {
       }
     }
 
-    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       addAresta_call method_call = new addAresta_call(id, va, vb, peso, bidirecional, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class addAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class addAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private int va;
       private int vb;
@@ -826,7 +826,7 @@ public class sdEntrega1 {
       private boolean bidirecional;
       private java.lang.String descricao;
       private boolean redirect;
-      public addAresta_call(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public addAresta_call(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.va = va;
@@ -851,7 +851,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -861,17 +861,17 @@ public class sdEntrega1 {
       }
     }
 
-    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       removeVertice_call method_call = new removeVertice_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class removeVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class removeVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private boolean redirect;
-      public removeVertice_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public removeVertice_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -886,7 +886,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -896,17 +896,17 @@ public class sdEntrega1 {
       }
     }
 
-    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       removeAresta_call method_call = new removeAresta_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class removeAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class removeAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private boolean redirect;
-      public removeAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public removeAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -921,7 +921,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -1065,18 +1065,18 @@ public class sdEntrega1 {
       }
     }
 
-    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setCorVertice_call method_call = new setCorVertice_call(id, cor, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class setCorVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class setCorVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private int cor;
       private boolean redirect;
-      public setCorVertice_call(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setCorVertice_call(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.cor = cor;
@@ -1093,7 +1093,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -1103,18 +1103,18 @@ public class sdEntrega1 {
       }
     }
 
-    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setPesoVertice_call method_call = new setPesoVertice_call(id, peso, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class setPesoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class setPesoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private double peso;
       private boolean redirect;
-      public setPesoVertice_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setPesoVertice_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.peso = peso;
@@ -1131,7 +1131,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -1141,18 +1141,18 @@ public class sdEntrega1 {
       }
     }
 
-    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setDescricaoVertice_call method_call = new setDescricaoVertice_call(id, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class setDescricaoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class setDescricaoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private java.lang.String descricao;
       private boolean redirect;
-      public setDescricaoVertice_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setDescricaoVertice_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.descricao = descricao;
@@ -1169,7 +1169,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -1179,18 +1179,18 @@ public class sdEntrega1 {
       }
     }
 
-    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setPesoAresta_call method_call = new setPesoAresta_call(id, peso, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class setPesoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class setPesoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private double peso;
       private boolean redirect;
-      public setPesoAresta_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setPesoAresta_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.peso = peso;
@@ -1207,7 +1207,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -1217,18 +1217,18 @@ public class sdEntrega1 {
       }
     }
 
-    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setDescricaoAresta_call method_call = new setDescricaoAresta_call(id, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class setDescricaoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
+    public static class setDescricaoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
       private int id;
       private java.lang.String descricao;
       private boolean redirect;
-      public setDescricaoAresta_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setDescricaoAresta_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.descricao = descricao;
@@ -1245,7 +1245,7 @@ public class sdEntrega1 {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Boolean getResult() throws org.apache.thrift.TException {
+      public java.lang.Integer getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -2059,7 +2059,7 @@ public class sdEntrega1 {
       }
     }
 
-    public static class addVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, addVertice_args, java.lang.Boolean> {
+    public static class addVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, addVertice_args, java.lang.Integer> {
       public addVertice() {
         super("addVertice");
       }
@@ -2068,10 +2068,10 @@ public class sdEntrega1 {
         return new addVertice_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             addVertice_result result = new addVertice_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2116,12 +2116,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, addVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, addVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.addVertice(args.id, args.cor, args.peso, args.descricao, args.redirect,resultHandler);
       }
     }
 
-    public static class addAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, addAresta_args, java.lang.Boolean> {
+    public static class addAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, addAresta_args, java.lang.Integer> {
       public addAresta() {
         super("addAresta");
       }
@@ -2130,10 +2130,10 @@ public class sdEntrega1 {
         return new addAresta_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             addAresta_result result = new addAresta_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2178,12 +2178,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, addAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, addAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.addAresta(args.id, args.va, args.vb, args.peso, args.bidirecional, args.descricao, args.redirect,resultHandler);
       }
     }
 
-    public static class removeVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeVertice_args, java.lang.Boolean> {
+    public static class removeVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeVertice_args, java.lang.Integer> {
       public removeVertice() {
         super("removeVertice");
       }
@@ -2192,10 +2192,10 @@ public class sdEntrega1 {
         return new removeVertice_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             removeVertice_result result = new removeVertice_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2240,12 +2240,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, removeVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, removeVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.removeVertice(args.id, args.redirect,resultHandler);
       }
     }
 
-    public static class removeAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeAresta_args, java.lang.Boolean> {
+    public static class removeAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeAresta_args, java.lang.Integer> {
       public removeAresta() {
         super("removeAresta");
       }
@@ -2254,10 +2254,10 @@ public class sdEntrega1 {
         return new removeAresta_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             removeAresta_result result = new removeAresta_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2302,7 +2302,7 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, removeAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, removeAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.removeAresta(args.id, args.redirect,resultHandler);
       }
     }
@@ -2550,7 +2550,7 @@ public class sdEntrega1 {
       }
     }
 
-    public static class setCorVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setCorVertice_args, java.lang.Boolean> {
+    public static class setCorVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setCorVertice_args, java.lang.Integer> {
       public setCorVertice() {
         super("setCorVertice");
       }
@@ -2559,10 +2559,10 @@ public class sdEntrega1 {
         return new setCorVertice_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             setCorVertice_result result = new setCorVertice_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2607,12 +2607,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, setCorVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, setCorVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.setCorVertice(args.id, args.cor, args.redirect,resultHandler);
       }
     }
 
-    public static class setPesoVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setPesoVertice_args, java.lang.Boolean> {
+    public static class setPesoVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setPesoVertice_args, java.lang.Integer> {
       public setPesoVertice() {
         super("setPesoVertice");
       }
@@ -2621,10 +2621,10 @@ public class sdEntrega1 {
         return new setPesoVertice_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             setPesoVertice_result result = new setPesoVertice_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2669,12 +2669,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, setPesoVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, setPesoVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.setPesoVertice(args.id, args.peso, args.redirect,resultHandler);
       }
     }
 
-    public static class setDescricaoVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setDescricaoVertice_args, java.lang.Boolean> {
+    public static class setDescricaoVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setDescricaoVertice_args, java.lang.Integer> {
       public setDescricaoVertice() {
         super("setDescricaoVertice");
       }
@@ -2683,10 +2683,10 @@ public class sdEntrega1 {
         return new setDescricaoVertice_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             setDescricaoVertice_result result = new setDescricaoVertice_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2731,12 +2731,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, setDescricaoVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, setDescricaoVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.setDescricaoVertice(args.id, args.descricao, args.redirect,resultHandler);
       }
     }
 
-    public static class setPesoAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setPesoAresta_args, java.lang.Boolean> {
+    public static class setPesoAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setPesoAresta_args, java.lang.Integer> {
       public setPesoAresta() {
         super("setPesoAresta");
       }
@@ -2745,10 +2745,10 @@ public class sdEntrega1 {
         return new setPesoAresta_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             setPesoAresta_result result = new setPesoAresta_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2793,12 +2793,12 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, setPesoAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, setPesoAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.setPesoAresta(args.id, args.peso, args.redirect,resultHandler);
       }
     }
 
-    public static class setDescricaoAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setDescricaoAresta_args, java.lang.Boolean> {
+    public static class setDescricaoAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, setDescricaoAresta_args, java.lang.Integer> {
       public setDescricaoAresta() {
         super("setDescricaoAresta");
       }
@@ -2807,10 +2807,10 @@ public class sdEntrega1 {
         return new setDescricaoAresta_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean>() { 
-          public void onComplete(java.lang.Boolean o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
+          public void onComplete(java.lang.Integer o) {
             setDescricaoAresta_result result = new setDescricaoAresta_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -2855,7 +2855,7 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, setDescricaoAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, setDescricaoAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
         iface.setDescricaoAresta(args.id, args.descricao, args.redirect,resultHandler);
       }
     }
@@ -7721,12 +7721,12 @@ public class sdEntrega1 {
   public static class addVertice_result implements org.apache.thrift.TBase<addVertice_result, addVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<addVertice_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("addVertice_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new addVertice_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new addVertice_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -7793,7 +7793,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(addVertice_result.class, metaDataMap);
     }
@@ -7802,7 +7802,7 @@ public class sdEntrega1 {
     }
 
     public addVertice_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -7824,14 +7824,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public addVertice_result setSuccess(boolean success) {
+    public addVertice_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -7856,7 +7856,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -7866,7 +7866,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -7916,7 +7916,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -8008,8 +8008,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -8032,7 +8032,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -8058,7 +8058,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -8067,7 +8067,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -9023,12 +9023,12 @@ public class sdEntrega1 {
   public static class addAresta_result implements org.apache.thrift.TBase<addAresta_result, addAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<addAresta_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("addAresta_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new addAresta_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new addAresta_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -9095,7 +9095,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(addAresta_result.class, metaDataMap);
     }
@@ -9104,7 +9104,7 @@ public class sdEntrega1 {
     }
 
     public addAresta_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -9126,14 +9126,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public addAresta_result setSuccess(boolean success) {
+    public addAresta_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -9158,7 +9158,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -9168,7 +9168,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -9218,7 +9218,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -9310,8 +9310,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -9334,7 +9334,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -9360,7 +9360,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -9369,7 +9369,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -9837,12 +9837,12 @@ public class sdEntrega1 {
   public static class removeVertice_result implements org.apache.thrift.TBase<removeVertice_result, removeVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<removeVertice_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeVertice_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeVertice_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeVertice_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -9909,7 +9909,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeVertice_result.class, metaDataMap);
     }
@@ -9918,7 +9918,7 @@ public class sdEntrega1 {
     }
 
     public removeVertice_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -9940,14 +9940,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public removeVertice_result setSuccess(boolean success) {
+    public removeVertice_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -9972,7 +9972,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -9982,7 +9982,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -10032,7 +10032,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -10124,8 +10124,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -10148,7 +10148,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -10174,7 +10174,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -10183,7 +10183,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -10651,12 +10651,12 @@ public class sdEntrega1 {
   public static class removeAresta_result implements org.apache.thrift.TBase<removeAresta_result, removeAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<removeAresta_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeAresta_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeAresta_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeAresta_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -10723,7 +10723,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeAresta_result.class, metaDataMap);
     }
@@ -10732,7 +10732,7 @@ public class sdEntrega1 {
     }
 
     public removeAresta_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -10754,14 +10754,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public removeAresta_result setSuccess(boolean success) {
+    public removeAresta_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -10786,7 +10786,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -10796,7 +10796,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -10846,7 +10846,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -10938,8 +10938,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -10962,7 +10962,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -10988,7 +10988,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -10997,7 +10997,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -14521,12 +14521,12 @@ public class sdEntrega1 {
   public static class setCorVertice_result implements org.apache.thrift.TBase<setCorVertice_result, setCorVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<setCorVertice_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setCorVertice_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setCorVertice_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setCorVertice_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -14593,7 +14593,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(setCorVertice_result.class, metaDataMap);
     }
@@ -14602,7 +14602,7 @@ public class sdEntrega1 {
     }
 
     public setCorVertice_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -14624,14 +14624,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public setCorVertice_result setSuccess(boolean success) {
+    public setCorVertice_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -14656,7 +14656,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -14666,7 +14666,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -14716,7 +14716,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -14808,8 +14808,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -14832,7 +14832,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -14858,7 +14858,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -14867,7 +14867,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -15431,12 +15431,12 @@ public class sdEntrega1 {
   public static class setPesoVertice_result implements org.apache.thrift.TBase<setPesoVertice_result, setPesoVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<setPesoVertice_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setPesoVertice_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setPesoVertice_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setPesoVertice_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -15503,7 +15503,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(setPesoVertice_result.class, metaDataMap);
     }
@@ -15512,7 +15512,7 @@ public class sdEntrega1 {
     }
 
     public setPesoVertice_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -15534,14 +15534,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public setPesoVertice_result setSuccess(boolean success) {
+    public setPesoVertice_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -15566,7 +15566,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -15576,7 +15576,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -15626,7 +15626,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -15718,8 +15718,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -15742,7 +15742,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -15768,7 +15768,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -15777,7 +15777,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -16349,12 +16349,12 @@ public class sdEntrega1 {
   public static class setDescricaoVertice_result implements org.apache.thrift.TBase<setDescricaoVertice_result, setDescricaoVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<setDescricaoVertice_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setDescricaoVertice_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setDescricaoVertice_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setDescricaoVertice_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -16421,7 +16421,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(setDescricaoVertice_result.class, metaDataMap);
     }
@@ -16430,7 +16430,7 @@ public class sdEntrega1 {
     }
 
     public setDescricaoVertice_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -16452,14 +16452,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public setDescricaoVertice_result setSuccess(boolean success) {
+    public setDescricaoVertice_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -16484,7 +16484,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -16494,7 +16494,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -16544,7 +16544,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -16636,8 +16636,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -16660,7 +16660,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -16686,7 +16686,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -16695,7 +16695,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -17259,12 +17259,12 @@ public class sdEntrega1 {
   public static class setPesoAresta_result implements org.apache.thrift.TBase<setPesoAresta_result, setPesoAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<setPesoAresta_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setPesoAresta_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setPesoAresta_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setPesoAresta_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -17331,7 +17331,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(setPesoAresta_result.class, metaDataMap);
     }
@@ -17340,7 +17340,7 @@ public class sdEntrega1 {
     }
 
     public setPesoAresta_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -17362,14 +17362,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public setPesoAresta_result setSuccess(boolean success) {
+    public setPesoAresta_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -17394,7 +17394,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -17404,7 +17404,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -17454,7 +17454,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -17546,8 +17546,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -17570,7 +17570,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -17596,7 +17596,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -17605,7 +17605,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }
@@ -18177,12 +18177,12 @@ public class sdEntrega1 {
   public static class setDescricaoAresta_result implements org.apache.thrift.TBase<setDescricaoAresta_result, setDescricaoAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<setDescricaoAresta_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setDescricaoAresta_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.BOOL, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setDescricaoAresta_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setDescricaoAresta_resultTupleSchemeFactory();
 
-    public boolean success; // required
+    public int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -18249,7 +18249,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(setDescricaoAresta_result.class, metaDataMap);
     }
@@ -18258,7 +18258,7 @@ public class sdEntrega1 {
     }
 
     public setDescricaoAresta_result(
-      boolean success)
+      int success)
     {
       this();
       this.success = success;
@@ -18280,14 +18280,14 @@ public class sdEntrega1 {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = false;
+      this.success = 0;
     }
 
-    public boolean isSuccess() {
+    public int getSuccess() {
       return this.success;
     }
 
-    public setDescricaoAresta_result setSuccess(boolean success) {
+    public setDescricaoAresta_result setSuccess(int success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -18312,7 +18312,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Boolean)value);
+          setSuccess((java.lang.Integer)value);
         }
         break;
 
@@ -18322,7 +18322,7 @@ public class sdEntrega1 {
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
-        return isSuccess();
+        return getSuccess();
 
       }
       throw new java.lang.IllegalStateException();
@@ -18372,7 +18372,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + ((success) ? 131071 : 524287);
+      hashCode = hashCode * 8191 + success;
 
       return hashCode;
     }
@@ -18464,8 +18464,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.success = iprot.readBool();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.success = iprot.readI32();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -18488,7 +18488,7 @@ public class sdEntrega1 {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -18514,7 +18514,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeBool(struct.success);
+          oprot.writeI32(struct.success);
         }
       }
 
@@ -18523,7 +18523,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readBool();
+          struct.success = iprot.readI32();
           struct.setSuccessIsSet(true);
         }
       }

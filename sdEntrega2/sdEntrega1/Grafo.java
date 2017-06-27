@@ -9,8 +9,6 @@ import org.apache.thrift.protocol.TProtocol;
 import sdEntrega1.*;
 import java.util.*;
  
-// nao ta repassando pros outros servidores de maneira transparente
-
 public class Grafo implements sdEntrega1.Iface{
     public static Grafo instance = null;
 
@@ -68,45 +66,45 @@ public class Grafo implements sdEntrega1.Iface{
         return a.contains(new Aresta(id, 0, 0, 0, false, ""));
     }
 
-    public synchronized boolean addVertice(int id, int cor, double peso, String descricao, boolean redirect) throws TException{
+    public synchronized int addVertice(int id, int cor, double peso, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if (redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).addVertice(id, cor, peso, descricao, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).addVertice(id, cor, peso, descricao, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(this.existeVertice(id, false)) 
-            return false;
+            return 0;
 
         v.add(new Vertice(id, cor, peso, descricao));
 
-        return true;
+        return 1;
     }
 
-    public synchronized boolean addAresta(int id, int va, int vb, double peso, boolean bidirecional, String descricao, boolean redirect) throws TException{
+    public synchronized int addAresta(int id, int va, int vb, double peso, boolean bidirecional, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).addAresta(id, va, vb, peso, bidirecional, descricao, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).addAresta(id, va, vb, peso, bidirecional, descricao, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!this.existeVertice(va, true) || !this.existeVertice(vb, true) || this.existeAresta(id, false)) 
-            return false;
+            return 0;
 
         Aresta nova = new Aresta(id, va, vb, peso, bidirecional, descricao);
 
         a.add(nova);
-        return true;
+        return 1;
     }
 
     public Vertice getVertice(int id, boolean redirect) throws TException{
@@ -170,45 +168,45 @@ public class Grafo implements sdEntrega1.Iface{
         }
     }
 
-    public synchronized boolean removeVertice(int id, boolean redirect) throws TException{
+    public synchronized int removeVertice(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).removeVertice(id, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).removeVertice(id, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!this.existeVertice(id, false))
-            return false;
+            return 0;
 
         removeArestasVizinhas(id, true);
         v.remove(this.getVertice(id, false));
 
-        return true;
+        return 1;
     }
         
-    public synchronized boolean removeAresta(int id, boolean redirect) throws TException{
+    public synchronized int removeAresta(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).removeAresta(id, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).removeAresta(id, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!this.existeAresta(id, false))
-            return false;
+            return 0;
 
         a.remove(this.getAresta(id, false));
         
-        return true;
+        return 1;
     }
 
     public synchronized String listaVerticesDeAresta(int id, boolean redirect) throws TException{
@@ -217,8 +215,9 @@ public class Grafo implements sdEntrega1.Iface{
                 for(int i=1;i<this.numServers;i++){
                     String resp = getClient((this.id+i) % this.numServers).listaVerticesDeAresta(id, false);
                     if(resp != "")
-                        return resp;
+                        return "Solicitacao repassada a outro servidor.\n" + resp;
                 }
+                return "Solicitacao repassada a outro servidor.\n" + "Aresta inexistente.";
             }
             return "";
         }
@@ -240,7 +239,6 @@ public class Grafo implements sdEntrega1.Iface{
     public synchronized String listaArestasDeVertice(int id) throws TException{
         if(!this.existeVertice(id, true))
             return "Vertice inexistente.";
-
 
         int contador = 1;
         String s = "";
@@ -304,99 +302,99 @@ public class Grafo implements sdEntrega1.Iface{
         return s;
     }
     
-    public synchronized boolean setCorVertice(int id, int cor, boolean redirect) throws TException{
+    public synchronized int setCorVertice(int id, int cor, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).setCorVertice(id, cor, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).setCorVertice(id, cor, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!existeVertice(id, false))
-            return false;
+            return 0;
 
         this.getVertice(id, false).setCor(cor);
-        return true;
+        return 1;
     }
 
-    public synchronized boolean setPesoVertice(int id, double peso, boolean redirect) throws TException{
+    public synchronized int setPesoVertice(int id, double peso, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).setPesoVertice(id, peso, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).setPesoVertice(id, peso, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!existeVertice(id, false))
-            return false;
+            return 0;
 
         this.getVertice(id, false).setPeso(peso);
-        return true;
+        return 1;
     }
 
-    public synchronized boolean setDescricaoVertice(int id, String descricao, boolean redirect) throws TException{
+    public synchronized int setDescricaoVertice(int id, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).setDescricaoVertice(id, descricao, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).setDescricaoVertice(id, descricao, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!existeVertice(id, false))
-            return false;
+            return 0;
 
         this.getVertice(id, false).setDescricao(descricao);
-        return true;
+        return 1;
     }
 
-    public synchronized boolean setPesoAresta(int id, double peso, boolean redirect) throws TException{
+    public synchronized int setPesoAresta(int id, double peso, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).setPesoAresta(id, peso, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).setPesoAresta(id, peso, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!existeAresta(id, false))
-            return false;
+            return 0;
 
         this.getAresta(id, false).setPeso(peso);
-        return true;
+        return 1;
     }
 
-    public synchronized boolean setDescricaoAresta(int id, String descricao, boolean redirect) throws TException{
+    public synchronized int setDescricaoAresta(int id, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
             if(redirect){
                 for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).setDescricaoAresta(id, descricao, false);
-                    if(ok)
-                        return true;
+                    int ok = getClient((this.id+i) % this.numServers).setDescricaoAresta(id, descricao, false);
+                    if(ok == 1)
+                        return 2;
                 }
             }
-            return false;
+            return -1;
         }
 
         if(!existeAresta(id, false))
-            return false;
+            return 0;
 
         this.getAresta(id, false).setDescricao(descricao);
-        return true;
+        return 1;
     }
 
     public double menorCaminho(int va, int vb) throws TException{

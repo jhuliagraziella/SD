@@ -61,7 +61,7 @@ public class Cliente {
             do {
                 imprimeMenu();
 
-                int op2, id, cor, va, vb, bid;
+                int op2, id, cor, va, vb, bid, resp;
                 double peso;
                 String descricao;
 
@@ -75,7 +75,10 @@ public class Cliente {
                         System.out.print("Digite o peso do novo vertice: "); peso = sc.nextDouble();
                         System.out.print("Digite a descricao do novo vertice: "); sc.nextLine(); descricao = sc.nextLine();
 
-                        if(client.addVertice(id, cor, peso, descricao, true))
+                        resp = client.addVertice(id, cor, peso, descricao, true);
+                        if(resp == 2 || resp == -1)
+                            System.out.println("Solicitacao repassada a outro servidor.");
+                        if(resp > 0)
                             System.out.println("Vertice adicionado com sucesso.");
                         else
                             System.out.println("Nao foi possivel adicionar o vertice.");
@@ -89,7 +92,10 @@ public class Cliente {
                         System.out.print("Digite 1 se a aresta for bidirecional ou 0, caso contrario: "); bid = sc.nextInt();
                         System.out.print("Digite a descricao da nova aresta: "); sc.nextLine();  descricao = sc.nextLine();
 
-                        if(client.addAresta(id, va, vb, peso, (bid == 1), descricao, true))
+                        resp = client.addAresta(id, va, vb, peso, (bid == 1), descricao, true);
+                        if(resp == 2 || resp == -1)
+                            System.out.println("Solicitacao repassada a outro servidor.");
+                        if(resp > 0)
                             System.out.println("Aresta adicionada com sucesso.");
                         else
                             System.out.println("Nao foi possivel adicionar a aresta.");
@@ -98,7 +104,10 @@ public class Cliente {
                     case 3: // remover vertice
                         System.out.print("Digite o id do vertice que deseja remover: "); id = sc.nextInt();
 
-                        if(client.removeAresta(id, true))
+                        resp = client.removeVertice(id, true);
+                        if(resp == 2 || resp == -1)
+                            System.out.println("Solicitacao repassada a outro servidor.");
+                        if(resp > 0)
                             System.out.println("Vertice deletado com sucesso.");
                         else
                             System.out.println("Nao foi possivel remover o vertice.");
@@ -107,7 +116,10 @@ public class Cliente {
                     case 4: // remover aresta
                         System.out.print("Digite o id da aresta que deseja remover: "); id = sc.nextInt();
 
-                        if(client.removeAresta(id, true))
+                        resp = client.removeAresta(id, true);
+                        if(resp == 2 || resp == -1)
+                            System.out.println("Solicitacao repassada a outro servidor.");
+                        if(resp > 0)
                             System.out.println("Aresta deletada com sucesso.");
                         else
                             System.out.println("Nao foi possivel remover a aresta.");
@@ -120,11 +132,13 @@ public class Cliente {
 
                     case 6: // listar arestas de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
+                        System.out.println("Solicitacao realizada em conjunto com outros servidores.");
                         System.out.println(client.listaArestasDeVertice(id));
                         break;
 
                     case 7: // listar vertices vizinhos de um vertice
                         System.out.print("Digite o id do vertice: "); id = sc.nextInt();
+                        System.out.println("Solicitacao realizada em conjunto com outros servidores.");
                         System.out.println(client.listaVerticesVizinhos(id));
                         break;
 
@@ -139,7 +153,10 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite a nova cor do vertice: "); cor = sc.nextInt();
                                     
-                                    if(client.setCorVertice(id, cor, true))
+                                    resp = client.setCorVertice(id, cor, true);
+                                    if(resp == 2 || resp == -1)
+                                        System.out.println("Solicitacao repassada a outro servidor.");
+                                    if(resp > 0)
                                         System.out.println("A cor do vertice " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a cor do vertice " + id);
@@ -149,7 +166,10 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite o nova peso do vertice: "); peso = sc.nextDouble();
                                     
-                                    if(client.setPesoVertice(id, peso, true))
+                                    resp = client.setPesoVertice(id, peso, true);
+                                    if(resp == 2 || resp == -1)
+                                        System.out.println("Solicitacao repassada a outro servidor.");
+                                    if(resp > 0)
                                         System.out.println("O peso do vertice " + id + " foi alterado com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar o peso do vertice " + id);
@@ -159,7 +179,10 @@ public class Cliente {
                                     System.out.print("Digite o id do vertice: "); id = sc.nextInt();
                                     System.out.print("Digite a nova descricao do vertice: "); sc.nextLine(); descricao = sc.nextLine();
 
-                                    if(client.setDescricaoVertice(id, descricao, true))
+                                    resp = client.setDescricaoVertice(id, descricao, true);
+                                    if(resp == 2 || resp == -1)
+                                        System.out.println("Solicitacao repassada a outro servidor.");
+                                    if(resp > 0)
                                         System.out.println("A descricao do vertice " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a descricao do vertice " + id);
@@ -188,7 +211,10 @@ public class Cliente {
                                     System.out.print("Digite o id da aresta: "); id = sc.nextInt();
                                     System.out.print("Digite o novo peso da aresta: "); peso = sc.nextDouble();
 
-                                    if(client.setPesoAresta(id, peso, true))
+                                    resp = client.setPesoAresta(id, peso, true);
+                                    if(resp == 2 || resp == -1)
+                                        System.out.println("Solicitacao repassada a outro servidor.");
+                                    if(resp > 0)
                                         System.out.println("O peso da aresta " + id + " foi alterado com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar o peso da aresta " + id);
@@ -198,7 +224,10 @@ public class Cliente {
                                     System.out.print("Digite o id da aresta: "); id = sc.nextInt();
                                     System.out.print("Digite a nova descricao da aresta: "); sc.nextLine(); descricao = sc.nextLine();
 
-                                    if(client.setDescricaoAresta(id, descricao, true))
+                                    resp = client.setDescricaoAresta(id, descricao, true);
+                                    if(resp == 2 || resp == -1)
+                                        System.out.println("Solicitacao repassada a outro servidor.");
+                                    if(resp > 0)
                                         System.out.println("A descricao da aresta " + id + " foi alterada com sucesso.");
                                     else
                                         System.out.println("Nao foi possivel alterar a descricao da aresta " + id);
@@ -221,6 +250,7 @@ public class Cliente {
 
                         double ans = client.menorCaminho(va, vb);
 
+                        System.out.println("Solicitacao realizada em conjunto com outros servidores.");
                         if(ans == -2)
                             System.out.println("Nao foi possivel encontrar o menor caminho entre o par de vertices especificado.");
                         else if(ans == -1)
