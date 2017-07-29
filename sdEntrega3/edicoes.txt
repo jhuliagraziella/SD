@@ -1,0 +1,14 @@
+Vertice.java:
+
+Alterar o metodo hashCode() e equals()
+Adicionar metodo getInformacoes()
+
+-----------------------------------------------
+
+Aresta.java
+
+Alterar o metodo hashCode() e equals()
+Adicionar metodo getInformacoes()
+
+-----------------------------------------------
+teoricamente também tem que remover os sets q nao deveriam existir

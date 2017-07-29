@@ -1,0 +1,6 @@
+javac -cp "jars\*;" gen-java\sdEntrega1\sdEntrega1.java
+javac -cp "jars\*;" *.java
+...
+
+java -cp "jars\*;" sdEntrega1/Servidor
+java -cp "jars\*;" sdEntrega1/Cliente
