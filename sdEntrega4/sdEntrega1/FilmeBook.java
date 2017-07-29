@@ -148,7 +148,7 @@ public class FilmeBook {
                         System.out.print("Digite a nova avaliacao do filme [0,10]: "); peso = sc.nextDouble();
                         id = va * 10000000 + vb;
 
-                        resp = client.setPesoAresta(id, peso, true);
+                        resp = client.setAvaliacaoFilme(id, peso, true);
                         if(resp == 2 || resp == -1)
                             System.out.println("Solicitacao repassada a outro servidor.");
                         if(resp > 0)

@@ -512,7 +512,7 @@ public class Aresta implements org.apache.thrift.TBase<Aresta, Aresta._Fields>, 
   public boolean equals(Aresta that) {
     if (that == null)
       return false;
-    return this.hashCode() == that.hashCode();
+    return (this.id == that.getId());
   }
 
   // @Override
@@ -538,7 +538,7 @@ public class Aresta implements org.apache.thrift.TBase<Aresta, Aresta._Fields>, 
 
   @Override
   public int hashCode() {
-    return this.id;
+    return (int) this.id;
   }
 
   @Override

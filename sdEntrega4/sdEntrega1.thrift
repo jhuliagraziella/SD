@@ -42,11 +42,13 @@ service sdEntrega1{
     string listaFilmesDeGrupo(1: list<i64> ids),
     string getAvaliacaoMedia(1: i64 id),
 
-    i32 setCorVertice(1: i64 id, 2: i32 cor, 3: bool redirect),
-    i32 setPesoVertice(1: i64 id, 2: double peso, 3: bool redirect),
-    i32 setDescricaoVertice(1: i64 id, 2: string descricao, 3: bool redirect),
-    i32 setPesoAresta(1: i64 id, 2: double peso, 3: bool redirect),
-    i32 setDescricaoAresta(1: i64 id, 2: string descricao, 3: bool redirect),
+    // i32 setCorVertice(1: i64 id, 2: i32 cor, 3: bool redirect),
+    // i32 setPesoVertice(1: i64 id, 2: double peso, 3: bool redirect),
+    // i32 setDescricaoVertice(1: i64 id, 2: string descricao, 3: bool redirect),
+    // i32 setPesoAresta(1: i64 id, 2: double peso, 3: bool redirect),
+    // i32 setDescricaoAresta(1: i64 id, 2: string descricao, 3: bool redirect),
+
+    i32 setAvaliacaoFilme(1: i64 id, 2: double peso, 3: bool redirect),
 
     double menorCaminho(1: i64 va, 2: i64 vb)
 }

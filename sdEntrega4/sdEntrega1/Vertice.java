@@ -182,7 +182,6 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
       return s;
   }
 
-
   public long getId() {
     return this.id;
   }
@@ -453,7 +452,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
     if (that == null)
       return false;
 
-    return this.hashCode() == that.hashCode();
+    return this.id == that.getId();
   }
 
   // @Override
@@ -477,7 +476,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
 
   @Override
   public int hashCode() {
-    return this.id;
+    return (int) this.id;
   }
 
   @Override

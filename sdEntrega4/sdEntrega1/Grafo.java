@@ -264,9 +264,9 @@ public class Grafo implements sdEntrega1.Iface{
     }
 
     public String listaFilmesDeGrupo(List<Long> ids) throws TException{
-        Set<Long> idsExistentes;
-        Set<Long> idsInexistentes;
-        Set<Long> filmes;
+        Set<Long> idsExistentes = new HashSet<Long>();
+        Set<Long> idsInexistentes = new HashSet<Long>();
+        Set<Long> filmes = new HashSet<Long>();
 
         Iterator<Long> it = ids.iterator();
 
@@ -282,7 +282,7 @@ public class Grafo implements sdEntrega1.Iface{
                 Iterator<Aresta> it2 = l.iterator();
 
                 while(it2.hasNext()){
-                    Aresta i = it.next();
+                    Aresta i = it2.next();
                     if(i.getVa() == id)
                         filmes.add(i.getVb());
                     else if(i.getVb() == id && i.isBidirecional())
@@ -294,7 +294,7 @@ public class Grafo implements sdEntrega1.Iface{
                     it2 = l.iterator();
 
                     while(it2.hasNext()){
-                        Aresta i = it.next();
+                        Aresta i = it2.next();
                         if(i.getVa() == id)
                             filmes.add(i.getVb());
                         else if(i.getVb() == id && i.isBidirecional())
@@ -356,8 +356,8 @@ public class Grafo implements sdEntrega1.Iface{
         return s;
     }
 
-    public String getAvaliacaoMedia(long id){
-        if(!this.existeVertice(id, true) || this.getVertice(id).getTipo() == 0)
+    public String getAvaliacaoMedia(long id) throws TException{
+        if(!this.existeVertice(id, true) || this.getVertice(id, true).getTipo() == 0)
             return "Filme inexistente.";
 
         double soma = 0;
@@ -395,51 +395,53 @@ public class Grafo implements sdEntrega1.Iface{
         return "Avaliacao media do filme: " + String.valueOf(soma/contador);
     }
     
-    public synchronized int setCorVertice(long id, int cor, boolean redirect) throws TException{
+    // public synchronized int setCorVertice(long id, int cor, boolean redirect) throws TException{
+    //     if(id % this.numServers != this.id){
+    //         if(redirect && getClient(id % this.numServers).setCorVertice(id, cor, false) == 1)
+    //             return 2;
+    //         return -1;
+    //     }
+
+    //     if(!existeVertice(id, false))
+    //         return 0;
+
+    //     this.getVertice(id, false).setCor(cor);
+    //     return 1;
+    // }
+
+    // public synchronized int setPesoVertice(long id, double peso, boolean redirect) throws TException{
+    //     if(id % this.numServers != this.id){
+    //         if(redirect && getClient(id % this.numServers).setPesoVertice(id, peso, false) == 1)
+    //             return 2;
+    //         return -1;
+    //     }
+
+    //     if(!existeVertice(id, false))
+    //         return 0;
+
+    //     this.getVertice(id, false).setPeso(peso);
+    //     return 1;
+    // }
+
+    // public synchronized int setDescricaoVertice(long id, String descricao, boolean redirect) throws TException{
+    //     if(id % this.numServers != this.id){
+    //         if(redirect && getClient(id % this.numServers).setDescricaoVertice(id, descricao, false) == 1)
+    //             return 2;
+    //         return -1;
+    //     }
+
+    //     if(!existeVertice(id, false))
+    //         return 0;
+
+    //     this.getVertice(id, false).setDescricao(descricao);
+    //     return 1;
+    // }
+
+    // i32 setAvaliacaoFilme(1: i64 id, 2: double peso, 3: bool redirect),
+    // public synchronized int setPesoAresta(long id, double peso, boolean redirect) throws TException{
+    public synchronized int setAvaliacaoFilme(long id, double peso, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect && getClient(id % this.numServers).setCorVertice(id, cor, false) == 1)
-                return 2;
-            return -1;
-        }
-
-        if(!existeVertice(id, false))
-            return 0;
-
-        this.getVertice(id, false).setCor(cor);
-        return 1;
-    }
-
-    public synchronized int setPesoVertice(long id, double peso, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect && getClient(id % this.numServers).setPesoVertice(id, peso, false) == 1)
-                return 2;
-            return -1;
-        }
-
-        if(!existeVertice(id, false))
-            return 0;
-
-        this.getVertice(id, false).setPeso(peso);
-        return 1;
-    }
-
-    public synchronized int setDescricaoVertice(long id, String descricao, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect && getClient(id % this.numServers).setDescricaoVertice(id, descricao, false) == 1)
-                return 2;
-            return -1;
-        }
-
-        if(!existeVertice(id, false))
-            return 0;
-
-        this.getVertice(id, false).setDescricao(descricao);
-        return 1;
-    }
-
-    public synchronized int setPesoAresta(long id, double peso, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect && getClient(id % this.numServers).setPesoAresta(id, peso, false) == 1)
+            if(redirect && getClient(id % this.numServers).setAvaliacaoFilme(id, peso, false) == 1)
                 return 2;
             return -1;
         }
@@ -451,68 +453,70 @@ public class Grafo implements sdEntrega1.Iface{
         return 1;
     }
 
-    public synchronized int setDescricaoAresta(long id, String descricao, boolean redirect) throws TException{
-        if(id % this.numServers != this.id){
-            if(redirect && getClient(id % this.numServers).setDescricaoAresta(id, descricao, false) == 1)
-                return 2;
-            return -1;
-        }
+    // public synchronized int setDescricaoAresta(long id, String descricao, boolean redirect) throws TException{
+    //     if(id % this.numServers != this.id){
+    //         if(redirect && getClient(id % this.numServers).setDescricaoAresta(id, descricao, false) == 1)
+    //             return 2;
+    //         return -1;
+    //     }
 
-        if(!existeAresta(id, false))
-            return 0;
+    //     if(!existeAresta(id, false))
+    //         return 0;
 
-        this.getAresta(id, false).setDescricao(descricao);
-        return 1;
-    }
+    //     this.getAresta(id, false).setDescricao(descricao);
+    //     return 1;
+    // }
 
     public double menorCaminho(long va, long vb) throws TException{
         if(!existeVertice(va, true) || !existeVertice(vb, true)) // nao existe um dos vertices
             return -2;
 
-        int inf = 0x3f3f3f3f;
-        for(int i=0;i<30000;i++)
-            dist[i] = inf;
+        // int inf = 0x3f3f3f3f;
+        // for(int i=0;i<30000;i++)
+        //     dist[i] = inf;
 
-        Comparator<Integer> comparator = new DistComparator();
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(30000, comparator);    
+        // Comparator<Integer> comparator = new DistComparator();
+        // PriorityQueue<Integer> pq = new PriorityQueue<Integer>(30000, comparator);    
     
-        dist[va] = 0;
-        pq.add(va);
+        // dist[va] = 0;
+        // pq.add(va);
 
-        while (pq.size() != 0){
-            int i = pq.remove();
+        // while (pq.size() != 0){
+        //     int i = pq.remove();
 
-            List<Aresta> l = this.getArestasAdjacentes(i);
-            Iterator<Aresta> it = l.iterator();
+        //     List<Aresta> l = this.getArestasAdjacentes(i);
+        //     Iterator<Aresta> it = l.iterator();
 
-            while(it.hasNext()){
-                Aresta aij = it.next();
-                int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
+        //     while(it.hasNext()){
+        //         Aresta aij = it.next();
+        //         int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
 
-                if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
-                    dist[j] = dist[i] + aij.getPeso();
-                    pq.add(j);
-                }
-            }
+        //         if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
+        //             dist[j] = dist[i] + aij.getPeso();
+        //             pq.add(j);
+        //         }
+        //     }
 
-            // arestas adj de outros servers:
-            for(int k=1;k<this.numServers;k++){
-                l = getClient((this.id+k) % this.numServers).getArestasAdjacentes(i);
-                it = l.iterator();
-                while(it.hasNext()){
-                    Aresta aij = it.next();
-                    int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
+        //     // arestas adj de outros servers:
+        //     for(int k=1;k<this.numServers;k++){
+        //         l = getClient((this.id+k) % this.numServers).getArestasAdjacentes(i);
+        //         it = l.iterator();
+        //         while(it.hasNext()){
+        //             Aresta aij = it.next();
+        //             int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
 
-                    if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
-                        dist[j] = dist[i] + aij.getPeso();
-                        pq.add(j);
-                    }
-                }
-            }
+        //             if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
+        //                 dist[j] = dist[i] + aij.getPeso();
+        //                 pq.add(j);
+        //             }
+        //         }
+        //     }
 
-        }
+        // }
     
-        return (dist[vb] < inf) ? dist[vb] : -1.0;
+        // return (dist[vb] < inf) ? dist[vb] : -1.0;
+    
+        return 0.0;
     }
 
     public List<Aresta> getArestasAdjacentes(long id){
@@ -529,7 +533,8 @@ public class Grafo implements sdEntrega1.Iface{
     }
 
     public static double getDist(long id){
-        return dist[id];
+        return 0.0;
+        // return dist[id];
     }
 }
 
