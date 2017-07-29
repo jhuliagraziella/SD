@@ -12,85 +12,73 @@ public class sdEntrega1 {
 
   public interface Iface {
 
-    public boolean existeVertice(int id, boolean redirect) throws org.apache.thrift.TException;
+    public boolean existeVertice(long id, boolean redirect) throws org.apache.thrift.TException;
 
-    public boolean existeAresta(int id, boolean redirect) throws org.apache.thrift.TException;
+    public boolean existeAresta(long id, boolean redirect) throws org.apache.thrift.TException;
 
-    public Vertice getVertice(int id, boolean redirect) throws org.apache.thrift.TException;
+    public Vertice getVertice(long id, boolean redirect) throws org.apache.thrift.TException;
 
-    public Aresta getAresta(int id, boolean redirect) throws org.apache.thrift.TException;
+    public Aresta getAresta(long id, boolean redirect) throws org.apache.thrift.TException;
 
-    public java.util.List<Aresta> getArestasAdjacentes(int id) throws org.apache.thrift.TException;
+    public java.util.List<Aresta> getArestasAdjacentes(long id) throws org.apache.thrift.TException;
 
-    public int addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int addVertice(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect) throws org.apache.thrift.TException;
 
-    public int addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
+    public int addAresta(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public int removeVertice(int id, boolean redirect) throws org.apache.thrift.TException;
+    public java.lang.String listaFilmesDeCliente(long id) throws org.apache.thrift.TException;
 
-    public int removeAresta(int id, boolean redirect) throws org.apache.thrift.TException;
+    public java.lang.String listaFilmesDeGrupo(java.util.List<java.lang.Long> ids) throws org.apache.thrift.TException;
 
-    public void removeArestasVizinhas(int v, boolean redirect) throws org.apache.thrift.TException;
+    public java.lang.String getAvaliacaoMedia(long id) throws org.apache.thrift.TException;
 
-    public java.lang.String listaVerticesDeAresta(int id, boolean redirect) throws org.apache.thrift.TException;
+    public int setCorVertice(long id, int cor, boolean redirect) throws org.apache.thrift.TException;
 
-    public java.lang.String listaArestasDeVertice(int id) throws org.apache.thrift.TException;
+    public int setPesoVertice(long id, double peso, boolean redirect) throws org.apache.thrift.TException;
 
-    public java.lang.String listaVerticesVizinhos(int id) throws org.apache.thrift.TException;
+    public int setDescricaoVertice(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public int setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException;
+    public int setPesoAresta(long id, double peso, boolean redirect) throws org.apache.thrift.TException;
 
-    public int setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
+    public int setDescricaoAresta(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
 
-    public int setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
-
-    public int setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException;
-
-    public int setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException;
-
-    public double menorCaminho(int va, int vb) throws org.apache.thrift.TException;
+    public double menorCaminho(long va, long vb) throws org.apache.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
-    public void existeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void existeVertice(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
 
-    public void existeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
+    public void existeAresta(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException;
 
-    public void getVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler) throws org.apache.thrift.TException;
+    public void getVertice(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler) throws org.apache.thrift.TException;
 
-    public void getAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler) throws org.apache.thrift.TException;
+    public void getAresta(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler) throws org.apache.thrift.TException;
 
-    public void getArestasAdjacentes(int id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler) throws org.apache.thrift.TException;
+    public void getArestasAdjacentes(long id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler) throws org.apache.thrift.TException;
 
-    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void addVertice(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void addAresta(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void listaFilmesDeCliente(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
 
-    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void listaFilmesDeGrupo(java.util.List<java.lang.Long> ids, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
 
-    public void removeArestasVizinhas(int v, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException;
+    public void getAvaliacaoMedia(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
 
-    public void listaVerticesDeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
+    public void setCorVertice(long id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void listaArestasDeVertice(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
+    public void setPesoVertice(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void listaVerticesVizinhos(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
+    public void setDescricaoVertice(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void setPesoAresta(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void setDescricaoAresta(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
 
-    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
-
-    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
-
-    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
-
-    public void menorCaminho(int va, int vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
+    public void menorCaminho(long va, long vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -114,13 +102,13 @@ public class sdEntrega1 {
       super(iprot, oprot);
     }
 
-    public boolean existeVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public boolean existeVertice(long id, boolean redirect) throws org.apache.thrift.TException
     {
       send_existeVertice(id, redirect);
       return recv_existeVertice();
     }
 
-    public void send_existeVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_existeVertice(long id, boolean redirect) throws org.apache.thrift.TException
     {
       existeVertice_args args = new existeVertice_args();
       args.setId(id);
@@ -138,13 +126,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "existeVertice failed: unknown result");
     }
 
-    public boolean existeAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public boolean existeAresta(long id, boolean redirect) throws org.apache.thrift.TException
     {
       send_existeAresta(id, redirect);
       return recv_existeAresta();
     }
 
-    public void send_existeAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_existeAresta(long id, boolean redirect) throws org.apache.thrift.TException
     {
       existeAresta_args args = new existeAresta_args();
       args.setId(id);
@@ -162,13 +150,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "existeAresta failed: unknown result");
     }
 
-    public Vertice getVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public Vertice getVertice(long id, boolean redirect) throws org.apache.thrift.TException
     {
       send_getVertice(id, redirect);
       return recv_getVertice();
     }
 
-    public void send_getVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_getVertice(long id, boolean redirect) throws org.apache.thrift.TException
     {
       getVertice_args args = new getVertice_args();
       args.setId(id);
@@ -186,13 +174,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getVertice failed: unknown result");
     }
 
-    public Aresta getAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public Aresta getAresta(long id, boolean redirect) throws org.apache.thrift.TException
     {
       send_getAresta(id, redirect);
       return recv_getAresta();
     }
 
-    public void send_getAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_getAresta(long id, boolean redirect) throws org.apache.thrift.TException
     {
       getAresta_args args = new getAresta_args();
       args.setId(id);
@@ -210,13 +198,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getAresta failed: unknown result");
     }
 
-    public java.util.List<Aresta> getArestasAdjacentes(int id) throws org.apache.thrift.TException
+    public java.util.List<Aresta> getArestasAdjacentes(long id) throws org.apache.thrift.TException
     {
       send_getArestasAdjacentes(id);
       return recv_getArestasAdjacentes();
     }
 
-    public void send_getArestasAdjacentes(int id) throws org.apache.thrift.TException
+    public void send_getArestasAdjacentes(long id) throws org.apache.thrift.TException
     {
       getArestasAdjacentes_args args = new getArestasAdjacentes_args();
       args.setId(id);
@@ -233,19 +221,20 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getArestasAdjacentes failed: unknown result");
     }
 
-    public int addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int addVertice(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect) throws org.apache.thrift.TException
     {
-      send_addVertice(id, cor, peso, descricao, redirect);
+      send_addVertice(id, cor, peso, descricao, tipo, redirect);
       return recv_addVertice();
     }
 
-    public void send_addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public void send_addVertice(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect) throws org.apache.thrift.TException
     {
       addVertice_args args = new addVertice_args();
       args.setId(id);
       args.setCor(cor);
       args.setPeso(peso);
       args.setDescricao(descricao);
+      args.setTipo(tipo);
       args.setRedirect(redirect);
       sendBase("addVertice", args);
     }
@@ -260,13 +249,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "addVertice failed: unknown result");
     }
 
-    public int addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int addAresta(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_addAresta(id, va, vb, peso, bidirecional, descricao, redirect);
       return recv_addAresta();
     }
 
-    public void send_addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public void send_addAresta(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       addAresta_args args = new addAresta_args();
       args.setId(id);
@@ -289,152 +278,82 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "addAresta failed: unknown result");
     }
 
-    public int removeVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public java.lang.String listaFilmesDeCliente(long id) throws org.apache.thrift.TException
     {
-      send_removeVertice(id, redirect);
-      return recv_removeVertice();
+      send_listaFilmesDeCliente(id);
+      return recv_listaFilmesDeCliente();
     }
 
-    public void send_removeVertice(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_listaFilmesDeCliente(long id) throws org.apache.thrift.TException
     {
-      removeVertice_args args = new removeVertice_args();
+      listaFilmesDeCliente_args args = new listaFilmesDeCliente_args();
       args.setId(id);
-      args.setRedirect(redirect);
-      sendBase("removeVertice", args);
+      sendBase("listaFilmesDeCliente", args);
     }
 
-    public int recv_removeVertice() throws org.apache.thrift.TException
+    public java.lang.String recv_listaFilmesDeCliente() throws org.apache.thrift.TException
     {
-      removeVertice_result result = new removeVertice_result();
-      receiveBase(result, "removeVertice");
+      listaFilmesDeCliente_result result = new listaFilmesDeCliente_result();
+      receiveBase(result, "listaFilmesDeCliente");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "removeVertice failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaFilmesDeCliente failed: unknown result");
     }
 
-    public int removeAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public java.lang.String listaFilmesDeGrupo(java.util.List<java.lang.Long> ids) throws org.apache.thrift.TException
     {
-      send_removeAresta(id, redirect);
-      return recv_removeAresta();
+      send_listaFilmesDeGrupo(ids);
+      return recv_listaFilmesDeGrupo();
     }
 
-    public void send_removeAresta(int id, boolean redirect) throws org.apache.thrift.TException
+    public void send_listaFilmesDeGrupo(java.util.List<java.lang.Long> ids) throws org.apache.thrift.TException
     {
-      removeAresta_args args = new removeAresta_args();
-      args.setId(id);
-      args.setRedirect(redirect);
-      sendBase("removeAresta", args);
+      listaFilmesDeGrupo_args args = new listaFilmesDeGrupo_args();
+      args.setIds(ids);
+      sendBase("listaFilmesDeGrupo", args);
     }
 
-    public int recv_removeAresta() throws org.apache.thrift.TException
+    public java.lang.String recv_listaFilmesDeGrupo() throws org.apache.thrift.TException
     {
-      removeAresta_result result = new removeAresta_result();
-      receiveBase(result, "removeAresta");
+      listaFilmesDeGrupo_result result = new listaFilmesDeGrupo_result();
+      receiveBase(result, "listaFilmesDeGrupo");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "removeAresta failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaFilmesDeGrupo failed: unknown result");
     }
 
-    public void removeArestasVizinhas(int v, boolean redirect) throws org.apache.thrift.TException
+    public java.lang.String getAvaliacaoMedia(long id) throws org.apache.thrift.TException
     {
-      send_removeArestasVizinhas(v, redirect);
-      recv_removeArestasVizinhas();
+      send_getAvaliacaoMedia(id);
+      return recv_getAvaliacaoMedia();
     }
 
-    public void send_removeArestasVizinhas(int v, boolean redirect) throws org.apache.thrift.TException
+    public void send_getAvaliacaoMedia(long id) throws org.apache.thrift.TException
     {
-      removeArestasVizinhas_args args = new removeArestasVizinhas_args();
-      args.setV(v);
-      args.setRedirect(redirect);
-      sendBase("removeArestasVizinhas", args);
-    }
-
-    public void recv_removeArestasVizinhas() throws org.apache.thrift.TException
-    {
-      removeArestasVizinhas_result result = new removeArestasVizinhas_result();
-      receiveBase(result, "removeArestasVizinhas");
-      return;
-    }
-
-    public java.lang.String listaVerticesDeAresta(int id, boolean redirect) throws org.apache.thrift.TException
-    {
-      send_listaVerticesDeAresta(id, redirect);
-      return recv_listaVerticesDeAresta();
-    }
-
-    public void send_listaVerticesDeAresta(int id, boolean redirect) throws org.apache.thrift.TException
-    {
-      listaVerticesDeAresta_args args = new listaVerticesDeAresta_args();
+      getAvaliacaoMedia_args args = new getAvaliacaoMedia_args();
       args.setId(id);
-      args.setRedirect(redirect);
-      sendBase("listaVerticesDeAresta", args);
+      sendBase("getAvaliacaoMedia", args);
     }
 
-    public java.lang.String recv_listaVerticesDeAresta() throws org.apache.thrift.TException
+    public java.lang.String recv_getAvaliacaoMedia() throws org.apache.thrift.TException
     {
-      listaVerticesDeAresta_result result = new listaVerticesDeAresta_result();
-      receiveBase(result, "listaVerticesDeAresta");
+      getAvaliacaoMedia_result result = new getAvaliacaoMedia_result();
+      receiveBase(result, "getAvaliacaoMedia");
       if (result.isSetSuccess()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaVerticesDeAresta failed: unknown result");
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getAvaliacaoMedia failed: unknown result");
     }
 
-    public java.lang.String listaArestasDeVertice(int id) throws org.apache.thrift.TException
-    {
-      send_listaArestasDeVertice(id);
-      return recv_listaArestasDeVertice();
-    }
-
-    public void send_listaArestasDeVertice(int id) throws org.apache.thrift.TException
-    {
-      listaArestasDeVertice_args args = new listaArestasDeVertice_args();
-      args.setId(id);
-      sendBase("listaArestasDeVertice", args);
-    }
-
-    public java.lang.String recv_listaArestasDeVertice() throws org.apache.thrift.TException
-    {
-      listaArestasDeVertice_result result = new listaArestasDeVertice_result();
-      receiveBase(result, "listaArestasDeVertice");
-      if (result.isSetSuccess()) {
-        return result.success;
-      }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaArestasDeVertice failed: unknown result");
-    }
-
-    public java.lang.String listaVerticesVizinhos(int id) throws org.apache.thrift.TException
-    {
-      send_listaVerticesVizinhos(id);
-      return recv_listaVerticesVizinhos();
-    }
-
-    public void send_listaVerticesVizinhos(int id) throws org.apache.thrift.TException
-    {
-      listaVerticesVizinhos_args args = new listaVerticesVizinhos_args();
-      args.setId(id);
-      sendBase("listaVerticesVizinhos", args);
-    }
-
-    public java.lang.String recv_listaVerticesVizinhos() throws org.apache.thrift.TException
-    {
-      listaVerticesVizinhos_result result = new listaVerticesVizinhos_result();
-      receiveBase(result, "listaVerticesVizinhos");
-      if (result.isSetSuccess()) {
-        return result.success;
-      }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "listaVerticesVizinhos failed: unknown result");
-    }
-
-    public int setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException
+    public int setCorVertice(long id, int cor, boolean redirect) throws org.apache.thrift.TException
     {
       send_setCorVertice(id, cor, redirect);
       return recv_setCorVertice();
     }
 
-    public void send_setCorVertice(int id, int cor, boolean redirect) throws org.apache.thrift.TException
+    public void send_setCorVertice(long id, int cor, boolean redirect) throws org.apache.thrift.TException
     {
       setCorVertice_args args = new setCorVertice_args();
       args.setId(id);
@@ -453,13 +372,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setCorVertice failed: unknown result");
     }
 
-    public int setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public int setPesoVertice(long id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       send_setPesoVertice(id, peso, redirect);
       return recv_setPesoVertice();
     }
 
-    public void send_setPesoVertice(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public void send_setPesoVertice(long id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       setPesoVertice_args args = new setPesoVertice_args();
       args.setId(id);
@@ -478,13 +397,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setPesoVertice failed: unknown result");
     }
 
-    public int setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int setDescricaoVertice(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_setDescricaoVertice(id, descricao, redirect);
       return recv_setDescricaoVertice();
     }
 
-    public void send_setDescricaoVertice(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public void send_setDescricaoVertice(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       setDescricaoVertice_args args = new setDescricaoVertice_args();
       args.setId(id);
@@ -503,13 +422,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setDescricaoVertice failed: unknown result");
     }
 
-    public int setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public int setPesoAresta(long id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       send_setPesoAresta(id, peso, redirect);
       return recv_setPesoAresta();
     }
 
-    public void send_setPesoAresta(int id, double peso, boolean redirect) throws org.apache.thrift.TException
+    public void send_setPesoAresta(long id, double peso, boolean redirect) throws org.apache.thrift.TException
     {
       setPesoAresta_args args = new setPesoAresta_args();
       args.setId(id);
@@ -528,13 +447,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setPesoAresta failed: unknown result");
     }
 
-    public int setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public int setDescricaoAresta(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       send_setDescricaoAresta(id, descricao, redirect);
       return recv_setDescricaoAresta();
     }
 
-    public void send_setDescricaoAresta(int id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
+    public void send_setDescricaoAresta(long id, java.lang.String descricao, boolean redirect) throws org.apache.thrift.TException
     {
       setDescricaoAresta_args args = new setDescricaoAresta_args();
       args.setId(id);
@@ -553,13 +472,13 @@ public class sdEntrega1 {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "setDescricaoAresta failed: unknown result");
     }
 
-    public double menorCaminho(int va, int vb) throws org.apache.thrift.TException
+    public double menorCaminho(long va, long vb) throws org.apache.thrift.TException
     {
       send_menorCaminho(va, vb);
       return recv_menorCaminho();
     }
 
-    public void send_menorCaminho(int va, int vb) throws org.apache.thrift.TException
+    public void send_menorCaminho(long va, long vb) throws org.apache.thrift.TException
     {
       menorCaminho_args args = new menorCaminho_args();
       args.setVa(va);
@@ -595,7 +514,7 @@ public class sdEntrega1 {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void existeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void existeVertice(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       existeVertice_call method_call = new existeVertice_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -603,9 +522,9 @@ public class sdEntrega1 {
     }
 
     public static class existeVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
-      private int id;
+      private long id;
       private boolean redirect;
-      public existeVertice_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public existeVertice_call(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -630,7 +549,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void existeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
+    public void existeAresta(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       existeAresta_call method_call = new existeAresta_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -638,9 +557,9 @@ public class sdEntrega1 {
     }
 
     public static class existeAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Boolean> {
-      private int id;
+      private long id;
       private boolean redirect;
-      public existeAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public existeAresta_call(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Boolean> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -665,7 +584,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void getVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler) throws org.apache.thrift.TException {
+    public void getVertice(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       getVertice_call method_call = new getVertice_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -673,9 +592,9 @@ public class sdEntrega1 {
     }
 
     public static class getVertice_call extends org.apache.thrift.async.TAsyncMethodCall<Vertice> {
-      private int id;
+      private long id;
       private boolean redirect;
-      public getVertice_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public getVertice_call(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Vertice> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -700,7 +619,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void getAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler) throws org.apache.thrift.TException {
+    public void getAresta(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       getAresta_call method_call = new getAresta_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -708,9 +627,9 @@ public class sdEntrega1 {
     }
 
     public static class getAresta_call extends org.apache.thrift.async.TAsyncMethodCall<Aresta> {
-      private int id;
+      private long id;
       private boolean redirect;
-      public getAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public getAresta_call(long id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Aresta> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.redirect = redirect;
@@ -735,7 +654,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void getArestasAdjacentes(int id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler) throws org.apache.thrift.TException {
+    public void getArestasAdjacentes(long id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       getArestasAdjacentes_call method_call = new getArestasAdjacentes_call(id, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -743,8 +662,8 @@ public class sdEntrega1 {
     }
 
     public static class getArestasAdjacentes_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<Aresta>> {
-      private int id;
-      public getArestasAdjacentes_call(int id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private long id;
+      public getArestasAdjacentes_call(long id, org.apache.thrift.async.AsyncMethodCallback<java.util.List<Aresta>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
       }
@@ -767,25 +686,27 @@ public class sdEntrega1 {
       }
     }
 
-    public void addVertice(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void addVertice(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      addVertice_call method_call = new addVertice_call(id, cor, peso, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
+      addVertice_call method_call = new addVertice_call(id, cor, peso, descricao, tipo, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
     public static class addVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private int cor;
       private double peso;
       private java.lang.String descricao;
+      private int tipo;
       private boolean redirect;
-      public addVertice_call(int id, int cor, double peso, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public addVertice_call(long id, int cor, double peso, java.lang.String descricao, int tipo, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.cor = cor;
         this.peso = peso;
         this.descricao = descricao;
+        this.tipo = tipo;
         this.redirect = redirect;
       }
 
@@ -796,6 +717,7 @@ public class sdEntrega1 {
         args.setCor(cor);
         args.setPeso(peso);
         args.setDescricao(descricao);
+        args.setTipo(tipo);
         args.setRedirect(redirect);
         args.write(prot);
         prot.writeMessageEnd();
@@ -811,7 +733,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void addAresta(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void addAresta(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       addAresta_call method_call = new addAresta_call(id, va, vb, peso, bidirecional, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -819,14 +741,14 @@ public class sdEntrega1 {
     }
 
     public static class addAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
-      private int va;
-      private int vb;
+      private long id;
+      private long va;
+      private long vb;
       private double peso;
       private boolean bidirecional;
       private java.lang.String descricao;
       private boolean redirect;
-      public addAresta_call(int id, int va, int vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public addAresta_call(long id, long va, long vb, double peso, boolean bidirecional, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.va = va;
@@ -861,163 +783,23 @@ public class sdEntrega1 {
       }
     }
 
-    public void removeVertice(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void listaFilmesDeCliente(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      removeVertice_call method_call = new removeVertice_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
+      listaFilmesDeCliente_call method_call = new listaFilmesDeCliente_call(id, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class removeVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
-      private boolean redirect;
-      public removeVertice_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
-        super(client, protocolFactory, transport, resultHandler, false);
-        this.id = id;
-        this.redirect = redirect;
-      }
-
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("removeVertice", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        removeVertice_args args = new removeVertice_args();
-        args.setId(id);
-        args.setRedirect(redirect);
-        args.write(prot);
-        prot.writeMessageEnd();
-      }
-
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
-          throw new java.lang.IllegalStateException("Method call not finished!");
-        }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_removeVertice();
-      }
-    }
-
-    public void removeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
-      checkReady();
-      removeAresta_call method_call = new removeAresta_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
-      this.___currentMethod = method_call;
-      ___manager.call(method_call);
-    }
-
-    public static class removeAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
-      private boolean redirect;
-      public removeAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
-        super(client, protocolFactory, transport, resultHandler, false);
-        this.id = id;
-        this.redirect = redirect;
-      }
-
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("removeAresta", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        removeAresta_args args = new removeAresta_args();
-        args.setId(id);
-        args.setRedirect(redirect);
-        args.write(prot);
-        prot.writeMessageEnd();
-      }
-
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
-          throw new java.lang.IllegalStateException("Method call not finished!");
-        }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_removeAresta();
-      }
-    }
-
-    public void removeArestasVizinhas(int v, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException {
-      checkReady();
-      removeArestasVizinhas_call method_call = new removeArestasVizinhas_call(v, redirect, resultHandler, this, ___protocolFactory, ___transport);
-      this.___currentMethod = method_call;
-      ___manager.call(method_call);
-    }
-
-    public static class removeArestasVizinhas_call extends org.apache.thrift.async.TAsyncMethodCall<Void> {
-      private int v;
-      private boolean redirect;
-      public removeArestasVizinhas_call(int v, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
-        super(client, protocolFactory, transport, resultHandler, false);
-        this.v = v;
-        this.redirect = redirect;
-      }
-
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("removeArestasVizinhas", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        removeArestasVizinhas_args args = new removeArestasVizinhas_args();
-        args.setV(v);
-        args.setRedirect(redirect);
-        args.write(prot);
-        prot.writeMessageEnd();
-      }
-
-      public Void getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
-          throw new java.lang.IllegalStateException("Method call not finished!");
-        }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return null;
-      }
-    }
-
-    public void listaVerticesDeAresta(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
-      checkReady();
-      listaVerticesDeAresta_call method_call = new listaVerticesDeAresta_call(id, redirect, resultHandler, this, ___protocolFactory, ___transport);
-      this.___currentMethod = method_call;
-      ___manager.call(method_call);
-    }
-
-    public static class listaVerticesDeAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
-      private int id;
-      private boolean redirect;
-      public listaVerticesDeAresta_call(int id, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
-        super(client, protocolFactory, transport, resultHandler, false);
-        this.id = id;
-        this.redirect = redirect;
-      }
-
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("listaVerticesDeAresta", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        listaVerticesDeAresta_args args = new listaVerticesDeAresta_args();
-        args.setId(id);
-        args.setRedirect(redirect);
-        args.write(prot);
-        prot.writeMessageEnd();
-      }
-
-      public java.lang.String getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
-          throw new java.lang.IllegalStateException("Method call not finished!");
-        }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_listaVerticesDeAresta();
-      }
-    }
-
-    public void listaArestasDeVertice(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
-      checkReady();
-      listaArestasDeVertice_call method_call = new listaArestasDeVertice_call(id, resultHandler, this, ___protocolFactory, ___transport);
-      this.___currentMethod = method_call;
-      ___manager.call(method_call);
-    }
-
-    public static class listaArestasDeVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
-      private int id;
-      public listaArestasDeVertice_call(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class listaFilmesDeCliente_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
+      private long id;
+      public listaFilmesDeCliente_call(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("listaArestasDeVertice", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        listaArestasDeVertice_args args = new listaArestasDeVertice_args();
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("listaFilmesDeCliente", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        listaFilmesDeCliente_args args = new listaFilmesDeCliente_args();
         args.setId(id);
         args.write(prot);
         prot.writeMessageEnd();
@@ -1029,27 +811,59 @@ public class sdEntrega1 {
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_listaArestasDeVertice();
+        return (new Client(prot)).recv_listaFilmesDeCliente();
       }
     }
 
-    public void listaVerticesVizinhos(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
+    public void listaFilmesDeGrupo(java.util.List<java.lang.Long> ids, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      listaVerticesVizinhos_call method_call = new listaVerticesVizinhos_call(id, resultHandler, this, ___protocolFactory, ___transport);
+      listaFilmesDeGrupo_call method_call = new listaFilmesDeGrupo_call(ids, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class listaVerticesVizinhos_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
-      private int id;
-      public listaVerticesVizinhos_call(int id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class listaFilmesDeGrupo_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
+      private java.util.List<java.lang.Long> ids;
+      public listaFilmesDeGrupo_call(java.util.List<java.lang.Long> ids, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.ids = ids;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("listaFilmesDeGrupo", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        listaFilmesDeGrupo_args args = new listaFilmesDeGrupo_args();
+        args.setIds(ids);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.lang.String getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_listaFilmesDeGrupo();
+      }
+    }
+
+    public void getAvaliacaoMedia(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      getAvaliacaoMedia_call method_call = new getAvaliacaoMedia_call(id, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class getAvaliacaoMedia_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.String> {
+      private long id;
+      public getAvaliacaoMedia_call(long id, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("listaVerticesVizinhos", org.apache.thrift.protocol.TMessageType.CALL, 0));
-        listaVerticesVizinhos_args args = new listaVerticesVizinhos_args();
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("getAvaliacaoMedia", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        getAvaliacaoMedia_args args = new getAvaliacaoMedia_args();
         args.setId(id);
         args.write(prot);
         prot.writeMessageEnd();
@@ -1061,11 +875,11 @@ public class sdEntrega1 {
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
-        return (new Client(prot)).recv_listaVerticesVizinhos();
+        return (new Client(prot)).recv_getAvaliacaoMedia();
       }
     }
 
-    public void setCorVertice(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void setCorVertice(long id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setCorVertice_call method_call = new setCorVertice_call(id, cor, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1073,10 +887,10 @@ public class sdEntrega1 {
     }
 
     public static class setCorVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private int cor;
       private boolean redirect;
-      public setCorVertice_call(int id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setCorVertice_call(long id, int cor, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.cor = cor;
@@ -1103,7 +917,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void setPesoVertice(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void setPesoVertice(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setPesoVertice_call method_call = new setPesoVertice_call(id, peso, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1111,10 +925,10 @@ public class sdEntrega1 {
     }
 
     public static class setPesoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private double peso;
       private boolean redirect;
-      public setPesoVertice_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setPesoVertice_call(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.peso = peso;
@@ -1141,7 +955,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void setDescricaoVertice(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void setDescricaoVertice(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setDescricaoVertice_call method_call = new setDescricaoVertice_call(id, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1149,10 +963,10 @@ public class sdEntrega1 {
     }
 
     public static class setDescricaoVertice_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private java.lang.String descricao;
       private boolean redirect;
-      public setDescricaoVertice_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setDescricaoVertice_call(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.descricao = descricao;
@@ -1179,7 +993,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void setPesoAresta(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void setPesoAresta(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setPesoAresta_call method_call = new setPesoAresta_call(id, peso, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1187,10 +1001,10 @@ public class sdEntrega1 {
     }
 
     public static class setPesoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private double peso;
       private boolean redirect;
-      public setPesoAresta_call(int id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setPesoAresta_call(long id, double peso, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.peso = peso;
@@ -1217,7 +1031,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void setDescricaoAresta(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void setDescricaoAresta(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       setDescricaoAresta_call method_call = new setDescricaoAresta_call(id, descricao, redirect, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1225,10 +1039,10 @@ public class sdEntrega1 {
     }
 
     public static class setDescricaoAresta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int id;
+      private long id;
       private java.lang.String descricao;
       private boolean redirect;
-      public setDescricaoAresta_call(int id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public setDescricaoAresta_call(long id, java.lang.String descricao, boolean redirect, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.id = id;
         this.descricao = descricao;
@@ -1255,7 +1069,7 @@ public class sdEntrega1 {
       }
     }
 
-    public void menorCaminho(int va, int vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
+    public void menorCaminho(long va, long vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       menorCaminho_call method_call = new menorCaminho_call(va, vb, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -1263,9 +1077,9 @@ public class sdEntrega1 {
     }
 
     public static class menorCaminho_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
-      private int va;
-      private int vb;
-      public menorCaminho_call(int va, int vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private long va;
+      private long vb;
+      public menorCaminho_call(long va, long vb, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.va = va;
         this.vb = vb;
@@ -1310,12 +1124,9 @@ public class sdEntrega1 {
       processMap.put("getArestasAdjacentes", new getArestasAdjacentes());
       processMap.put("addVertice", new addVertice());
       processMap.put("addAresta", new addAresta());
-      processMap.put("removeVertice", new removeVertice());
-      processMap.put("removeAresta", new removeAresta());
-      processMap.put("removeArestasVizinhas", new removeArestasVizinhas());
-      processMap.put("listaVerticesDeAresta", new listaVerticesDeAresta());
-      processMap.put("listaArestasDeVertice", new listaArestasDeVertice());
-      processMap.put("listaVerticesVizinhos", new listaVerticesVizinhos());
+      processMap.put("listaFilmesDeCliente", new listaFilmesDeCliente());
+      processMap.put("listaFilmesDeGrupo", new listaFilmesDeGrupo());
+      processMap.put("getAvaliacaoMedia", new getAvaliacaoMedia());
       processMap.put("setCorVertice", new setCorVertice());
       processMap.put("setPesoVertice", new setPesoVertice());
       processMap.put("setDescricaoVertice", new setDescricaoVertice());
@@ -1442,7 +1253,7 @@ public class sdEntrega1 {
 
       public addVertice_result getResult(I iface, addVertice_args args) throws org.apache.thrift.TException {
         addVertice_result result = new addVertice_result();
-        result.success = iface.addVertice(args.id, args.cor, args.peso, args.descricao, args.redirect);
+        result.success = iface.addVertice(args.id, args.cor, args.peso, args.descricao, args.tipo, args.redirect);
         result.setSuccessIsSet(true);
         return result;
       }
@@ -1469,124 +1280,62 @@ public class sdEntrega1 {
       }
     }
 
-    public static class removeVertice<I extends Iface> extends org.apache.thrift.ProcessFunction<I, removeVertice_args> {
-      public removeVertice() {
-        super("removeVertice");
+    public static class listaFilmesDeCliente<I extends Iface> extends org.apache.thrift.ProcessFunction<I, listaFilmesDeCliente_args> {
+      public listaFilmesDeCliente() {
+        super("listaFilmesDeCliente");
       }
 
-      public removeVertice_args getEmptyArgsInstance() {
-        return new removeVertice_args();
+      public listaFilmesDeCliente_args getEmptyArgsInstance() {
+        return new listaFilmesDeCliente_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public removeVertice_result getResult(I iface, removeVertice_args args) throws org.apache.thrift.TException {
-        removeVertice_result result = new removeVertice_result();
-        result.success = iface.removeVertice(args.id, args.redirect);
-        result.setSuccessIsSet(true);
+      public listaFilmesDeCliente_result getResult(I iface, listaFilmesDeCliente_args args) throws org.apache.thrift.TException {
+        listaFilmesDeCliente_result result = new listaFilmesDeCliente_result();
+        result.success = iface.listaFilmesDeCliente(args.id);
         return result;
       }
     }
 
-    public static class removeAresta<I extends Iface> extends org.apache.thrift.ProcessFunction<I, removeAresta_args> {
-      public removeAresta() {
-        super("removeAresta");
+    public static class listaFilmesDeGrupo<I extends Iface> extends org.apache.thrift.ProcessFunction<I, listaFilmesDeGrupo_args> {
+      public listaFilmesDeGrupo() {
+        super("listaFilmesDeGrupo");
       }
 
-      public removeAresta_args getEmptyArgsInstance() {
-        return new removeAresta_args();
+      public listaFilmesDeGrupo_args getEmptyArgsInstance() {
+        return new listaFilmesDeGrupo_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public removeAresta_result getResult(I iface, removeAresta_args args) throws org.apache.thrift.TException {
-        removeAresta_result result = new removeAresta_result();
-        result.success = iface.removeAresta(args.id, args.redirect);
-        result.setSuccessIsSet(true);
+      public listaFilmesDeGrupo_result getResult(I iface, listaFilmesDeGrupo_args args) throws org.apache.thrift.TException {
+        listaFilmesDeGrupo_result result = new listaFilmesDeGrupo_result();
+        result.success = iface.listaFilmesDeGrupo(args.ids);
         return result;
       }
     }
 
-    public static class removeArestasVizinhas<I extends Iface> extends org.apache.thrift.ProcessFunction<I, removeArestasVizinhas_args> {
-      public removeArestasVizinhas() {
-        super("removeArestasVizinhas");
+    public static class getAvaliacaoMedia<I extends Iface> extends org.apache.thrift.ProcessFunction<I, getAvaliacaoMedia_args> {
+      public getAvaliacaoMedia() {
+        super("getAvaliacaoMedia");
       }
 
-      public removeArestasVizinhas_args getEmptyArgsInstance() {
-        return new removeArestasVizinhas_args();
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public removeArestasVizinhas_result getResult(I iface, removeArestasVizinhas_args args) throws org.apache.thrift.TException {
-        removeArestasVizinhas_result result = new removeArestasVizinhas_result();
-        iface.removeArestasVizinhas(args.v, args.redirect);
-        return result;
-      }
-    }
-
-    public static class listaVerticesDeAresta<I extends Iface> extends org.apache.thrift.ProcessFunction<I, listaVerticesDeAresta_args> {
-      public listaVerticesDeAresta() {
-        super("listaVerticesDeAresta");
-      }
-
-      public listaVerticesDeAresta_args getEmptyArgsInstance() {
-        return new listaVerticesDeAresta_args();
+      public getAvaliacaoMedia_args getEmptyArgsInstance() {
+        return new getAvaliacaoMedia_args();
       }
 
       protected boolean isOneway() {
         return false;
       }
 
-      public listaVerticesDeAresta_result getResult(I iface, listaVerticesDeAresta_args args) throws org.apache.thrift.TException {
-        listaVerticesDeAresta_result result = new listaVerticesDeAresta_result();
-        result.success = iface.listaVerticesDeAresta(args.id, args.redirect);
-        return result;
-      }
-    }
-
-    public static class listaArestasDeVertice<I extends Iface> extends org.apache.thrift.ProcessFunction<I, listaArestasDeVertice_args> {
-      public listaArestasDeVertice() {
-        super("listaArestasDeVertice");
-      }
-
-      public listaArestasDeVertice_args getEmptyArgsInstance() {
-        return new listaArestasDeVertice_args();
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public listaArestasDeVertice_result getResult(I iface, listaArestasDeVertice_args args) throws org.apache.thrift.TException {
-        listaArestasDeVertice_result result = new listaArestasDeVertice_result();
-        result.success = iface.listaArestasDeVertice(args.id);
-        return result;
-      }
-    }
-
-    public static class listaVerticesVizinhos<I extends Iface> extends org.apache.thrift.ProcessFunction<I, listaVerticesVizinhos_args> {
-      public listaVerticesVizinhos() {
-        super("listaVerticesVizinhos");
-      }
-
-      public listaVerticesVizinhos_args getEmptyArgsInstance() {
-        return new listaVerticesVizinhos_args();
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public listaVerticesVizinhos_result getResult(I iface, listaVerticesVizinhos_args args) throws org.apache.thrift.TException {
-        listaVerticesVizinhos_result result = new listaVerticesVizinhos_result();
-        result.success = iface.listaVerticesVizinhos(args.id);
+      public getAvaliacaoMedia_result getResult(I iface, getAvaliacaoMedia_args args) throws org.apache.thrift.TException {
+        getAvaliacaoMedia_result result = new getAvaliacaoMedia_result();
+        result.success = iface.getAvaliacaoMedia(args.id);
         return result;
       }
     }
@@ -1737,12 +1486,9 @@ public class sdEntrega1 {
       processMap.put("getArestasAdjacentes", new getArestasAdjacentes());
       processMap.put("addVertice", new addVertice());
       processMap.put("addAresta", new addAresta());
-      processMap.put("removeVertice", new removeVertice());
-      processMap.put("removeAresta", new removeAresta());
-      processMap.put("removeArestasVizinhas", new removeArestasVizinhas());
-      processMap.put("listaVerticesDeAresta", new listaVerticesDeAresta());
-      processMap.put("listaArestasDeVertice", new listaArestasDeVertice());
-      processMap.put("listaVerticesVizinhos", new listaVerticesVizinhos());
+      processMap.put("listaFilmesDeCliente", new listaFilmesDeCliente());
+      processMap.put("listaFilmesDeGrupo", new listaFilmesDeGrupo());
+      processMap.put("getAvaliacaoMedia", new getAvaliacaoMedia());
       processMap.put("setCorVertice", new setCorVertice());
       processMap.put("setPesoVertice", new setPesoVertice());
       processMap.put("setDescricaoVertice", new setDescricaoVertice());
@@ -2117,7 +1863,7 @@ public class sdEntrega1 {
       }
 
       public void start(I iface, addVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
-        iface.addVertice(args.id, args.cor, args.peso, args.descricao, args.redirect,resultHandler);
+        iface.addVertice(args.id, args.cor, args.peso, args.descricao, args.tipo, args.redirect,resultHandler);
       }
     }
 
@@ -2183,204 +1929,20 @@ public class sdEntrega1 {
       }
     }
 
-    public static class removeVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeVertice_args, java.lang.Integer> {
-      public removeVertice() {
-        super("removeVertice");
+    public static class listaFilmesDeCliente<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, listaFilmesDeCliente_args, java.lang.String> {
+      public listaFilmesDeCliente() {
+        super("listaFilmesDeCliente");
       }
 
-      public removeVertice_args getEmptyArgsInstance() {
-        return new removeVertice_args();
-      }
-
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
-        final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
-            removeVertice_result result = new removeVertice_result();
-            result.success = o;
-            result.setSuccessIsSet(true);
-            try {
-              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
-            } catch (org.apache.thrift.transport.TTransportException e) {
-              _LOGGER.error("TTransportException writing to internal frame buffer", e);
-              fb.close();
-            } catch (java.lang.Exception e) {
-              _LOGGER.error("Exception writing to internal frame buffer", e);
-              onError(e);
-            }
-          }
-          public void onError(java.lang.Exception e) {
-            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
-            org.apache.thrift.TSerializable msg;
-            removeVertice_result result = new removeVertice_result();
-            if (e instanceof org.apache.thrift.transport.TTransportException) {
-              _LOGGER.error("TTransportException inside handler", e);
-              fb.close();
-              return;
-            } else if (e instanceof org.apache.thrift.TApplicationException) {
-              _LOGGER.error("TApplicationException inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = (org.apache.thrift.TApplicationException)e;
-            } else {
-              _LOGGER.error("Exception inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
-            }
-            try {
-              fcall.sendResponse(fb,msg,msgType,seqid);
-            } catch (java.lang.Exception ex) {
-              _LOGGER.error("Exception writing to internal frame buffer", ex);
-              fb.close();
-            }
-          }
-        };
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public void start(I iface, removeVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
-        iface.removeVertice(args.id, args.redirect,resultHandler);
-      }
-    }
-
-    public static class removeAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeAresta_args, java.lang.Integer> {
-      public removeAresta() {
-        super("removeAresta");
-      }
-
-      public removeAresta_args getEmptyArgsInstance() {
-        return new removeAresta_args();
-      }
-
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
-        final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
-            removeAresta_result result = new removeAresta_result();
-            result.success = o;
-            result.setSuccessIsSet(true);
-            try {
-              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
-            } catch (org.apache.thrift.transport.TTransportException e) {
-              _LOGGER.error("TTransportException writing to internal frame buffer", e);
-              fb.close();
-            } catch (java.lang.Exception e) {
-              _LOGGER.error("Exception writing to internal frame buffer", e);
-              onError(e);
-            }
-          }
-          public void onError(java.lang.Exception e) {
-            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
-            org.apache.thrift.TSerializable msg;
-            removeAresta_result result = new removeAresta_result();
-            if (e instanceof org.apache.thrift.transport.TTransportException) {
-              _LOGGER.error("TTransportException inside handler", e);
-              fb.close();
-              return;
-            } else if (e instanceof org.apache.thrift.TApplicationException) {
-              _LOGGER.error("TApplicationException inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = (org.apache.thrift.TApplicationException)e;
-            } else {
-              _LOGGER.error("Exception inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
-            }
-            try {
-              fcall.sendResponse(fb,msg,msgType,seqid);
-            } catch (java.lang.Exception ex) {
-              _LOGGER.error("Exception writing to internal frame buffer", ex);
-              fb.close();
-            }
-          }
-        };
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public void start(I iface, removeAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
-        iface.removeAresta(args.id, args.redirect,resultHandler);
-      }
-    }
-
-    public static class removeArestasVizinhas<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, removeArestasVizinhas_args, Void> {
-      public removeArestasVizinhas() {
-        super("removeArestasVizinhas");
-      }
-
-      public removeArestasVizinhas_args getEmptyArgsInstance() {
-        return new removeArestasVizinhas_args();
-      }
-
-      public org.apache.thrift.async.AsyncMethodCallback<Void> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
-        final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<Void>() { 
-          public void onComplete(Void o) {
-            removeArestasVizinhas_result result = new removeArestasVizinhas_result();
-            try {
-              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
-            } catch (org.apache.thrift.transport.TTransportException e) {
-              _LOGGER.error("TTransportException writing to internal frame buffer", e);
-              fb.close();
-            } catch (java.lang.Exception e) {
-              _LOGGER.error("Exception writing to internal frame buffer", e);
-              onError(e);
-            }
-          }
-          public void onError(java.lang.Exception e) {
-            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
-            org.apache.thrift.TSerializable msg;
-            removeArestasVizinhas_result result = new removeArestasVizinhas_result();
-            if (e instanceof org.apache.thrift.transport.TTransportException) {
-              _LOGGER.error("TTransportException inside handler", e);
-              fb.close();
-              return;
-            } else if (e instanceof org.apache.thrift.TApplicationException) {
-              _LOGGER.error("TApplicationException inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = (org.apache.thrift.TApplicationException)e;
-            } else {
-              _LOGGER.error("Exception inside handler", e);
-              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
-              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
-            }
-            try {
-              fcall.sendResponse(fb,msg,msgType,seqid);
-            } catch (java.lang.Exception ex) {
-              _LOGGER.error("Exception writing to internal frame buffer", ex);
-              fb.close();
-            }
-          }
-        };
-      }
-
-      protected boolean isOneway() {
-        return false;
-      }
-
-      public void start(I iface, removeArestasVizinhas_args args, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException {
-        iface.removeArestasVizinhas(args.v, args.redirect,resultHandler);
-      }
-    }
-
-    public static class listaVerticesDeAresta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, listaVerticesDeAresta_args, java.lang.String> {
-      public listaVerticesDeAresta() {
-        super("listaVerticesDeAresta");
-      }
-
-      public listaVerticesDeAresta_args getEmptyArgsInstance() {
-        return new listaVerticesDeAresta_args();
+      public listaFilmesDeCliente_args getEmptyArgsInstance() {
+        return new listaFilmesDeCliente_args();
       }
 
       public org.apache.thrift.async.AsyncMethodCallback<java.lang.String> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
         return new org.apache.thrift.async.AsyncMethodCallback<java.lang.String>() { 
           public void onComplete(java.lang.String o) {
-            listaVerticesDeAresta_result result = new listaVerticesDeAresta_result();
+            listaFilmesDeCliente_result result = new listaFilmesDeCliente_result();
             result.success = o;
             try {
               fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
@@ -2395,7 +1957,7 @@ public class sdEntrega1 {
           public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
-            listaVerticesDeAresta_result result = new listaVerticesDeAresta_result();
+            listaFilmesDeCliente_result result = new listaFilmesDeCliente_result();
             if (e instanceof org.apache.thrift.transport.TTransportException) {
               _LOGGER.error("TTransportException inside handler", e);
               fb.close();
@@ -2423,25 +1985,25 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, listaVerticesDeAresta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
-        iface.listaVerticesDeAresta(args.id, args.redirect,resultHandler);
+      public void start(I iface, listaFilmesDeCliente_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
+        iface.listaFilmesDeCliente(args.id,resultHandler);
       }
     }
 
-    public static class listaArestasDeVertice<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, listaArestasDeVertice_args, java.lang.String> {
-      public listaArestasDeVertice() {
-        super("listaArestasDeVertice");
+    public static class listaFilmesDeGrupo<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, listaFilmesDeGrupo_args, java.lang.String> {
+      public listaFilmesDeGrupo() {
+        super("listaFilmesDeGrupo");
       }
 
-      public listaArestasDeVertice_args getEmptyArgsInstance() {
-        return new listaArestasDeVertice_args();
+      public listaFilmesDeGrupo_args getEmptyArgsInstance() {
+        return new listaFilmesDeGrupo_args();
       }
 
       public org.apache.thrift.async.AsyncMethodCallback<java.lang.String> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
         return new org.apache.thrift.async.AsyncMethodCallback<java.lang.String>() { 
           public void onComplete(java.lang.String o) {
-            listaArestasDeVertice_result result = new listaArestasDeVertice_result();
+            listaFilmesDeGrupo_result result = new listaFilmesDeGrupo_result();
             result.success = o;
             try {
               fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
@@ -2456,7 +2018,7 @@ public class sdEntrega1 {
           public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
-            listaArestasDeVertice_result result = new listaArestasDeVertice_result();
+            listaFilmesDeGrupo_result result = new listaFilmesDeGrupo_result();
             if (e instanceof org.apache.thrift.transport.TTransportException) {
               _LOGGER.error("TTransportException inside handler", e);
               fb.close();
@@ -2484,25 +2046,25 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, listaArestasDeVertice_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
-        iface.listaArestasDeVertice(args.id,resultHandler);
+      public void start(I iface, listaFilmesDeGrupo_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
+        iface.listaFilmesDeGrupo(args.ids,resultHandler);
       }
     }
 
-    public static class listaVerticesVizinhos<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, listaVerticesVizinhos_args, java.lang.String> {
-      public listaVerticesVizinhos() {
-        super("listaVerticesVizinhos");
+    public static class getAvaliacaoMedia<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, getAvaliacaoMedia_args, java.lang.String> {
+      public getAvaliacaoMedia() {
+        super("getAvaliacaoMedia");
       }
 
-      public listaVerticesVizinhos_args getEmptyArgsInstance() {
-        return new listaVerticesVizinhos_args();
+      public getAvaliacaoMedia_args getEmptyArgsInstance() {
+        return new getAvaliacaoMedia_args();
       }
 
       public org.apache.thrift.async.AsyncMethodCallback<java.lang.String> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
         return new org.apache.thrift.async.AsyncMethodCallback<java.lang.String>() { 
           public void onComplete(java.lang.String o) {
-            listaVerticesVizinhos_result result = new listaVerticesVizinhos_result();
+            getAvaliacaoMedia_result result = new getAvaliacaoMedia_result();
             result.success = o;
             try {
               fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
@@ -2517,7 +2079,7 @@ public class sdEntrega1 {
           public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
-            listaVerticesVizinhos_result result = new listaVerticesVizinhos_result();
+            getAvaliacaoMedia_result result = new getAvaliacaoMedia_result();
             if (e instanceof org.apache.thrift.transport.TTransportException) {
               _LOGGER.error("TTransportException inside handler", e);
               fb.close();
@@ -2545,8 +2107,8 @@ public class sdEntrega1 {
         return false;
       }
 
-      public void start(I iface, listaVerticesVizinhos_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
-        iface.listaVerticesVizinhos(args.id,resultHandler);
+      public void start(I iface, getAvaliacaoMedia_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException {
+        iface.getAvaliacaoMedia(args.id,resultHandler);
       }
     }
 
@@ -2927,13 +2489,13 @@ public class sdEntrega1 {
   public static class existeVertice_args implements org.apache.thrift.TBase<existeVertice_args, existeVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<existeVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("existeVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new existeVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new existeVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public boolean redirect; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -3005,7 +2567,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
@@ -3016,7 +2578,7 @@ public class sdEntrega1 {
     }
 
     public existeVertice_args(
-      int id,
+      long id,
       boolean redirect)
     {
       this();
@@ -3047,11 +2609,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public existeVertice_args setId(int id) {
+    public existeVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -3099,7 +2661,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -3181,7 +2743,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
 
@@ -3289,8 +2851,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -3320,7 +2882,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
         oprot.writeBool(struct.redirect);
@@ -3351,7 +2913,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetRedirect()) {
           oprot.writeBool(struct.redirect);
@@ -3363,7 +2925,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -3741,13 +3303,13 @@ public class sdEntrega1 {
   public static class existeAresta_args implements org.apache.thrift.TBase<existeAresta_args, existeAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<existeAresta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("existeAresta_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new existeAresta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new existeAresta_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public boolean redirect; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -3819,7 +3381,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
@@ -3830,7 +3392,7 @@ public class sdEntrega1 {
     }
 
     public existeAresta_args(
-      int id,
+      long id,
       boolean redirect)
     {
       this();
@@ -3861,11 +3423,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public existeAresta_args setId(int id) {
+    public existeAresta_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -3913,7 +3475,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -3995,7 +3557,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
 
@@ -4103,8 +3665,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -4134,7 +3696,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
         oprot.writeBool(struct.redirect);
@@ -4165,7 +3727,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetRedirect()) {
           oprot.writeBool(struct.redirect);
@@ -4177,7 +3739,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -4555,13 +4117,13 @@ public class sdEntrega1 {
   public static class getVertice_args implements org.apache.thrift.TBase<getVertice_args, getVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<getVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public boolean redirect; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -4633,7 +4195,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
@@ -4644,7 +4206,7 @@ public class sdEntrega1 {
     }
 
     public getVertice_args(
-      int id,
+      long id,
       boolean redirect)
     {
       this();
@@ -4675,11 +4237,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public getVertice_args setId(int id) {
+    public getVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -4727,7 +4289,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -4809,7 +4371,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
 
@@ -4917,8 +4479,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -4948,7 +4510,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
         oprot.writeBool(struct.redirect);
@@ -4979,7 +4541,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetRedirect()) {
           oprot.writeBool(struct.redirect);
@@ -4991,7 +4553,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -5376,13 +4938,13 @@ public class sdEntrega1 {
   public static class getAresta_args implements org.apache.thrift.TBase<getAresta_args, getAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<getAresta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getAresta_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getAresta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getAresta_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public boolean redirect; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -5454,7 +5016,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
@@ -5465,7 +5027,7 @@ public class sdEntrega1 {
     }
 
     public getAresta_args(
-      int id,
+      long id,
       boolean redirect)
     {
       this();
@@ -5496,11 +5058,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public getAresta_args setId(int id) {
+    public getAresta_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -5548,7 +5110,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -5630,7 +5192,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
 
@@ -5738,8 +5300,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -5769,7 +5331,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
         oprot.writeBool(struct.redirect);
@@ -5800,7 +5362,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetRedirect()) {
           oprot.writeBool(struct.redirect);
@@ -5812,7 +5374,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -6197,12 +5759,12 @@ public class sdEntrega1 {
   public static class getArestasAdjacentes_args implements org.apache.thrift.TBase<getArestasAdjacentes_args, getArestasAdjacentes_args._Fields>, java.io.Serializable, Cloneable, Comparable<getArestasAdjacentes_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getArestasAdjacentes_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getArestasAdjacentes_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getArestasAdjacentes_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -6269,7 +5831,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getArestasAdjacentes_args.class, metaDataMap);
     }
@@ -6278,7 +5840,7 @@ public class sdEntrega1 {
     }
 
     public getArestasAdjacentes_args(
-      int id)
+      long id)
     {
       this();
       this.id = id;
@@ -6303,11 +5865,11 @@ public class sdEntrega1 {
       this.id = 0;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public getArestasAdjacentes_args setId(int id) {
+    public getArestasAdjacentes_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -6332,7 +5894,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -6392,7 +5954,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       return hashCode;
     }
@@ -6484,8 +6046,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -6507,7 +6069,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -6532,7 +6094,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
       }
 
@@ -6541,7 +6103,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
       }
@@ -6971,19 +6533,21 @@ public class sdEntrega1 {
   public static class addVertice_args implements org.apache.thrift.TBase<addVertice_args, addVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<addVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("addVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField COR_FIELD_DESC = new org.apache.thrift.protocol.TField("cor", org.apache.thrift.protocol.TType.I32, (short)2);
     private static final org.apache.thrift.protocol.TField PESO_FIELD_DESC = new org.apache.thrift.protocol.TField("peso", org.apache.thrift.protocol.TType.DOUBLE, (short)3);
     private static final org.apache.thrift.protocol.TField DESCRICAO_FIELD_DESC = new org.apache.thrift.protocol.TField("descricao", org.apache.thrift.protocol.TType.STRING, (short)4);
-    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)5);
+    private static final org.apache.thrift.protocol.TField TIPO_FIELD_DESC = new org.apache.thrift.protocol.TField("tipo", org.apache.thrift.protocol.TType.I32, (short)5);
+    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)6);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new addVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new addVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public int cor; // required
     public double peso; // required
     public java.lang.String descricao; // required
+    public int tipo; // required
     public boolean redirect; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -6992,7 +6556,8 @@ public class sdEntrega1 {
       COR((short)2, "cor"),
       PESO((short)3, "peso"),
       DESCRICAO((short)4, "descricao"),
-      REDIRECT((short)5, "redirect");
+      TIPO((short)5, "tipo"),
+      REDIRECT((short)6, "redirect");
 
       private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -7015,7 +6580,9 @@ public class sdEntrega1 {
             return PESO;
           case 4: // DESCRICAO
             return DESCRICAO;
-          case 5: // REDIRECT
+          case 5: // TIPO
+            return TIPO;
+          case 6: // REDIRECT
             return REDIRECT;
           default:
             return null;
@@ -7060,19 +6627,22 @@ public class sdEntrega1 {
     private static final int __ID_ISSET_ID = 0;
     private static final int __COR_ISSET_ID = 1;
     private static final int __PESO_ISSET_ID = 2;
-    private static final int __REDIRECT_ISSET_ID = 3;
+    private static final int __TIPO_ISSET_ID = 3;
+    private static final int __REDIRECT_ISSET_ID = 4;
     private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.COR, new org.apache.thrift.meta_data.FieldMetaData("cor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       tmpMap.put(_Fields.PESO, new org.apache.thrift.meta_data.FieldMetaData("peso", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.DESCRICAO, new org.apache.thrift.meta_data.FieldMetaData("descricao", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.TIPO, new org.apache.thrift.meta_data.FieldMetaData("tipo", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
@@ -7083,10 +6653,11 @@ public class sdEntrega1 {
     }
 
     public addVertice_args(
-      int id,
+      long id,
       int cor,
       double peso,
       java.lang.String descricao,
+      int tipo,
       boolean redirect)
     {
       this();
@@ -7097,6 +6668,8 @@ public class sdEntrega1 {
       this.peso = peso;
       setPesoIsSet(true);
       this.descricao = descricao;
+      this.tipo = tipo;
+      setTipoIsSet(true);
       this.redirect = redirect;
       setRedirectIsSet(true);
     }
@@ -7112,6 +6685,7 @@ public class sdEntrega1 {
       if (other.isSetDescricao()) {
         this.descricao = other.descricao;
       }
+      this.tipo = other.tipo;
       this.redirect = other.redirect;
     }
 
@@ -7128,15 +6702,17 @@ public class sdEntrega1 {
       setPesoIsSet(false);
       this.peso = 0.0;
       this.descricao = null;
+      setTipoIsSet(false);
+      this.tipo = 0;
       setRedirectIsSet(false);
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public addVertice_args setId(int id) {
+    public addVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -7225,6 +6801,29 @@ public class sdEntrega1 {
       }
     }
 
+    public int getTipo() {
+      return this.tipo;
+    }
+
+    public addVertice_args setTipo(int tipo) {
+      this.tipo = tipo;
+      setTipoIsSet(true);
+      return this;
+    }
+
+    public void unsetTipo() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __TIPO_ISSET_ID);
+    }
+
+    /** Returns true if field tipo is set (has been assigned a value) and false otherwise */
+    public boolean isSetTipo() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __TIPO_ISSET_ID);
+    }
+
+    public void setTipoIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __TIPO_ISSET_ID, value);
+    }
+
     public boolean isRedirect() {
       return this.redirect;
     }
@@ -7254,7 +6853,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -7279,6 +6878,14 @@ public class sdEntrega1 {
           unsetDescricao();
         } else {
           setDescricao((java.lang.String)value);
+        }
+        break;
+
+      case TIPO:
+        if (value == null) {
+          unsetTipo();
+        } else {
+          setTipo((java.lang.Integer)value);
         }
         break;
 
@@ -7307,6 +6914,9 @@ public class sdEntrega1 {
       case DESCRICAO:
         return getDescricao();
 
+      case TIPO:
+        return getTipo();
+
       case REDIRECT:
         return isRedirect();
 
@@ -7329,6 +6939,8 @@ public class sdEntrega1 {
         return isSetPeso();
       case DESCRICAO:
         return isSetDescricao();
+      case TIPO:
+        return isSetTipo();
       case REDIRECT:
         return isSetRedirect();
       }
@@ -7386,6 +6998,15 @@ public class sdEntrega1 {
           return false;
       }
 
+      boolean this_present_tipo = true;
+      boolean that_present_tipo = true;
+      if (this_present_tipo || that_present_tipo) {
+        if (!(this_present_tipo && that_present_tipo))
+          return false;
+        if (this.tipo != that.tipo)
+          return false;
+      }
+
       boolean this_present_redirect = true;
       boolean that_present_redirect = true;
       if (this_present_redirect || that_present_redirect) {
@@ -7402,7 +7023,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + cor;
 
@@ -7411,6 +7032,8 @@ public class sdEntrega1 {
       hashCode = hashCode * 8191 + ((isSetDescricao()) ? 131071 : 524287);
       if (isSetDescricao())
         hashCode = hashCode * 8191 + descricao.hashCode();
+
+      hashCode = hashCode * 8191 + tipo;
 
       hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
 
@@ -7465,6 +7088,16 @@ public class sdEntrega1 {
           return lastComparison;
         }
       }
+      lastComparison = java.lang.Boolean.valueOf(isSetTipo()).compareTo(other.isSetTipo());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetTipo()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.tipo, other.tipo);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
       lastComparison = java.lang.Boolean.valueOf(isSetRedirect()).compareTo(other.isSetRedirect());
       if (lastComparison != 0) {
         return lastComparison;
@@ -7513,6 +7146,10 @@ public class sdEntrega1 {
       } else {
         sb.append(this.descricao);
       }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("tipo:");
+      sb.append(this.tipo);
       first = false;
       if (!first) sb.append(", ");
       sb.append("redirect:");
@@ -7564,8 +7201,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -7595,7 +7232,15 @@ public class sdEntrega1 {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
-            case 5: // REDIRECT
+            case 5: // TIPO
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.tipo = iprot.readI32();
+                struct.setTipoIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 6: // REDIRECT
               if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
                 struct.redirect = iprot.readBool();
                 struct.setRedirectIsSet(true);
@@ -7619,7 +7264,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(COR_FIELD_DESC);
         oprot.writeI32(struct.cor);
@@ -7632,6 +7277,9 @@ public class sdEntrega1 {
           oprot.writeString(struct.descricao);
           oprot.writeFieldEnd();
         }
+        oprot.writeFieldBegin(TIPO_FIELD_DESC);
+        oprot.writeI32(struct.tipo);
+        oprot.writeFieldEnd();
         oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
         oprot.writeBool(struct.redirect);
         oprot.writeFieldEnd();
@@ -7665,12 +7313,15 @@ public class sdEntrega1 {
         if (struct.isSetDescricao()) {
           optionals.set(3);
         }
-        if (struct.isSetRedirect()) {
+        if (struct.isSetTipo()) {
           optionals.set(4);
         }
-        oprot.writeBitSet(optionals, 5);
+        if (struct.isSetRedirect()) {
+          optionals.set(5);
+        }
+        oprot.writeBitSet(optionals, 6);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetCor()) {
           oprot.writeI32(struct.cor);
@@ -7681,6 +7332,9 @@ public class sdEntrega1 {
         if (struct.isSetDescricao()) {
           oprot.writeString(struct.descricao);
         }
+        if (struct.isSetTipo()) {
+          oprot.writeI32(struct.tipo);
+        }
         if (struct.isSetRedirect()) {
           oprot.writeBool(struct.redirect);
         }
@@ -7689,9 +7343,9 @@ public class sdEntrega1 {
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, addVertice_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(5);
+        java.util.BitSet incoming = iprot.readBitSet(6);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -7707,6 +7361,10 @@ public class sdEntrega1 {
           struct.setDescricaoIsSet(true);
         }
         if (incoming.get(4)) {
+          struct.tipo = iprot.readI32();
+          struct.setTipoIsSet(true);
+        }
+        if (incoming.get(5)) {
           struct.redirect = iprot.readBool();
           struct.setRedirectIsSet(true);
         }
@@ -8081,9 +7739,9 @@ public class sdEntrega1 {
   public static class addAresta_args implements org.apache.thrift.TBase<addAresta_args, addAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<addAresta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("addAresta_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField VA_FIELD_DESC = new org.apache.thrift.protocol.TField("va", org.apache.thrift.protocol.TType.I32, (short)2);
-    private static final org.apache.thrift.protocol.TField VB_FIELD_DESC = new org.apache.thrift.protocol.TField("vb", org.apache.thrift.protocol.TType.I32, (short)3);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
+    private static final org.apache.thrift.protocol.TField VA_FIELD_DESC = new org.apache.thrift.protocol.TField("va", org.apache.thrift.protocol.TType.I64, (short)2);
+    private static final org.apache.thrift.protocol.TField VB_FIELD_DESC = new org.apache.thrift.protocol.TField("vb", org.apache.thrift.protocol.TType.I64, (short)3);
     private static final org.apache.thrift.protocol.TField PESO_FIELD_DESC = new org.apache.thrift.protocol.TField("peso", org.apache.thrift.protocol.TType.DOUBLE, (short)4);
     private static final org.apache.thrift.protocol.TField BIDIRECIONAL_FIELD_DESC = new org.apache.thrift.protocol.TField("bidirecional", org.apache.thrift.protocol.TType.BOOL, (short)5);
     private static final org.apache.thrift.protocol.TField DESCRICAO_FIELD_DESC = new org.apache.thrift.protocol.TField("descricao", org.apache.thrift.protocol.TType.STRING, (short)6);
@@ -8092,9 +7750,9 @@ public class sdEntrega1 {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new addAresta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new addAresta_argsTupleSchemeFactory();
 
-    public int id; // required
-    public int va; // required
-    public int vb; // required
+    public long id; // required
+    public long va; // required
+    public long vb; // required
     public double peso; // required
     public boolean bidirecional; // required
     public java.lang.String descricao; // required
@@ -8188,11 +7846,11 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.VA, new org.apache.thrift.meta_data.FieldMetaData("va", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.VB, new org.apache.thrift.meta_data.FieldMetaData("vb", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.PESO, new org.apache.thrift.meta_data.FieldMetaData("peso", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.BIDIRECIONAL, new org.apache.thrift.meta_data.FieldMetaData("bidirecional", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -8209,9 +7867,9 @@ public class sdEntrega1 {
     }
 
     public addAresta_args(
-      int id,
-      int va,
-      int vb,
+      long id,
+      long va,
+      long vb,
       double peso,
       boolean bidirecional,
       java.lang.String descricao,
@@ -8270,11 +7928,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public addAresta_args setId(int id) {
+    public addAresta_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -8293,11 +7951,11 @@ public class sdEntrega1 {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
     }
 
-    public int getVa() {
+    public long getVa() {
       return this.va;
     }
 
-    public addAresta_args setVa(int va) {
+    public addAresta_args setVa(long va) {
       this.va = va;
       setVaIsSet(true);
       return this;
@@ -8316,11 +7974,11 @@ public class sdEntrega1 {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __VA_ISSET_ID, value);
     }
 
-    public int getVb() {
+    public long getVb() {
       return this.vb;
     }
 
-    public addAresta_args setVb(int vb) {
+    public addAresta_args setVb(long vb) {
       this.vb = vb;
       setVbIsSet(true);
       return this;
@@ -8438,7 +8096,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -8446,7 +8104,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetVa();
         } else {
-          setVa((java.lang.Integer)value);
+          setVa((java.lang.Long)value);
         }
         break;
 
@@ -8454,7 +8112,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetVb();
         } else {
-          setVb((java.lang.Integer)value);
+          setVb((java.lang.Long)value);
         }
         break;
 
@@ -8630,11 +8288,11 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
-      hashCode = hashCode * 8191 + va;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(va);
 
-      hashCode = hashCode * 8191 + vb;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(vb);
 
       hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(peso);
 
@@ -8824,24 +8482,24 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // VA
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.va = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.va = iprot.readI64();
                 struct.setVaIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 3: // VB
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.vb = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.vb = iprot.readI64();
                 struct.setVbIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -8895,13 +8553,13 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(VA_FIELD_DESC);
-        oprot.writeI32(struct.va);
+        oprot.writeI64(struct.va);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(VB_FIELD_DESC);
-        oprot.writeI32(struct.vb);
+        oprot.writeI64(struct.vb);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(PESO_FIELD_DESC);
         oprot.writeDouble(struct.peso);
@@ -8958,13 +8616,13 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 7);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetVa()) {
-          oprot.writeI32(struct.va);
+          oprot.writeI64(struct.va);
         }
         if (struct.isSetVb()) {
-          oprot.writeI32(struct.vb);
+          oprot.writeI64(struct.vb);
         }
         if (struct.isSetPeso()) {
           oprot.writeDouble(struct.peso);
@@ -8985,15 +8643,15 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(7);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
-          struct.va = iprot.readI32();
+          struct.va = iprot.readI64();
           struct.setVaIsSet(true);
         }
         if (incoming.get(2)) {
-          struct.vb = iprot.readI32();
+          struct.vb = iprot.readI64();
           struct.setVbIsSet(true);
         }
         if (incoming.get(3)) {
@@ -9380,3163 +9038,15 @@ public class sdEntrega1 {
     }
   }
 
-  public static class removeVertice_args implements org.apache.thrift.TBase<removeVertice_args, removeVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<removeVertice_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeVertice_args");
+  public static class listaFilmesDeCliente_args implements org.apache.thrift.TBase<listaFilmesDeCliente_args, listaFilmesDeCliente_args._Fields>, java.io.Serializable, Cloneable, Comparable<listaFilmesDeCliente_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaFilmesDeCliente_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeVertice_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeVertice_argsTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaFilmesDeCliente_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaFilmesDeCliente_argsTupleSchemeFactory();
 
-    public int id; // required
-    public boolean redirect; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      ID((short)1, "id"),
-      REDIRECT((short)2, "redirect");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 1: // ID
-            return ID;
-          case 2: // REDIRECT
-            return REDIRECT;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __ID_ISSET_ID = 0;
-    private static final int __REDIRECT_ISSET_ID = 1;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeVertice_args.class, metaDataMap);
-    }
-
-    public removeVertice_args() {
-    }
-
-    public removeVertice_args(
-      int id,
-      boolean redirect)
-    {
-      this();
-      this.id = id;
-      setIdIsSet(true);
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeVertice_args(removeVertice_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.id = other.id;
-      this.redirect = other.redirect;
-    }
-
-    public removeVertice_args deepCopy() {
-      return new removeVertice_args(this);
-    }
-
-    @Override
-    public void clear() {
-      setIdIsSet(false);
-      this.id = 0;
-      setRedirectIsSet(false);
-      this.redirect = false;
-    }
-
-    public int getId() {
-      return this.id;
-    }
-
-    public removeVertice_args setId(int id) {
-      this.id = id;
-      setIdIsSet(true);
-      return this;
-    }
-
-    public void unsetId() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    /** Returns true if field id is set (has been assigned a value) and false otherwise */
-    public boolean isSetId() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    public void setIdIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
-    }
-
-    public boolean isRedirect() {
-      return this.redirect;
-    }
-
-    public removeVertice_args setRedirect(boolean redirect) {
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-      return this;
-    }
-
-    public void unsetRedirect() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    /** Returns true if field redirect is set (has been assigned a value) and false otherwise */
-    public boolean isSetRedirect() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    public void setRedirectIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __REDIRECT_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case ID:
-        if (value == null) {
-          unsetId();
-        } else {
-          setId((java.lang.Integer)value);
-        }
-        break;
-
-      case REDIRECT:
-        if (value == null) {
-          unsetRedirect();
-        } else {
-          setRedirect((java.lang.Boolean)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case ID:
-        return getId();
-
-      case REDIRECT:
-        return isRedirect();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case ID:
-        return isSetId();
-      case REDIRECT:
-        return isSetRedirect();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeVertice_args)
-        return this.equals((removeVertice_args)that);
-      return false;
-    }
-
-    public boolean equals(removeVertice_args that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_id = true;
-      boolean that_present_id = true;
-      if (this_present_id || that_present_id) {
-        if (!(this_present_id && that_present_id))
-          return false;
-        if (this.id != that.id)
-          return false;
-      }
-
-      boolean this_present_redirect = true;
-      boolean that_present_redirect = true;
-      if (this_present_redirect || that_present_redirect) {
-        if (!(this_present_redirect && that_present_redirect))
-          return false;
-        if (this.redirect != that.redirect)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + id;
-
-      hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeVertice_args other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetId()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetRedirect()).compareTo(other.isSetRedirect());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetRedirect()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.redirect, other.redirect);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-    }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeVertice_args(");
-      boolean first = true;
-
-      sb.append("id:");
-      sb.append(this.id);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("redirect:");
-      sb.append(this.redirect);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeVertice_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeVertice_argsStandardScheme getScheme() {
-        return new removeVertice_argsStandardScheme();
-      }
-    }
-
-    private static class removeVertice_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeVertice_args> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeVertice_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
-                struct.setIdIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // REDIRECT
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.redirect = iprot.readBool();
-                struct.setRedirectIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeVertice_args struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
-        oprot.writeBool(struct.redirect);
-        oprot.writeFieldEnd();
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeVertice_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeVertice_argsTupleScheme getScheme() {
-        return new removeVertice_argsTupleScheme();
-      }
-    }
-
-    private static class removeVertice_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeVertice_args> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeVertice_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetId()) {
-          optionals.set(0);
-        }
-        if (struct.isSetRedirect()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
-        }
-        if (struct.isSetRedirect()) {
-          oprot.writeBool(struct.redirect);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeVertice_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
-        if (incoming.get(0)) {
-          struct.id = iprot.readI32();
-          struct.setIdIsSet(true);
-        }
-        if (incoming.get(1)) {
-          struct.redirect = iprot.readBool();
-          struct.setRedirectIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class removeVertice_result implements org.apache.thrift.TBase<removeVertice_result, removeVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<removeVertice_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeVertice_result");
-
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeVertice_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeVertice_resultTupleSchemeFactory();
-
-    public int success; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      SUCCESS((short)0, "success");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 0: // SUCCESS
-            return SUCCESS;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __SUCCESS_ISSET_ID = 0;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeVertice_result.class, metaDataMap);
-    }
-
-    public removeVertice_result() {
-    }
-
-    public removeVertice_result(
-      int success)
-    {
-      this();
-      this.success = success;
-      setSuccessIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeVertice_result(removeVertice_result other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.success = other.success;
-    }
-
-    public removeVertice_result deepCopy() {
-      return new removeVertice_result(this);
-    }
-
-    @Override
-    public void clear() {
-      setSuccessIsSet(false);
-      this.success = 0;
-    }
-
-    public int getSuccess() {
-      return this.success;
-    }
-
-    public removeVertice_result setSuccess(int success) {
-      this.success = success;
-      setSuccessIsSet(true);
-      return this;
-    }
-
-    public void unsetSuccess() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SUCCESS_ISSET_ID);
-    }
-
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
-    public boolean isSetSuccess() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SUCCESS_ISSET_ID);
-    }
-
-    public void setSuccessIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case SUCCESS:
-        if (value == null) {
-          unsetSuccess();
-        } else {
-          setSuccess((java.lang.Integer)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case SUCCESS:
-        return getSuccess();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case SUCCESS:
-        return isSetSuccess();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeVertice_result)
-        return this.equals((removeVertice_result)that);
-      return false;
-    }
-
-    public boolean equals(removeVertice_result that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_success = true;
-      boolean that_present_success = true;
-      if (this_present_success || that_present_success) {
-        if (!(this_present_success && that_present_success))
-          return false;
-        if (this.success != that.success)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + success;
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeVertice_result other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetSuccess()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-      }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeVertice_result(");
-      boolean first = true;
-
-      sb.append("success:");
-      sb.append(this.success);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeVertice_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeVertice_resultStandardScheme getScheme() {
-        return new removeVertice_resultStandardScheme();
-      }
-    }
-
-    private static class removeVertice_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeVertice_result> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeVertice_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
-                struct.setSuccessIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeVertice_result struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.isSetSuccess()) {
-          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
-          oprot.writeFieldEnd();
-        }
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeVertice_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeVertice_resultTupleScheme getScheme() {
-        return new removeVertice_resultTupleScheme();
-      }
-    }
-
-    private static class removeVertice_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeVertice_result> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeVertice_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetSuccess()) {
-          optionals.set(0);
-        }
-        oprot.writeBitSet(optionals, 1);
-        if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeVertice_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(1);
-        if (incoming.get(0)) {
-          struct.success = iprot.readI32();
-          struct.setSuccessIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class removeAresta_args implements org.apache.thrift.TBase<removeAresta_args, removeAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<removeAresta_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeAresta_args");
-
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeAresta_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeAresta_argsTupleSchemeFactory();
-
-    public int id; // required
-    public boolean redirect; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      ID((short)1, "id"),
-      REDIRECT((short)2, "redirect");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 1: // ID
-            return ID;
-          case 2: // REDIRECT
-            return REDIRECT;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __ID_ISSET_ID = 0;
-    private static final int __REDIRECT_ISSET_ID = 1;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeAresta_args.class, metaDataMap);
-    }
-
-    public removeAresta_args() {
-    }
-
-    public removeAresta_args(
-      int id,
-      boolean redirect)
-    {
-      this();
-      this.id = id;
-      setIdIsSet(true);
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeAresta_args(removeAresta_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.id = other.id;
-      this.redirect = other.redirect;
-    }
-
-    public removeAresta_args deepCopy() {
-      return new removeAresta_args(this);
-    }
-
-    @Override
-    public void clear() {
-      setIdIsSet(false);
-      this.id = 0;
-      setRedirectIsSet(false);
-      this.redirect = false;
-    }
-
-    public int getId() {
-      return this.id;
-    }
-
-    public removeAresta_args setId(int id) {
-      this.id = id;
-      setIdIsSet(true);
-      return this;
-    }
-
-    public void unsetId() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    /** Returns true if field id is set (has been assigned a value) and false otherwise */
-    public boolean isSetId() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    public void setIdIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
-    }
-
-    public boolean isRedirect() {
-      return this.redirect;
-    }
-
-    public removeAresta_args setRedirect(boolean redirect) {
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-      return this;
-    }
-
-    public void unsetRedirect() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    /** Returns true if field redirect is set (has been assigned a value) and false otherwise */
-    public boolean isSetRedirect() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    public void setRedirectIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __REDIRECT_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case ID:
-        if (value == null) {
-          unsetId();
-        } else {
-          setId((java.lang.Integer)value);
-        }
-        break;
-
-      case REDIRECT:
-        if (value == null) {
-          unsetRedirect();
-        } else {
-          setRedirect((java.lang.Boolean)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case ID:
-        return getId();
-
-      case REDIRECT:
-        return isRedirect();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case ID:
-        return isSetId();
-      case REDIRECT:
-        return isSetRedirect();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeAresta_args)
-        return this.equals((removeAresta_args)that);
-      return false;
-    }
-
-    public boolean equals(removeAresta_args that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_id = true;
-      boolean that_present_id = true;
-      if (this_present_id || that_present_id) {
-        if (!(this_present_id && that_present_id))
-          return false;
-        if (this.id != that.id)
-          return false;
-      }
-
-      boolean this_present_redirect = true;
-      boolean that_present_redirect = true;
-      if (this_present_redirect || that_present_redirect) {
-        if (!(this_present_redirect && that_present_redirect))
-          return false;
-        if (this.redirect != that.redirect)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + id;
-
-      hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeAresta_args other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetId()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetRedirect()).compareTo(other.isSetRedirect());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetRedirect()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.redirect, other.redirect);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-    }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeAresta_args(");
-      boolean first = true;
-
-      sb.append("id:");
-      sb.append(this.id);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("redirect:");
-      sb.append(this.redirect);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeAresta_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeAresta_argsStandardScheme getScheme() {
-        return new removeAresta_argsStandardScheme();
-      }
-    }
-
-    private static class removeAresta_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeAresta_args> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
-                struct.setIdIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // REDIRECT
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.redirect = iprot.readBool();
-                struct.setRedirectIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeAresta_args struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
-        oprot.writeBool(struct.redirect);
-        oprot.writeFieldEnd();
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeAresta_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeAresta_argsTupleScheme getScheme() {
-        return new removeAresta_argsTupleScheme();
-      }
-    }
-
-    private static class removeAresta_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeAresta_args> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetId()) {
-          optionals.set(0);
-        }
-        if (struct.isSetRedirect()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
-        }
-        if (struct.isSetRedirect()) {
-          oprot.writeBool(struct.redirect);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
-        if (incoming.get(0)) {
-          struct.id = iprot.readI32();
-          struct.setIdIsSet(true);
-        }
-        if (incoming.get(1)) {
-          struct.redirect = iprot.readBool();
-          struct.setRedirectIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class removeAresta_result implements org.apache.thrift.TBase<removeAresta_result, removeAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<removeAresta_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeAresta_result");
-
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeAresta_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeAresta_resultTupleSchemeFactory();
-
-    public int success; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      SUCCESS((short)0, "success");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 0: // SUCCESS
-            return SUCCESS;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __SUCCESS_ISSET_ID = 0;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeAresta_result.class, metaDataMap);
-    }
-
-    public removeAresta_result() {
-    }
-
-    public removeAresta_result(
-      int success)
-    {
-      this();
-      this.success = success;
-      setSuccessIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeAresta_result(removeAresta_result other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.success = other.success;
-    }
-
-    public removeAresta_result deepCopy() {
-      return new removeAresta_result(this);
-    }
-
-    @Override
-    public void clear() {
-      setSuccessIsSet(false);
-      this.success = 0;
-    }
-
-    public int getSuccess() {
-      return this.success;
-    }
-
-    public removeAresta_result setSuccess(int success) {
-      this.success = success;
-      setSuccessIsSet(true);
-      return this;
-    }
-
-    public void unsetSuccess() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SUCCESS_ISSET_ID);
-    }
-
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
-    public boolean isSetSuccess() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SUCCESS_ISSET_ID);
-    }
-
-    public void setSuccessIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case SUCCESS:
-        if (value == null) {
-          unsetSuccess();
-        } else {
-          setSuccess((java.lang.Integer)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case SUCCESS:
-        return getSuccess();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case SUCCESS:
-        return isSetSuccess();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeAresta_result)
-        return this.equals((removeAresta_result)that);
-      return false;
-    }
-
-    public boolean equals(removeAresta_result that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_success = true;
-      boolean that_present_success = true;
-      if (this_present_success || that_present_success) {
-        if (!(this_present_success && that_present_success))
-          return false;
-        if (this.success != that.success)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + success;
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeAresta_result other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetSuccess()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-      }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeAresta_result(");
-      boolean first = true;
-
-      sb.append("success:");
-      sb.append(this.success);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeAresta_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeAresta_resultStandardScheme getScheme() {
-        return new removeAresta_resultStandardScheme();
-      }
-    }
-
-    private static class removeAresta_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeAresta_result> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
-                struct.setSuccessIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeAresta_result struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.isSetSuccess()) {
-          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
-          oprot.writeFieldEnd();
-        }
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeAresta_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeAresta_resultTupleScheme getScheme() {
-        return new removeAresta_resultTupleScheme();
-      }
-    }
-
-    private static class removeAresta_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeAresta_result> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetSuccess()) {
-          optionals.set(0);
-        }
-        oprot.writeBitSet(optionals, 1);
-        if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(1);
-        if (incoming.get(0)) {
-          struct.success = iprot.readI32();
-          struct.setSuccessIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class removeArestasVizinhas_args implements org.apache.thrift.TBase<removeArestasVizinhas_args, removeArestasVizinhas_args._Fields>, java.io.Serializable, Cloneable, Comparable<removeArestasVizinhas_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeArestasVizinhas_args");
-
-    private static final org.apache.thrift.protocol.TField V_FIELD_DESC = new org.apache.thrift.protocol.TField("v", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeArestasVizinhas_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeArestasVizinhas_argsTupleSchemeFactory();
-
-    public int v; // required
-    public boolean redirect; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      V((short)1, "v"),
-      REDIRECT((short)2, "redirect");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 1: // V
-            return V;
-          case 2: // REDIRECT
-            return REDIRECT;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __V_ISSET_ID = 0;
-    private static final int __REDIRECT_ISSET_ID = 1;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.V, new org.apache.thrift.meta_data.FieldMetaData("v", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeArestasVizinhas_args.class, metaDataMap);
-    }
-
-    public removeArestasVizinhas_args() {
-    }
-
-    public removeArestasVizinhas_args(
-      int v,
-      boolean redirect)
-    {
-      this();
-      this.v = v;
-      setVIsSet(true);
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeArestasVizinhas_args(removeArestasVizinhas_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.v = other.v;
-      this.redirect = other.redirect;
-    }
-
-    public removeArestasVizinhas_args deepCopy() {
-      return new removeArestasVizinhas_args(this);
-    }
-
-    @Override
-    public void clear() {
-      setVIsSet(false);
-      this.v = 0;
-      setRedirectIsSet(false);
-      this.redirect = false;
-    }
-
-    public int getV() {
-      return this.v;
-    }
-
-    public removeArestasVizinhas_args setV(int v) {
-      this.v = v;
-      setVIsSet(true);
-      return this;
-    }
-
-    public void unsetV() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __V_ISSET_ID);
-    }
-
-    /** Returns true if field v is set (has been assigned a value) and false otherwise */
-    public boolean isSetV() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __V_ISSET_ID);
-    }
-
-    public void setVIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __V_ISSET_ID, value);
-    }
-
-    public boolean isRedirect() {
-      return this.redirect;
-    }
-
-    public removeArestasVizinhas_args setRedirect(boolean redirect) {
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-      return this;
-    }
-
-    public void unsetRedirect() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    /** Returns true if field redirect is set (has been assigned a value) and false otherwise */
-    public boolean isSetRedirect() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    public void setRedirectIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __REDIRECT_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case V:
-        if (value == null) {
-          unsetV();
-        } else {
-          setV((java.lang.Integer)value);
-        }
-        break;
-
-      case REDIRECT:
-        if (value == null) {
-          unsetRedirect();
-        } else {
-          setRedirect((java.lang.Boolean)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case V:
-        return getV();
-
-      case REDIRECT:
-        return isRedirect();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case V:
-        return isSetV();
-      case REDIRECT:
-        return isSetRedirect();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeArestasVizinhas_args)
-        return this.equals((removeArestasVizinhas_args)that);
-      return false;
-    }
-
-    public boolean equals(removeArestasVizinhas_args that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_v = true;
-      boolean that_present_v = true;
-      if (this_present_v || that_present_v) {
-        if (!(this_present_v && that_present_v))
-          return false;
-        if (this.v != that.v)
-          return false;
-      }
-
-      boolean this_present_redirect = true;
-      boolean that_present_redirect = true;
-      if (this_present_redirect || that_present_redirect) {
-        if (!(this_present_redirect && that_present_redirect))
-          return false;
-        if (this.redirect != that.redirect)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + v;
-
-      hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeArestasVizinhas_args other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetV()).compareTo(other.isSetV());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetV()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.v, other.v);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetRedirect()).compareTo(other.isSetRedirect());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetRedirect()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.redirect, other.redirect);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-    }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeArestasVizinhas_args(");
-      boolean first = true;
-
-      sb.append("v:");
-      sb.append(this.v);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("redirect:");
-      sb.append(this.redirect);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeArestasVizinhas_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeArestasVizinhas_argsStandardScheme getScheme() {
-        return new removeArestasVizinhas_argsStandardScheme();
-      }
-    }
-
-    private static class removeArestasVizinhas_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeArestasVizinhas_args> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeArestasVizinhas_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 1: // V
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.v = iprot.readI32();
-                struct.setVIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // REDIRECT
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.redirect = iprot.readBool();
-                struct.setRedirectIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeArestasVizinhas_args struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(V_FIELD_DESC);
-        oprot.writeI32(struct.v);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
-        oprot.writeBool(struct.redirect);
-        oprot.writeFieldEnd();
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeArestasVizinhas_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeArestasVizinhas_argsTupleScheme getScheme() {
-        return new removeArestasVizinhas_argsTupleScheme();
-      }
-    }
-
-    private static class removeArestasVizinhas_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeArestasVizinhas_args> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeArestasVizinhas_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetV()) {
-          optionals.set(0);
-        }
-        if (struct.isSetRedirect()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetV()) {
-          oprot.writeI32(struct.v);
-        }
-        if (struct.isSetRedirect()) {
-          oprot.writeBool(struct.redirect);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeArestasVizinhas_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
-        if (incoming.get(0)) {
-          struct.v = iprot.readI32();
-          struct.setVIsSet(true);
-        }
-        if (incoming.get(1)) {
-          struct.redirect = iprot.readBool();
-          struct.setRedirectIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class removeArestasVizinhas_result implements org.apache.thrift.TBase<removeArestasVizinhas_result, removeArestasVizinhas_result._Fields>, java.io.Serializable, Cloneable, Comparable<removeArestasVizinhas_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("removeArestasVizinhas_result");
-
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new removeArestasVizinhas_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new removeArestasVizinhas_resultTupleSchemeFactory();
-
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-;
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(removeArestasVizinhas_result.class, metaDataMap);
-    }
-
-    public removeArestasVizinhas_result() {
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public removeArestasVizinhas_result(removeArestasVizinhas_result other) {
-    }
-
-    public removeArestasVizinhas_result deepCopy() {
-      return new removeArestasVizinhas_result(this);
-    }
-
-    @Override
-    public void clear() {
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof removeArestasVizinhas_result)
-        return this.equals((removeArestasVizinhas_result)that);
-      return false;
-    }
-
-    public boolean equals(removeArestasVizinhas_result that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(removeArestasVizinhas_result other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-      }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("removeArestasVizinhas_result(");
-      boolean first = true;
-
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class removeArestasVizinhas_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeArestasVizinhas_resultStandardScheme getScheme() {
-        return new removeArestasVizinhas_resultStandardScheme();
-      }
-    }
-
-    private static class removeArestasVizinhas_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<removeArestasVizinhas_result> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, removeArestasVizinhas_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, removeArestasVizinhas_result struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class removeArestasVizinhas_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public removeArestasVizinhas_resultTupleScheme getScheme() {
-        return new removeArestasVizinhas_resultTupleScheme();
-      }
-    }
-
-    private static class removeArestasVizinhas_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<removeArestasVizinhas_result> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, removeArestasVizinhas_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, removeArestasVizinhas_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class listaVerticesDeAresta_args implements org.apache.thrift.TBase<listaVerticesDeAresta_args, listaVerticesDeAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<listaVerticesDeAresta_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaVerticesDeAresta_args");
-
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)2);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaVerticesDeAresta_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaVerticesDeAresta_argsTupleSchemeFactory();
-
-    public int id; // required
-    public boolean redirect; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      ID((short)1, "id"),
-      REDIRECT((short)2, "redirect");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 1: // ID
-            return ID;
-          case 2: // REDIRECT
-            return REDIRECT;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    private static final int __ID_ISSET_ID = 0;
-    private static final int __REDIRECT_ISSET_ID = 1;
-    private byte __isset_bitfield = 0;
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaVerticesDeAresta_args.class, metaDataMap);
-    }
-
-    public listaVerticesDeAresta_args() {
-    }
-
-    public listaVerticesDeAresta_args(
-      int id,
-      boolean redirect)
-    {
-      this();
-      this.id = id;
-      setIdIsSet(true);
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public listaVerticesDeAresta_args(listaVerticesDeAresta_args other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.id = other.id;
-      this.redirect = other.redirect;
-    }
-
-    public listaVerticesDeAresta_args deepCopy() {
-      return new listaVerticesDeAresta_args(this);
-    }
-
-    @Override
-    public void clear() {
-      setIdIsSet(false);
-      this.id = 0;
-      setRedirectIsSet(false);
-      this.redirect = false;
-    }
-
-    public int getId() {
-      return this.id;
-    }
-
-    public listaVerticesDeAresta_args setId(int id) {
-      this.id = id;
-      setIdIsSet(true);
-      return this;
-    }
-
-    public void unsetId() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    /** Returns true if field id is set (has been assigned a value) and false otherwise */
-    public boolean isSetId() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
-    }
-
-    public void setIdIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
-    }
-
-    public boolean isRedirect() {
-      return this.redirect;
-    }
-
-    public listaVerticesDeAresta_args setRedirect(boolean redirect) {
-      this.redirect = redirect;
-      setRedirectIsSet(true);
-      return this;
-    }
-
-    public void unsetRedirect() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    /** Returns true if field redirect is set (has been assigned a value) and false otherwise */
-    public boolean isSetRedirect() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __REDIRECT_ISSET_ID);
-    }
-
-    public void setRedirectIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __REDIRECT_ISSET_ID, value);
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case ID:
-        if (value == null) {
-          unsetId();
-        } else {
-          setId((java.lang.Integer)value);
-        }
-        break;
-
-      case REDIRECT:
-        if (value == null) {
-          unsetRedirect();
-        } else {
-          setRedirect((java.lang.Boolean)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case ID:
-        return getId();
-
-      case REDIRECT:
-        return isRedirect();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case ID:
-        return isSetId();
-      case REDIRECT:
-        return isSetRedirect();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof listaVerticesDeAresta_args)
-        return this.equals((listaVerticesDeAresta_args)that);
-      return false;
-    }
-
-    public boolean equals(listaVerticesDeAresta_args that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_id = true;
-      boolean that_present_id = true;
-      if (this_present_id || that_present_id) {
-        if (!(this_present_id && that_present_id))
-          return false;
-        if (this.id != that.id)
-          return false;
-      }
-
-      boolean this_present_redirect = true;
-      boolean that_present_redirect = true;
-      if (this_present_redirect || that_present_redirect) {
-        if (!(this_present_redirect && that_present_redirect))
-          return false;
-        if (this.redirect != that.redirect)
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + id;
-
-      hashCode = hashCode * 8191 + ((redirect) ? 131071 : 524287);
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(listaVerticesDeAresta_args other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetId()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = java.lang.Boolean.valueOf(isSetRedirect()).compareTo(other.isSetRedirect());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetRedirect()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.redirect, other.redirect);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-    }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaVerticesDeAresta_args(");
-      boolean first = true;
-
-      sb.append("id:");
-      sb.append(this.id);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("redirect:");
-      sb.append(this.redirect);
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class listaVerticesDeAresta_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesDeAresta_argsStandardScheme getScheme() {
-        return new listaVerticesDeAresta_argsStandardScheme();
-      }
-    }
-
-    private static class listaVerticesDeAresta_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaVerticesDeAresta_args> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaVerticesDeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
-                struct.setIdIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 2: // REDIRECT
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.redirect = iprot.readBool();
-                struct.setRedirectIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaVerticesDeAresta_args struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(REDIRECT_FIELD_DESC);
-        oprot.writeBool(struct.redirect);
-        oprot.writeFieldEnd();
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class listaVerticesDeAresta_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesDeAresta_argsTupleScheme getScheme() {
-        return new listaVerticesDeAresta_argsTupleScheme();
-      }
-    }
-
-    private static class listaVerticesDeAresta_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaVerticesDeAresta_args> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaVerticesDeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetId()) {
-          optionals.set(0);
-        }
-        if (struct.isSetRedirect()) {
-          optionals.set(1);
-        }
-        oprot.writeBitSet(optionals, 2);
-        if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
-        }
-        if (struct.isSetRedirect()) {
-          oprot.writeBool(struct.redirect);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaVerticesDeAresta_args struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(2);
-        if (incoming.get(0)) {
-          struct.id = iprot.readI32();
-          struct.setIdIsSet(true);
-        }
-        if (incoming.get(1)) {
-          struct.redirect = iprot.readBool();
-          struct.setRedirectIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class listaVerticesDeAresta_result implements org.apache.thrift.TBase<listaVerticesDeAresta_result, listaVerticesDeAresta_result._Fields>, java.io.Serializable, Cloneable, Comparable<listaVerticesDeAresta_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaVerticesDeAresta_result");
-
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaVerticesDeAresta_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaVerticesDeAresta_resultTupleSchemeFactory();
-
-    public java.lang.String success; // required
-
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      SUCCESS((short)0, "success");
-
-      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
-
-      static {
-        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
-          byName.put(field.getFieldName(), field);
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, or null if its not found.
-       */
-      public static _Fields findByThriftId(int fieldId) {
-        switch(fieldId) {
-          case 0: // SUCCESS
-            return SUCCESS;
-          default:
-            return null;
-        }
-      }
-
-      /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
-       */
-      public static _Fields findByThriftIdOrThrow(int fieldId) {
-        _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
-        return fields;
-      }
-
-      /**
-       * Find the _Fields constant that matches name, or null if its not found.
-       */
-      public static _Fields findByName(java.lang.String name) {
-        return byName.get(name);
-      }
-
-      private final short _thriftId;
-      private final java.lang.String _fieldName;
-
-      _Fields(short thriftId, java.lang.String fieldName) {
-        _thriftId = thriftId;
-        _fieldName = fieldName;
-      }
-
-      public short getThriftFieldId() {
-        return _thriftId;
-      }
-
-      public java.lang.String getFieldName() {
-        return _fieldName;
-      }
-    }
-
-    // isset id assignments
-    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
-    static {
-      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaVerticesDeAresta_result.class, metaDataMap);
-    }
-
-    public listaVerticesDeAresta_result() {
-    }
-
-    public listaVerticesDeAresta_result(
-      java.lang.String success)
-    {
-      this();
-      this.success = success;
-    }
-
-    /**
-     * Performs a deep copy on <i>other</i>.
-     */
-    public listaVerticesDeAresta_result(listaVerticesDeAresta_result other) {
-      if (other.isSetSuccess()) {
-        this.success = other.success;
-      }
-    }
-
-    public listaVerticesDeAresta_result deepCopy() {
-      return new listaVerticesDeAresta_result(this);
-    }
-
-    @Override
-    public void clear() {
-      this.success = null;
-    }
-
-    public java.lang.String getSuccess() {
-      return this.success;
-    }
-
-    public listaVerticesDeAresta_result setSuccess(java.lang.String success) {
-      this.success = success;
-      return this;
-    }
-
-    public void unsetSuccess() {
-      this.success = null;
-    }
-
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
-    public boolean isSetSuccess() {
-      return this.success != null;
-    }
-
-    public void setSuccessIsSet(boolean value) {
-      if (!value) {
-        this.success = null;
-      }
-    }
-
-    public void setFieldValue(_Fields field, java.lang.Object value) {
-      switch (field) {
-      case SUCCESS:
-        if (value == null) {
-          unsetSuccess();
-        } else {
-          setSuccess((java.lang.String)value);
-        }
-        break;
-
-      }
-    }
-
-    public java.lang.Object getFieldValue(_Fields field) {
-      switch (field) {
-      case SUCCESS:
-        return getSuccess();
-
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
-    public boolean isSet(_Fields field) {
-      if (field == null) {
-        throw new java.lang.IllegalArgumentException();
-      }
-
-      switch (field) {
-      case SUCCESS:
-        return isSetSuccess();
-      }
-      throw new java.lang.IllegalStateException();
-    }
-
-    @Override
-    public boolean equals(java.lang.Object that) {
-      if (that == null)
-        return false;
-      if (that instanceof listaVerticesDeAresta_result)
-        return this.equals((listaVerticesDeAresta_result)that);
-      return false;
-    }
-
-    public boolean equals(listaVerticesDeAresta_result that) {
-      if (that == null)
-        return false;
-      if (this == that)
-        return true;
-
-      boolean this_present_success = true && this.isSetSuccess();
-      boolean that_present_success = true && that.isSetSuccess();
-      if (this_present_success || that_present_success) {
-        if (!(this_present_success && that_present_success))
-          return false;
-        if (!this.success.equals(that.success))
-          return false;
-      }
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int hashCode = 1;
-
-      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
-      if (isSetSuccess())
-        hashCode = hashCode * 8191 + success.hashCode();
-
-      return hashCode;
-    }
-
-    @Override
-    public int compareTo(listaVerticesDeAresta_result other) {
-      if (!getClass().equals(other.getClass())) {
-        return getClass().getName().compareTo(other.getClass().getName());
-      }
-
-      int lastComparison = 0;
-
-      lastComparison = java.lang.Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetSuccess()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      return 0;
-    }
-
-    public _Fields fieldForId(int fieldId) {
-      return _Fields.findByThriftId(fieldId);
-    }
-
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      scheme(iprot).read(iprot, this);
-    }
-
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
-      scheme(oprot).write(oprot, this);
-      }
-
-    @Override
-    public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaVerticesDeAresta_result(");
-      boolean first = true;
-
-      sb.append("success:");
-      if (this.success == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.success);
-      }
-      first = false;
-      sb.append(")");
-      return sb.toString();
-    }
-
-    public void validate() throws org.apache.thrift.TException {
-      // check for required fields
-      // check for sub-struct validity
-    }
-
-    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-      try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
-      try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
-        throw new java.io.IOException(te);
-      }
-    }
-
-    private static class listaVerticesDeAresta_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesDeAresta_resultStandardScheme getScheme() {
-        return new listaVerticesDeAresta_resultStandardScheme();
-      }
-    }
-
-    private static class listaVerticesDeAresta_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaVerticesDeAresta_result> {
-
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaVerticesDeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TField schemeField;
-        iprot.readStructBegin();
-        while (true)
-        {
-          schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
-            break;
-          }
-          switch (schemeField.id) {
-            case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-                struct.success = iprot.readString();
-                struct.setSuccessIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            default:
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-          }
-          iprot.readFieldEnd();
-        }
-        iprot.readStructEnd();
-
-        // check for required fields of primitive type, which can't be checked in the validate method
-        struct.validate();
-      }
-
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaVerticesDeAresta_result struct) throws org.apache.thrift.TException {
-        struct.validate();
-
-        oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.success != null) {
-          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeString(struct.success);
-          oprot.writeFieldEnd();
-        }
-        oprot.writeFieldStop();
-        oprot.writeStructEnd();
-      }
-
-    }
-
-    private static class listaVerticesDeAresta_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesDeAresta_resultTupleScheme getScheme() {
-        return new listaVerticesDeAresta_resultTupleScheme();
-      }
-    }
-
-    private static class listaVerticesDeAresta_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaVerticesDeAresta_result> {
-
-      @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaVerticesDeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet optionals = new java.util.BitSet();
-        if (struct.isSetSuccess()) {
-          optionals.set(0);
-        }
-        oprot.writeBitSet(optionals, 1);
-        if (struct.isSetSuccess()) {
-          oprot.writeString(struct.success);
-        }
-      }
-
-      @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaVerticesDeAresta_result struct) throws org.apache.thrift.TException {
-        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-        java.util.BitSet incoming = iprot.readBitSet(1);
-        if (incoming.get(0)) {
-          struct.success = iprot.readString();
-          struct.setSuccessIsSet(true);
-        }
-      }
-    }
-
-    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
-      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
-    }
-  }
-
-  public static class listaArestasDeVertice_args implements org.apache.thrift.TBase<listaArestasDeVertice_args, listaArestasDeVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<listaArestasDeVertice_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaArestasDeVertice_args");
-
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaArestasDeVertice_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaArestasDeVertice_argsTupleSchemeFactory();
-
-    public int id; // required
+    public long id; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -12603,16 +9113,16 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaArestasDeVertice_args.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaFilmesDeCliente_args.class, metaDataMap);
     }
 
-    public listaArestasDeVertice_args() {
+    public listaFilmesDeCliente_args() {
     }
 
-    public listaArestasDeVertice_args(
-      int id)
+    public listaFilmesDeCliente_args(
+      long id)
     {
       this();
       this.id = id;
@@ -12622,13 +9132,13 @@ public class sdEntrega1 {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public listaArestasDeVertice_args(listaArestasDeVertice_args other) {
+    public listaFilmesDeCliente_args(listaFilmesDeCliente_args other) {
       __isset_bitfield = other.__isset_bitfield;
       this.id = other.id;
     }
 
-    public listaArestasDeVertice_args deepCopy() {
-      return new listaArestasDeVertice_args(this);
+    public listaFilmesDeCliente_args deepCopy() {
+      return new listaFilmesDeCliente_args(this);
     }
 
     @Override
@@ -12637,11 +9147,11 @@ public class sdEntrega1 {
       this.id = 0;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public listaArestasDeVertice_args setId(int id) {
+    public listaFilmesDeCliente_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -12666,7 +9176,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -12699,12 +9209,12 @@ public class sdEntrega1 {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof listaArestasDeVertice_args)
-        return this.equals((listaArestasDeVertice_args)that);
+      if (that instanceof listaFilmesDeCliente_args)
+        return this.equals((listaFilmesDeCliente_args)that);
       return false;
     }
 
-    public boolean equals(listaArestasDeVertice_args that) {
+    public boolean equals(listaFilmesDeCliente_args that) {
       if (that == null)
         return false;
       if (this == that)
@@ -12726,13 +9236,13 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       return hashCode;
     }
 
     @Override
-    public int compareTo(listaArestasDeVertice_args other) {
+    public int compareTo(listaFilmesDeCliente_args other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -12766,7 +9276,7 @@ public class sdEntrega1 {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaArestasDeVertice_args(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaFilmesDeCliente_args(");
       boolean first = true;
 
       sb.append("id:");
@@ -12799,15 +9309,15 @@ public class sdEntrega1 {
       }
     }
 
-    private static class listaArestasDeVertice_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaArestasDeVertice_argsStandardScheme getScheme() {
-        return new listaArestasDeVertice_argsStandardScheme();
+    private static class listaFilmesDeCliente_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeCliente_argsStandardScheme getScheme() {
+        return new listaFilmesDeCliente_argsStandardScheme();
       }
     }
 
-    private static class listaArestasDeVertice_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaArestasDeVertice_args> {
+    private static class listaFilmesDeCliente_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaFilmesDeCliente_args> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaArestasDeVertice_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, listaFilmesDeCliente_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -12818,8 +9328,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -12836,12 +9346,12 @@ public class sdEntrega1 {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaArestasDeVertice_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, listaFilmesDeCliente_args struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -12849,16 +9359,16 @@ public class sdEntrega1 {
 
     }
 
-    private static class listaArestasDeVertice_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaArestasDeVertice_argsTupleScheme getScheme() {
-        return new listaArestasDeVertice_argsTupleScheme();
+    private static class listaFilmesDeCliente_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeCliente_argsTupleScheme getScheme() {
+        return new listaFilmesDeCliente_argsTupleScheme();
       }
     }
 
-    private static class listaArestasDeVertice_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaArestasDeVertice_args> {
+    private static class listaFilmesDeCliente_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaFilmesDeCliente_args> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaArestasDeVertice_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeCliente_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
         if (struct.isSetId()) {
@@ -12866,16 +9376,16 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaArestasDeVertice_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeCliente_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
       }
@@ -12886,13 +9396,13 @@ public class sdEntrega1 {
     }
   }
 
-  public static class listaArestasDeVertice_result implements org.apache.thrift.TBase<listaArestasDeVertice_result, listaArestasDeVertice_result._Fields>, java.io.Serializable, Cloneable, Comparable<listaArestasDeVertice_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaArestasDeVertice_result");
+  public static class listaFilmesDeCliente_result implements org.apache.thrift.TBase<listaFilmesDeCliente_result, listaFilmesDeCliente_result._Fields>, java.io.Serializable, Cloneable, Comparable<listaFilmesDeCliente_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaFilmesDeCliente_result");
 
     private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaArestasDeVertice_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaArestasDeVertice_resultTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaFilmesDeCliente_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaFilmesDeCliente_resultTupleSchemeFactory();
 
     public java.lang.String success; // required
 
@@ -12961,13 +9471,13 @@ public class sdEntrega1 {
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaArestasDeVertice_result.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaFilmesDeCliente_result.class, metaDataMap);
     }
 
-    public listaArestasDeVertice_result() {
+    public listaFilmesDeCliente_result() {
     }
 
-    public listaArestasDeVertice_result(
+    public listaFilmesDeCliente_result(
       java.lang.String success)
     {
       this();
@@ -12977,14 +9487,14 @@ public class sdEntrega1 {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public listaArestasDeVertice_result(listaArestasDeVertice_result other) {
+    public listaFilmesDeCliente_result(listaFilmesDeCliente_result other) {
       if (other.isSetSuccess()) {
         this.success = other.success;
       }
     }
 
-    public listaArestasDeVertice_result deepCopy() {
-      return new listaArestasDeVertice_result(this);
+    public listaFilmesDeCliente_result deepCopy() {
+      return new listaFilmesDeCliente_result(this);
     }
 
     @Override
@@ -12996,7 +9506,7 @@ public class sdEntrega1 {
       return this.success;
     }
 
-    public listaArestasDeVertice_result setSuccess(java.lang.String success) {
+    public listaFilmesDeCliente_result setSuccess(java.lang.String success) {
       this.success = success;
       return this;
     }
@@ -13055,12 +9565,12 @@ public class sdEntrega1 {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof listaArestasDeVertice_result)
-        return this.equals((listaArestasDeVertice_result)that);
+      if (that instanceof listaFilmesDeCliente_result)
+        return this.equals((listaFilmesDeCliente_result)that);
       return false;
     }
 
-    public boolean equals(listaArestasDeVertice_result that) {
+    public boolean equals(listaFilmesDeCliente_result that) {
       if (that == null)
         return false;
       if (this == that)
@@ -13090,7 +9600,7 @@ public class sdEntrega1 {
     }
 
     @Override
-    public int compareTo(listaArestasDeVertice_result other) {
+    public int compareTo(listaFilmesDeCliente_result other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -13124,7 +9634,7 @@ public class sdEntrega1 {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaArestasDeVertice_result(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaFilmesDeCliente_result(");
       boolean first = true;
 
       sb.append("success:");
@@ -13159,15 +9669,15 @@ public class sdEntrega1 {
       }
     }
 
-    private static class listaArestasDeVertice_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaArestasDeVertice_resultStandardScheme getScheme() {
-        return new listaArestasDeVertice_resultStandardScheme();
+    private static class listaFilmesDeCliente_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeCliente_resultStandardScheme getScheme() {
+        return new listaFilmesDeCliente_resultStandardScheme();
       }
     }
 
-    private static class listaArestasDeVertice_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaArestasDeVertice_result> {
+    private static class listaFilmesDeCliente_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaFilmesDeCliente_result> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaArestasDeVertice_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, listaFilmesDeCliente_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -13196,7 +9706,7 @@ public class sdEntrega1 {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaArestasDeVertice_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, listaFilmesDeCliente_result struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -13211,16 +9721,16 @@ public class sdEntrega1 {
 
     }
 
-    private static class listaArestasDeVertice_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaArestasDeVertice_resultTupleScheme getScheme() {
-        return new listaArestasDeVertice_resultTupleScheme();
+    private static class listaFilmesDeCliente_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeCliente_resultTupleScheme getScheme() {
+        return new listaFilmesDeCliente_resultTupleScheme();
       }
     }
 
-    private static class listaArestasDeVertice_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaArestasDeVertice_result> {
+    private static class listaFilmesDeCliente_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaFilmesDeCliente_result> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaArestasDeVertice_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeCliente_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
         if (struct.isSetSuccess()) {
@@ -13233,7 +9743,7 @@ public class sdEntrega1 {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaArestasDeVertice_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeCliente_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
@@ -13248,15 +9758,788 @@ public class sdEntrega1 {
     }
   }
 
-  public static class listaVerticesVizinhos_args implements org.apache.thrift.TBase<listaVerticesVizinhos_args, listaVerticesVizinhos_args._Fields>, java.io.Serializable, Cloneable, Comparable<listaVerticesVizinhos_args>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaVerticesVizinhos_args");
+  public static class listaFilmesDeGrupo_args implements org.apache.thrift.TBase<listaFilmesDeGrupo_args, listaFilmesDeGrupo_args._Fields>, java.io.Serializable, Cloneable, Comparable<listaFilmesDeGrupo_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaFilmesDeGrupo_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField IDS_FIELD_DESC = new org.apache.thrift.protocol.TField("ids", org.apache.thrift.protocol.TType.LIST, (short)1);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaVerticesVizinhos_argsStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaVerticesVizinhos_argsTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaFilmesDeGrupo_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaFilmesDeGrupo_argsTupleSchemeFactory();
 
-    public int id; // required
+    public java.util.List<java.lang.Long> ids; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      IDS((short)1, "ids");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // IDS
+            return IDS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.IDS, new org.apache.thrift.meta_data.FieldMetaData("ids", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaFilmesDeGrupo_args.class, metaDataMap);
+    }
+
+    public listaFilmesDeGrupo_args() {
+    }
+
+    public listaFilmesDeGrupo_args(
+      java.util.List<java.lang.Long> ids)
+    {
+      this();
+      this.ids = ids;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public listaFilmesDeGrupo_args(listaFilmesDeGrupo_args other) {
+      if (other.isSetIds()) {
+        java.util.List<java.lang.Long> __this__ids = new java.util.ArrayList<java.lang.Long>(other.ids);
+        this.ids = __this__ids;
+      }
+    }
+
+    public listaFilmesDeGrupo_args deepCopy() {
+      return new listaFilmesDeGrupo_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.ids = null;
+    }
+
+    public int getIdsSize() {
+      return (this.ids == null) ? 0 : this.ids.size();
+    }
+
+    public java.util.Iterator<java.lang.Long> getIdsIterator() {
+      return (this.ids == null) ? null : this.ids.iterator();
+    }
+
+    public void addToIds(long elem) {
+      if (this.ids == null) {
+        this.ids = new java.util.ArrayList<java.lang.Long>();
+      }
+      this.ids.add(elem);
+    }
+
+    public java.util.List<java.lang.Long> getIds() {
+      return this.ids;
+    }
+
+    public listaFilmesDeGrupo_args setIds(java.util.List<java.lang.Long> ids) {
+      this.ids = ids;
+      return this;
+    }
+
+    public void unsetIds() {
+      this.ids = null;
+    }
+
+    /** Returns true if field ids is set (has been assigned a value) and false otherwise */
+    public boolean isSetIds() {
+      return this.ids != null;
+    }
+
+    public void setIdsIsSet(boolean value) {
+      if (!value) {
+        this.ids = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, java.lang.Object value) {
+      switch (field) {
+      case IDS:
+        if (value == null) {
+          unsetIds();
+        } else {
+          setIds((java.util.List<java.lang.Long>)value);
+        }
+        break;
+
+      }
+    }
+
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case IDS:
+        return getIds();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case IDS:
+        return isSetIds();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof listaFilmesDeGrupo_args)
+        return this.equals((listaFilmesDeGrupo_args)that);
+      return false;
+    }
+
+    public boolean equals(listaFilmesDeGrupo_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_ids = true && this.isSetIds();
+      boolean that_present_ids = true && that.isSetIds();
+      if (this_present_ids || that_present_ids) {
+        if (!(this_present_ids && that_present_ids))
+          return false;
+        if (!this.ids.equals(that.ids))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetIds()) ? 131071 : 524287);
+      if (isSetIds())
+        hashCode = hashCode * 8191 + ids.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(listaFilmesDeGrupo_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.valueOf(isSetIds()).compareTo(other.isSetIds());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetIds()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.ids, other.ids);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaFilmesDeGrupo_args(");
+      boolean first = true;
+
+      sb.append("ids:");
+      if (this.ids == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.ids);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class listaFilmesDeGrupo_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeGrupo_argsStandardScheme getScheme() {
+        return new listaFilmesDeGrupo_argsStandardScheme();
+      }
+    }
+
+    private static class listaFilmesDeGrupo_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaFilmesDeGrupo_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, listaFilmesDeGrupo_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // IDS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list8 = iprot.readListBegin();
+                  struct.ids = new java.util.ArrayList<java.lang.Long>(_list8.size);
+                  long _elem9;
+                  for (int _i10 = 0; _i10 < _list8.size; ++_i10)
+                  {
+                    _elem9 = iprot.readI64();
+                    struct.ids.add(_elem9);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setIdsIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, listaFilmesDeGrupo_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.ids != null) {
+          oprot.writeFieldBegin(IDS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.I64, struct.ids.size()));
+            for (long _iter11 : struct.ids)
+            {
+              oprot.writeI64(_iter11);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class listaFilmesDeGrupo_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeGrupo_argsTupleScheme getScheme() {
+        return new listaFilmesDeGrupo_argsTupleScheme();
+      }
+    }
+
+    private static class listaFilmesDeGrupo_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaFilmesDeGrupo_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeGrupo_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetIds()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetIds()) {
+          {
+            oprot.writeI32(struct.ids.size());
+            for (long _iter12 : struct.ids)
+            {
+              oprot.writeI64(_iter12);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeGrupo_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list13 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.I64, iprot.readI32());
+            struct.ids = new java.util.ArrayList<java.lang.Long>(_list13.size);
+            long _elem14;
+            for (int _i15 = 0; _i15 < _list13.size; ++_i15)
+            {
+              _elem14 = iprot.readI64();
+              struct.ids.add(_elem14);
+            }
+          }
+          struct.setIdsIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class listaFilmesDeGrupo_result implements org.apache.thrift.TBase<listaFilmesDeGrupo_result, listaFilmesDeGrupo_result._Fields>, java.io.Serializable, Cloneable, Comparable<listaFilmesDeGrupo_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaFilmesDeGrupo_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaFilmesDeGrupo_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaFilmesDeGrupo_resultTupleSchemeFactory();
+
+    public java.lang.String success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaFilmesDeGrupo_result.class, metaDataMap);
+    }
+
+    public listaFilmesDeGrupo_result() {
+    }
+
+    public listaFilmesDeGrupo_result(
+      java.lang.String success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public listaFilmesDeGrupo_result(listaFilmesDeGrupo_result other) {
+      if (other.isSetSuccess()) {
+        this.success = other.success;
+      }
+    }
+
+    public listaFilmesDeGrupo_result deepCopy() {
+      return new listaFilmesDeGrupo_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public java.lang.String getSuccess() {
+      return this.success;
+    }
+
+    public listaFilmesDeGrupo_result setSuccess(java.lang.String success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.lang.String)value);
+        }
+        break;
+
+      }
+    }
+
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof listaFilmesDeGrupo_result)
+        return this.equals((listaFilmesDeGrupo_result)that);
+      return false;
+    }
+
+    public boolean equals(listaFilmesDeGrupo_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(listaFilmesDeGrupo_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaFilmesDeGrupo_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class listaFilmesDeGrupo_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeGrupo_resultStandardScheme getScheme() {
+        return new listaFilmesDeGrupo_resultStandardScheme();
+      }
+    }
+
+    private static class listaFilmesDeGrupo_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaFilmesDeGrupo_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, listaFilmesDeGrupo_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.success = iprot.readString();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, listaFilmesDeGrupo_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeString(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class listaFilmesDeGrupo_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public listaFilmesDeGrupo_resultTupleScheme getScheme() {
+        return new listaFilmesDeGrupo_resultTupleScheme();
+      }
+    }
+
+    private static class listaFilmesDeGrupo_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaFilmesDeGrupo_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeGrupo_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeString(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, listaFilmesDeGrupo_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readString();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class getAvaliacaoMedia_args implements org.apache.thrift.TBase<getAvaliacaoMedia_args, getAvaliacaoMedia_args._Fields>, java.io.Serializable, Cloneable, Comparable<getAvaliacaoMedia_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getAvaliacaoMedia_args");
+
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getAvaliacaoMedia_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getAvaliacaoMedia_argsTupleSchemeFactory();
+
+    public long id; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -13323,16 +10606,16 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaVerticesVizinhos_args.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getAvaliacaoMedia_args.class, metaDataMap);
     }
 
-    public listaVerticesVizinhos_args() {
+    public getAvaliacaoMedia_args() {
     }
 
-    public listaVerticesVizinhos_args(
-      int id)
+    public getAvaliacaoMedia_args(
+      long id)
     {
       this();
       this.id = id;
@@ -13342,13 +10625,13 @@ public class sdEntrega1 {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public listaVerticesVizinhos_args(listaVerticesVizinhos_args other) {
+    public getAvaliacaoMedia_args(getAvaliacaoMedia_args other) {
       __isset_bitfield = other.__isset_bitfield;
       this.id = other.id;
     }
 
-    public listaVerticesVizinhos_args deepCopy() {
-      return new listaVerticesVizinhos_args(this);
+    public getAvaliacaoMedia_args deepCopy() {
+      return new getAvaliacaoMedia_args(this);
     }
 
     @Override
@@ -13357,11 +10640,11 @@ public class sdEntrega1 {
       this.id = 0;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public listaVerticesVizinhos_args setId(int id) {
+    public getAvaliacaoMedia_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -13386,7 +10669,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -13419,12 +10702,12 @@ public class sdEntrega1 {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof listaVerticesVizinhos_args)
-        return this.equals((listaVerticesVizinhos_args)that);
+      if (that instanceof getAvaliacaoMedia_args)
+        return this.equals((getAvaliacaoMedia_args)that);
       return false;
     }
 
-    public boolean equals(listaVerticesVizinhos_args that) {
+    public boolean equals(getAvaliacaoMedia_args that) {
       if (that == null)
         return false;
       if (this == that)
@@ -13446,13 +10729,13 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       return hashCode;
     }
 
     @Override
-    public int compareTo(listaVerticesVizinhos_args other) {
+    public int compareTo(getAvaliacaoMedia_args other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -13486,7 +10769,7 @@ public class sdEntrega1 {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaVerticesVizinhos_args(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("getAvaliacaoMedia_args(");
       boolean first = true;
 
       sb.append("id:");
@@ -13519,15 +10802,15 @@ public class sdEntrega1 {
       }
     }
 
-    private static class listaVerticesVizinhos_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesVizinhos_argsStandardScheme getScheme() {
-        return new listaVerticesVizinhos_argsStandardScheme();
+    private static class getAvaliacaoMedia_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public getAvaliacaoMedia_argsStandardScheme getScheme() {
+        return new getAvaliacaoMedia_argsStandardScheme();
       }
     }
 
-    private static class listaVerticesVizinhos_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaVerticesVizinhos_args> {
+    private static class getAvaliacaoMedia_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<getAvaliacaoMedia_args> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaVerticesVizinhos_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getAvaliacaoMedia_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -13538,8 +10821,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -13556,12 +10839,12 @@ public class sdEntrega1 {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaVerticesVizinhos_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getAvaliacaoMedia_args struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -13569,16 +10852,16 @@ public class sdEntrega1 {
 
     }
 
-    private static class listaVerticesVizinhos_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesVizinhos_argsTupleScheme getScheme() {
-        return new listaVerticesVizinhos_argsTupleScheme();
+    private static class getAvaliacaoMedia_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public getAvaliacaoMedia_argsTupleScheme getScheme() {
+        return new getAvaliacaoMedia_argsTupleScheme();
       }
     }
 
-    private static class listaVerticesVizinhos_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaVerticesVizinhos_args> {
+    private static class getAvaliacaoMedia_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<getAvaliacaoMedia_args> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaVerticesVizinhos_args struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, getAvaliacaoMedia_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
         if (struct.isSetId()) {
@@ -13586,16 +10869,16 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaVerticesVizinhos_args struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, getAvaliacaoMedia_args struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
       }
@@ -13606,13 +10889,13 @@ public class sdEntrega1 {
     }
   }
 
-  public static class listaVerticesVizinhos_result implements org.apache.thrift.TBase<listaVerticesVizinhos_result, listaVerticesVizinhos_result._Fields>, java.io.Serializable, Cloneable, Comparable<listaVerticesVizinhos_result>   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("listaVerticesVizinhos_result");
+  public static class getAvaliacaoMedia_result implements org.apache.thrift.TBase<getAvaliacaoMedia_result, getAvaliacaoMedia_result._Fields>, java.io.Serializable, Cloneable, Comparable<getAvaliacaoMedia_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getAvaliacaoMedia_result");
 
     private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
 
-    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new listaVerticesVizinhos_resultStandardSchemeFactory();
-    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new listaVerticesVizinhos_resultTupleSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getAvaliacaoMedia_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getAvaliacaoMedia_resultTupleSchemeFactory();
 
     public java.lang.String success; // required
 
@@ -13681,13 +10964,13 @@ public class sdEntrega1 {
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(listaVerticesVizinhos_result.class, metaDataMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getAvaliacaoMedia_result.class, metaDataMap);
     }
 
-    public listaVerticesVizinhos_result() {
+    public getAvaliacaoMedia_result() {
     }
 
-    public listaVerticesVizinhos_result(
+    public getAvaliacaoMedia_result(
       java.lang.String success)
     {
       this();
@@ -13697,14 +10980,14 @@ public class sdEntrega1 {
     /**
      * Performs a deep copy on <i>other</i>.
      */
-    public listaVerticesVizinhos_result(listaVerticesVizinhos_result other) {
+    public getAvaliacaoMedia_result(getAvaliacaoMedia_result other) {
       if (other.isSetSuccess()) {
         this.success = other.success;
       }
     }
 
-    public listaVerticesVizinhos_result deepCopy() {
-      return new listaVerticesVizinhos_result(this);
+    public getAvaliacaoMedia_result deepCopy() {
+      return new getAvaliacaoMedia_result(this);
     }
 
     @Override
@@ -13716,7 +10999,7 @@ public class sdEntrega1 {
       return this.success;
     }
 
-    public listaVerticesVizinhos_result setSuccess(java.lang.String success) {
+    public getAvaliacaoMedia_result setSuccess(java.lang.String success) {
       this.success = success;
       return this;
     }
@@ -13775,12 +11058,12 @@ public class sdEntrega1 {
     public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
-      if (that instanceof listaVerticesVizinhos_result)
-        return this.equals((listaVerticesVizinhos_result)that);
+      if (that instanceof getAvaliacaoMedia_result)
+        return this.equals((getAvaliacaoMedia_result)that);
       return false;
     }
 
-    public boolean equals(listaVerticesVizinhos_result that) {
+    public boolean equals(getAvaliacaoMedia_result that) {
       if (that == null)
         return false;
       if (this == that)
@@ -13810,7 +11093,7 @@ public class sdEntrega1 {
     }
 
     @Override
-    public int compareTo(listaVerticesVizinhos_result other) {
+    public int compareTo(getAvaliacaoMedia_result other) {
       if (!getClass().equals(other.getClass())) {
         return getClass().getName().compareTo(other.getClass().getName());
       }
@@ -13844,7 +11127,7 @@ public class sdEntrega1 {
 
     @Override
     public java.lang.String toString() {
-      java.lang.StringBuilder sb = new java.lang.StringBuilder("listaVerticesVizinhos_result(");
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("getAvaliacaoMedia_result(");
       boolean first = true;
 
       sb.append("success:");
@@ -13879,15 +11162,15 @@ public class sdEntrega1 {
       }
     }
 
-    private static class listaVerticesVizinhos_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesVizinhos_resultStandardScheme getScheme() {
-        return new listaVerticesVizinhos_resultStandardScheme();
+    private static class getAvaliacaoMedia_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public getAvaliacaoMedia_resultStandardScheme getScheme() {
+        return new getAvaliacaoMedia_resultStandardScheme();
       }
     }
 
-    private static class listaVerticesVizinhos_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<listaVerticesVizinhos_result> {
+    private static class getAvaliacaoMedia_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<getAvaliacaoMedia_result> {
 
-      public void read(org.apache.thrift.protocol.TProtocol iprot, listaVerticesVizinhos_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getAvaliacaoMedia_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TField schemeField;
         iprot.readStructBegin();
         while (true)
@@ -13916,7 +11199,7 @@ public class sdEntrega1 {
         struct.validate();
       }
 
-      public void write(org.apache.thrift.protocol.TProtocol oprot, listaVerticesVizinhos_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getAvaliacaoMedia_result struct) throws org.apache.thrift.TException {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
@@ -13931,16 +11214,16 @@ public class sdEntrega1 {
 
     }
 
-    private static class listaVerticesVizinhos_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
-      public listaVerticesVizinhos_resultTupleScheme getScheme() {
-        return new listaVerticesVizinhos_resultTupleScheme();
+    private static class getAvaliacaoMedia_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public getAvaliacaoMedia_resultTupleScheme getScheme() {
+        return new getAvaliacaoMedia_resultTupleScheme();
       }
     }
 
-    private static class listaVerticesVizinhos_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<listaVerticesVizinhos_result> {
+    private static class getAvaliacaoMedia_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<getAvaliacaoMedia_result> {
 
       @Override
-      public void write(org.apache.thrift.protocol.TProtocol prot, listaVerticesVizinhos_result struct) throws org.apache.thrift.TException {
+      public void write(org.apache.thrift.protocol.TProtocol prot, getAvaliacaoMedia_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet optionals = new java.util.BitSet();
         if (struct.isSetSuccess()) {
@@ -13953,7 +11236,7 @@ public class sdEntrega1 {
       }
 
       @Override
-      public void read(org.apache.thrift.protocol.TProtocol prot, listaVerticesVizinhos_result struct) throws org.apache.thrift.TException {
+      public void read(org.apache.thrift.protocol.TProtocol prot, getAvaliacaoMedia_result struct) throws org.apache.thrift.TException {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
@@ -13971,14 +11254,14 @@ public class sdEntrega1 {
   public static class setCorVertice_args implements org.apache.thrift.TBase<setCorVertice_args, setCorVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<setCorVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setCorVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField COR_FIELD_DESC = new org.apache.thrift.protocol.TField("cor", org.apache.thrift.protocol.TType.I32, (short)2);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)3);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setCorVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setCorVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public int cor; // required
     public boolean redirect; // required
 
@@ -14055,7 +11338,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.COR, new org.apache.thrift.meta_data.FieldMetaData("cor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -14068,7 +11351,7 @@ public class sdEntrega1 {
     }
 
     public setCorVertice_args(
-      int id,
+      long id,
       int cor,
       boolean redirect)
     {
@@ -14105,11 +11388,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public setCorVertice_args setId(int id) {
+    public setCorVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -14180,7 +11463,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -14284,7 +11567,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + cor;
 
@@ -14408,8 +11691,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -14447,7 +11730,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(COR_FIELD_DESC);
         oprot.writeI32(struct.cor);
@@ -14484,7 +11767,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 3);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetCor()) {
           oprot.writeI32(struct.cor);
@@ -14499,7 +11782,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -14881,14 +12164,14 @@ public class sdEntrega1 {
   public static class setPesoVertice_args implements org.apache.thrift.TBase<setPesoVertice_args, setPesoVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<setPesoVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setPesoVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField PESO_FIELD_DESC = new org.apache.thrift.protocol.TField("peso", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)3);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setPesoVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setPesoVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public double peso; // required
     public boolean redirect; // required
 
@@ -14965,7 +12248,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.PESO, new org.apache.thrift.meta_data.FieldMetaData("peso", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -14978,7 +12261,7 @@ public class sdEntrega1 {
     }
 
     public setPesoVertice_args(
-      int id,
+      long id,
       double peso,
       boolean redirect)
     {
@@ -15015,11 +12298,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public setPesoVertice_args setId(int id) {
+    public setPesoVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -15090,7 +12373,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -15194,7 +12477,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(peso);
 
@@ -15318,8 +12601,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -15357,7 +12640,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(PESO_FIELD_DESC);
         oprot.writeDouble(struct.peso);
@@ -15394,7 +12677,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 3);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetPeso()) {
           oprot.writeDouble(struct.peso);
@@ -15409,7 +12692,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -15791,14 +13074,14 @@ public class sdEntrega1 {
   public static class setDescricaoVertice_args implements org.apache.thrift.TBase<setDescricaoVertice_args, setDescricaoVertice_args._Fields>, java.io.Serializable, Cloneable, Comparable<setDescricaoVertice_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setDescricaoVertice_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField DESCRICAO_FIELD_DESC = new org.apache.thrift.protocol.TField("descricao", org.apache.thrift.protocol.TType.STRING, (short)2);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)3);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setDescricaoVertice_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setDescricaoVertice_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public java.lang.String descricao; // required
     public boolean redirect; // required
 
@@ -15874,7 +13157,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.DESCRICAO, new org.apache.thrift.meta_data.FieldMetaData("descricao", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -15887,7 +13170,7 @@ public class sdEntrega1 {
     }
 
     public setDescricaoVertice_args(
-      int id,
+      long id,
       java.lang.String descricao,
       boolean redirect)
     {
@@ -15924,11 +13207,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public setDescricaoVertice_args setId(int id) {
+    public setDescricaoVertice_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -16000,7 +13283,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -16104,7 +13387,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((isSetDescricao()) ? 131071 : 524287);
       if (isSetDescricao())
@@ -16234,8 +13517,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -16273,7 +13556,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         if (struct.descricao != null) {
           oprot.writeFieldBegin(DESCRICAO_FIELD_DESC);
@@ -16312,7 +13595,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 3);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetDescricao()) {
           oprot.writeString(struct.descricao);
@@ -16327,7 +13610,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -16709,14 +13992,14 @@ public class sdEntrega1 {
   public static class setPesoAresta_args implements org.apache.thrift.TBase<setPesoAresta_args, setPesoAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<setPesoAresta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setPesoAresta_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField PESO_FIELD_DESC = new org.apache.thrift.protocol.TField("peso", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)3);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setPesoAresta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setPesoAresta_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public double peso; // required
     public boolean redirect; // required
 
@@ -16793,7 +14076,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.PESO, new org.apache.thrift.meta_data.FieldMetaData("peso", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -16806,7 +14089,7 @@ public class sdEntrega1 {
     }
 
     public setPesoAresta_args(
-      int id,
+      long id,
       double peso,
       boolean redirect)
     {
@@ -16843,11 +14126,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public setPesoAresta_args setId(int id) {
+    public setPesoAresta_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -16918,7 +14201,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -17022,7 +14305,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(peso);
 
@@ -17146,8 +14429,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -17185,7 +14468,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(PESO_FIELD_DESC);
         oprot.writeDouble(struct.peso);
@@ -17222,7 +14505,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 3);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetPeso()) {
           oprot.writeDouble(struct.peso);
@@ -17237,7 +14520,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -17619,14 +14902,14 @@ public class sdEntrega1 {
   public static class setDescricaoAresta_args implements org.apache.thrift.TBase<setDescricaoAresta_args, setDescricaoAresta_args._Fields>, java.io.Serializable, Cloneable, Comparable<setDescricaoAresta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("setDescricaoAresta_args");
 
-    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
     private static final org.apache.thrift.protocol.TField DESCRICAO_FIELD_DESC = new org.apache.thrift.protocol.TField("descricao", org.apache.thrift.protocol.TType.STRING, (short)2);
     private static final org.apache.thrift.protocol.TField REDIRECT_FIELD_DESC = new org.apache.thrift.protocol.TField("redirect", org.apache.thrift.protocol.TType.BOOL, (short)3);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new setDescricaoAresta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new setDescricaoAresta_argsTupleSchemeFactory();
 
-    public int id; // required
+    public long id; // required
     public java.lang.String descricao; // required
     public boolean redirect; // required
 
@@ -17702,7 +14985,7 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.DESCRICAO, new org.apache.thrift.meta_data.FieldMetaData("descricao", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       tmpMap.put(_Fields.REDIRECT, new org.apache.thrift.meta_data.FieldMetaData("redirect", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -17715,7 +14998,7 @@ public class sdEntrega1 {
     }
 
     public setDescricaoAresta_args(
-      int id,
+      long id,
       java.lang.String descricao,
       boolean redirect)
     {
@@ -17752,11 +15035,11 @@ public class sdEntrega1 {
       this.redirect = false;
     }
 
-    public int getId() {
+    public long getId() {
       return this.id;
     }
 
-    public setDescricaoAresta_args setId(int id) {
+    public setDescricaoAresta_args setId(long id) {
       this.id = id;
       setIdIsSet(true);
       return this;
@@ -17828,7 +15111,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetId();
         } else {
-          setId((java.lang.Integer)value);
+          setId((java.lang.Long)value);
         }
         break;
 
@@ -17932,7 +15215,7 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + id;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
       hashCode = hashCode * 8191 + ((isSetDescricao()) ? 131071 : 524287);
       if (isSetDescricao())
@@ -18062,8 +15345,8 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // ID
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.id = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.id = iprot.readI64();
                 struct.setIdIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -18101,7 +15384,7 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(ID_FIELD_DESC);
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
         oprot.writeFieldEnd();
         if (struct.descricao != null) {
           oprot.writeFieldBegin(DESCRICAO_FIELD_DESC);
@@ -18140,7 +15423,7 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 3);
         if (struct.isSetId()) {
-          oprot.writeI32(struct.id);
+          oprot.writeI64(struct.id);
         }
         if (struct.isSetDescricao()) {
           oprot.writeString(struct.descricao);
@@ -18155,7 +15438,7 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.id = iprot.readI32();
+          struct.id = iprot.readI64();
           struct.setIdIsSet(true);
         }
         if (incoming.get(1)) {
@@ -18537,14 +15820,14 @@ public class sdEntrega1 {
   public static class menorCaminho_args implements org.apache.thrift.TBase<menorCaminho_args, menorCaminho_args._Fields>, java.io.Serializable, Cloneable, Comparable<menorCaminho_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("menorCaminho_args");
 
-    private static final org.apache.thrift.protocol.TField VA_FIELD_DESC = new org.apache.thrift.protocol.TField("va", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField VB_FIELD_DESC = new org.apache.thrift.protocol.TField("vb", org.apache.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.thrift.protocol.TField VA_FIELD_DESC = new org.apache.thrift.protocol.TField("va", org.apache.thrift.protocol.TType.I64, (short)1);
+    private static final org.apache.thrift.protocol.TField VB_FIELD_DESC = new org.apache.thrift.protocol.TField("vb", org.apache.thrift.protocol.TType.I64, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new menorCaminho_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new menorCaminho_argsTupleSchemeFactory();
 
-    public int va; // required
-    public int vb; // required
+    public long va; // required
+    public long vb; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -18615,9 +15898,9 @@ public class sdEntrega1 {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.VA, new org.apache.thrift.meta_data.FieldMetaData("va", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.VB, new org.apache.thrift.meta_data.FieldMetaData("vb", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(menorCaminho_args.class, metaDataMap);
     }
@@ -18626,8 +15909,8 @@ public class sdEntrega1 {
     }
 
     public menorCaminho_args(
-      int va,
-      int vb)
+      long va,
+      long vb)
     {
       this();
       this.va = va;
@@ -18657,11 +15940,11 @@ public class sdEntrega1 {
       this.vb = 0;
     }
 
-    public int getVa() {
+    public long getVa() {
       return this.va;
     }
 
-    public menorCaminho_args setVa(int va) {
+    public menorCaminho_args setVa(long va) {
       this.va = va;
       setVaIsSet(true);
       return this;
@@ -18680,11 +15963,11 @@ public class sdEntrega1 {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __VA_ISSET_ID, value);
     }
 
-    public int getVb() {
+    public long getVb() {
       return this.vb;
     }
 
-    public menorCaminho_args setVb(int vb) {
+    public menorCaminho_args setVb(long vb) {
       this.vb = vb;
       setVbIsSet(true);
       return this;
@@ -18709,7 +15992,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetVa();
         } else {
-          setVa((java.lang.Integer)value);
+          setVa((java.lang.Long)value);
         }
         break;
 
@@ -18717,7 +16000,7 @@ public class sdEntrega1 {
         if (value == null) {
           unsetVb();
         } else {
-          setVb((java.lang.Integer)value);
+          setVb((java.lang.Long)value);
         }
         break;
 
@@ -18791,9 +16074,9 @@ public class sdEntrega1 {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + va;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(va);
 
-      hashCode = hashCode * 8191 + vb;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(vb);
 
       return hashCode;
     }
@@ -18899,16 +16182,16 @@ public class sdEntrega1 {
           }
           switch (schemeField.id) {
             case 1: // VA
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.va = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.va = iprot.readI64();
                 struct.setVaIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // VB
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.vb = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+                struct.vb = iprot.readI64();
                 struct.setVbIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -18930,10 +16213,10 @@ public class sdEntrega1 {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(VA_FIELD_DESC);
-        oprot.writeI32(struct.va);
+        oprot.writeI64(struct.va);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(VB_FIELD_DESC);
-        oprot.writeI32(struct.vb);
+        oprot.writeI64(struct.vb);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -18961,10 +16244,10 @@ public class sdEntrega1 {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetVa()) {
-          oprot.writeI32(struct.va);
+          oprot.writeI64(struct.va);
         }
         if (struct.isSetVb()) {
-          oprot.writeI32(struct.vb);
+          oprot.writeI64(struct.vb);
         }
       }
 
@@ -18973,11 +16256,11 @@ public class sdEntrega1 {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.va = iprot.readI32();
+          struct.va = iprot.readI64();
           struct.setVaIsSet(true);
         }
         if (incoming.get(1)) {
-          struct.vb = iprot.readI32();
+          struct.vb = iprot.readI64();
           struct.setVbIsSet(true);
         }
       }

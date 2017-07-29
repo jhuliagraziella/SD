@@ -11,7 +11,7 @@ package sdEntrega1;
 public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields>, java.io.Serializable, Cloneable, Comparable<Vertice> {
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Vertice");
 
-  private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
+  private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
   private static final org.apache.thrift.protocol.TField COR_FIELD_DESC = new org.apache.thrift.protocol.TField("cor", org.apache.thrift.protocol.TType.I32, (short)2);
   private static final org.apache.thrift.protocol.TField PESO_FIELD_DESC = new org.apache.thrift.protocol.TField("peso", org.apache.thrift.protocol.TType.DOUBLE, (short)3);
   private static final org.apache.thrift.protocol.TField DESCRICAO_FIELD_DESC = new org.apache.thrift.protocol.TField("descricao", org.apache.thrift.protocol.TType.STRING, (short)4);
@@ -20,7 +20,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new VerticeStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new VerticeTupleSchemeFactory();
 
-  public int id; // required
+  public long id; // required
   public int cor; // required
   public double peso; // required
   public java.lang.String descricao; // required
@@ -106,7 +106,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
   static {
     java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
     tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     tmpMap.put(_Fields.COR, new org.apache.thrift.meta_data.FieldMetaData("cor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     tmpMap.put(_Fields.PESO, new org.apache.thrift.meta_data.FieldMetaData("peso", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -123,7 +123,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
   }
 
   public Vertice(
-    int id,
+    long id,
     int cor,
     double peso,
     java.lang.String descricao,
@@ -172,11 +172,22 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
     this.tipo = 0;
   }
 
-  public int getId() {
+  public java.lang.String getInformacoes(){
+      java.lang.String s = "";
+      s += "Nome: " + java.lang.String.valueOf(this.id) + "\n";
+      s += "Cor: " + java.lang.String.valueOf(this.cor) + "\n";
+      s += "Peso: " + java.lang.String.valueOf(this.peso) + "\n";
+      s += "Descricao: " + this.descricao + "\n";
+  
+      return s;
+  }
+
+
+  public long getId() {
     return this.id;
   }
 
-  public Vertice setId(int id) {
+  public Vertice setId(long id) {
     this.id = id;
     setIdIsSet(true);
     return this;
@@ -294,7 +305,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
       if (value == null) {
         unsetId();
       } else {
-        setId((java.lang.Integer)value);
+        setId((java.lang.Long)value);
       }
       break;
 
@@ -445,12 +456,11 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
     return this.hashCode() == that.hashCode();
   }
 
-
   // @Override
   // public int hashCode() {
   //   int hashCode = 1;
 
-  //   hashCode = hashCode * 8191 + id;
+  //   hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
 
   //   hashCode = hashCode * 8191 + cor;
 
@@ -617,8 +627,8 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
         }
         switch (schemeField.id) {
           case 1: // ID
-            if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.id = iprot.readI32();
+            if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+              struct.id = iprot.readI64();
               struct.setIdIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -672,7 +682,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
 
       oprot.writeStructBegin(STRUCT_DESC);
       oprot.writeFieldBegin(ID_FIELD_DESC);
-      oprot.writeI32(struct.id);
+      oprot.writeI64(struct.id);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(COR_FIELD_DESC);
       oprot.writeI32(struct.cor);
@@ -723,7 +733,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
       }
       oprot.writeBitSet(optionals, 5);
       if (struct.isSetId()) {
-        oprot.writeI32(struct.id);
+        oprot.writeI64(struct.id);
       }
       if (struct.isSetCor()) {
         oprot.writeI32(struct.cor);
@@ -744,7 +754,7 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
       org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       java.util.BitSet incoming = iprot.readBitSet(5);
       if (incoming.get(0)) {
-        struct.id = iprot.readI32();
+        struct.id = iprot.readI64();
         struct.setIdIsSet(true);
       }
       if (incoming.get(1)) {
