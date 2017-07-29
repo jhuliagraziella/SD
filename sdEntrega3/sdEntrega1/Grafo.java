@@ -38,13 +38,8 @@ public class Grafo implements sdEntrega1.Iface{
     
     public boolean existeVertice(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).existeVertice(id, false);
-                    if(ok)
-                        return true;
-                }
-            }
+            if(redirect)
+                return getClient(id % this.numServers).existeVertice(id, false);
             return false;
         }
 
@@ -53,13 +48,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public boolean existeAresta(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    boolean ok = getClient((this.id+i) % this.numServers).existeAresta(id, false);
-                    if(ok)
-                        return true;
-                }
-            }
+            if(redirect)
+                return getClient(id % this.numServers).existeAresta(id, false);
             return false;
         }
 
@@ -68,13 +58,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int addVertice(int id, int cor, double peso, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if (redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).addVertice(id, cor, peso, descricao, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if (redirect && getClient(id % this.numServers).addVertice(id, cor, peso, descricao, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -88,13 +73,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int addAresta(int id, int va, int vb, double peso, boolean bidirecional, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).addAresta(id, va, vb, peso, bidirecional, descricao, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).addAresta(id, va, vb, peso, bidirecional, descricao, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -109,9 +89,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public Vertice getVertice(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
+            if(redirect)
                 return getClient(id % this.numServers).getVertice(id, false);
-            }
             return null;
         }
 
@@ -129,13 +108,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public Aresta getAresta(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    Aresta a = getClient((this.id+i) % this.numServers).getAresta(id, false);
-                    if(a != null)
-                        return a;
-                }
-            }
+            if(redirect)
+                return getClient(id % this.numServers).getAresta(id, false);
             return null;
         }
 
@@ -166,13 +140,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int removeVertice(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).removeVertice(id, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).removeVertice(id, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -187,13 +156,8 @@ public class Grafo implements sdEntrega1.Iface{
         
     public synchronized int removeAresta(int id, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).removeAresta(id, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).removeAresta(id, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -299,13 +263,8 @@ public class Grafo implements sdEntrega1.Iface{
     
     public synchronized int setCorVertice(int id, int cor, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).setCorVertice(id, cor, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).setCorVertice(id, cor, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -318,13 +277,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int setPesoVertice(int id, double peso, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).setPesoVertice(id, peso, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).setPesoVertice(id, peso, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -337,13 +291,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int setDescricaoVertice(int id, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).setDescricaoVertice(id, descricao, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).setDescricaoVertice(id, descricao, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -356,13 +305,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int setPesoAresta(int id, double peso, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).setPesoAresta(id, peso, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).setPesoAresta(id, peso, false) == 1)
+                return 2;
             return -1;
         }
 
@@ -375,13 +319,8 @@ public class Grafo implements sdEntrega1.Iface{
 
     public synchronized int setDescricaoAresta(int id, String descricao, boolean redirect) throws TException{
         if(id % this.numServers != this.id){
-            if(redirect){
-                for(int i=1;i<this.numServers;i++){
-                    int ok = getClient((this.id+i) % this.numServers).setDescricaoAresta(id, descricao, false);
-                    if(ok == 1)
-                        return 2;
-                }
-            }
+            if(redirect && getClient(id % this.numServers).setDescricaoAresta(id, descricao, false) == 1)
+                return 2;
             return -1;
         }
 
