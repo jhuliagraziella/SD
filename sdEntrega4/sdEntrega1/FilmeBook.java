@@ -20,7 +20,7 @@ public class FilmeBook {
         System.out.println("| 5 - Consultar filmes assistidos por um cliente           |");
         System.out.println("| 6 - Consultar filmes assistidos por um grupo de clientes |");
         System.out.println("| 7 - Consultar a avaliacao media de um filme              |");
-        System.out.println("| 8 - Consultar o menor caminho entre 2 clientes           |");
+        System.out.println("| 8 - Consultar o menor caminho entre 2 pontos             |");
         System.out.println("| 0 - Finalizar o programa                                 |");
         System.out.println(" ----------------------------------------------------------");
     }
@@ -58,7 +58,7 @@ public class FilmeBook {
                 switch(op){
                     case 1: // registrar um novo filme -> novo vertice de tipo 1
                         System.out.print("Digite o IMDB ID do filme: "); id = sc.nextLong();
-                        System.out.print("Digite as informacoes do filme: "); descricao = sc.nextLine();
+                        System.out.print("Digite as informacoes do filme: "); sc.nextLine(); descricao = sc.nextLine();
 
                         resp = client.addVertice(id, 0, 0, descricao, 1, true);
                         if(resp == 2 || resp == -1)
@@ -72,7 +72,7 @@ public class FilmeBook {
 
                     case 2: // registrar um novo cliente -> novo vertice de tipo 0
                         System.out.print("Digite o CPF do cliente: "); id = sc.nextLong();
-                        System.out.print("Digite o nome do cliente: "); descricao = sc.nextLine();
+                        System.out.print("Digite o nome do cliente: "); sc.nextLine(); descricao = sc.nextLine();
 
                         resp = client.addVertice(id, 0, 0, descricao, 0, true);
                         if(resp == 2 || resp == -1)
@@ -129,9 +129,11 @@ public class FilmeBook {
                         System.out.print("Digite o CPF do cliente: "); va = sc.nextLong();
                         System.out.print("Digite o IMDB ID do filme: "); vb = sc.nextLong();
                         System.out.print("Digite a avaliacao do filme [0,10]: "); peso = sc.nextDouble();
-                        // System.out.print("Comente algo sobre o filme: "); descricao = sc.nextLine();
+                        // System.out.print("Comente algo sobre o filme: "); sc.nextLine(); descricao = sc.nextLine();
                         descricao = "";
                         id = va * 10000000 + vb;
+
+                        System.out.println("oi? " + id);
 
                         resp = client.addAresta(id, va, vb, peso, true, descricao, true);
                         if(resp == 2 || resp == -1)
@@ -185,21 +187,20 @@ public class FilmeBook {
 
 
                     case 8: // menor caminho entre 2 vertices
-                        System.out.print("Digite o CPF do cliente: "); va = sc.nextLong();
-                        System.out.print("Digite o IMDB ID do filme: "); vb = sc.nextLong();
-                        id = va * 10000000 + vb;
-
+                        System.out.print("Digite o CPF do cliente ou o IMDB ID do filme: "); va = sc.nextLong();
+                        System.out.print("Digite o CPF do cliente ou o IMDB ID do filme: "); vb = sc.nextLong();
                         System.out.println("Solicitacao realizada em conjunto com outros servidores.");
 
                         // precisa alterar o djikstra
-                        double ans = client.menorCaminho(va, vb);
+                        System.out.println(client.menorCaminho(va, vb));
 
-                        if(ans == -2)
-                            System.out.println("Nao foi possivel encontrar o menor caminho entre o par de vertices especificado.");
-                        else if(ans == -1)
-                            System.out.println("Nao ha nenhum caminho entre o par de vertices especificado.");
-                        else 
-                            System.out.println("O menor caminho entre os vertices " + va + " e " + vb + " eh: " + ans);
+                        // double ans = client.menorCaminho(va, vb);
+                        // if(ans == -2)
+                        //     System.out.println("Nao foi possivel encontrar o menor caminho entre o par de vertices especificado.");
+                        // else if(ans == -1)
+                        //     System.out.println("Nao ha nenhum caminho entre o par de vertices especificado.");
+                        // else 
+                        //     System.out.println("O menor caminho entre os vertices " + va + " e " + vb + " eh: " + ans);
                         break;
 
                     // end

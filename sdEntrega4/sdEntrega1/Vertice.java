@@ -174,10 +174,10 @@ public class Vertice implements org.apache.thrift.TBase<Vertice, Vertice._Fields
 
   public java.lang.String getInformacoes(){
       java.lang.String s = "";
-      s += "Nome: " + java.lang.String.valueOf(this.id) + "\n";
-      s += "Cor: " + java.lang.String.valueOf(this.cor) + "\n";
-      s += "Peso: " + java.lang.String.valueOf(this.peso) + "\n";
-      s += "Descricao: " + this.descricao + "\n";
+      s += "ID: " + java.lang.String.valueOf(this.id) + "\n";
+      // s += "Cor: " + java.lang.String.valueOf(this.cor) + "\n";
+      // s += "Peso: " + java.lang.String.valueOf(this.peso) + "\n";
+      s += "Nome/Descricao: " + this.descricao + "\n";
   
       return s;
   }

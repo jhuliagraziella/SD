@@ -50,5 +50,5 @@ service sdEntrega1{
 
     i32 setAvaliacaoFilme(1: i64 id, 2: double peso, 3: bool redirect),
 
-    double menorCaminho(1: i64 va, 2: i64 vb)
+    string menorCaminho(1: i64 va, 2: i64 vb)
 }

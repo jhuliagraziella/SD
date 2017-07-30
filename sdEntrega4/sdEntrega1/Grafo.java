@@ -78,7 +78,10 @@ public class Grafo implements sdEntrega1.Iface{
             return -1;
         }
 
-        if(!this.existeVertice(va, true) || !this.existeVertice(vb, true) || this.existeAresta(id, false) || this.getVertice(va, true).getTipo() == this.getVertice(va, true).getTipo()) 
+        // System.out.println("olar " + id + "  " + va + "  " + vb);
+        // System.out.println(this.existeVertice(va, true) + " " + this.existeVertice(va, true) + " " + this.getVertice(va, true).getTipo() + " " + this.getVertice(vb, true).getTipo());
+
+        if(!this.existeVertice(va, true) || !this.existeVertice(vb, true) || this.existeAresta(id, false) || this.getVertice(va, true).getTipo() == this.getVertice(vb, true).getTipo()) 
             return 0;
 
         Aresta nova = new Aresta(id, va, vb, peso, bidirecional, descricao);
@@ -467,58 +470,101 @@ public class Grafo implements sdEntrega1.Iface{
     //     return 1;
     // }
 
-    public double menorCaminho(long va, long vb) throws TException{
+    public String menorCaminho(long va, long vb) throws TException{
         if(!existeVertice(va, true) || !existeVertice(vb, true)) // nao existe um dos vertices
-            return -2;
+            return "Nao foi possivel especificar o menor caminho entre o par especificado.";
 
-        Map<TipoChave, TipoValor> map = new HashMap<>();
+        int pai[] = new int[30000];
+        int cont = 0;
 
-        // int inf = 0x3f3f3f3f;
-        // for(int i=0;i<30000;i++)
-        //     dist[i] = inf;
+        Map<Long, Integer> mapa1 = new HashMap<Long, Integer>(); mapa1.clear();
+        Map<Integer, Long> mapa2 = new HashMap<Integer, Long>(); mapa2.clear();
 
-        // Comparator<Integer> comparator = new DistComparator();
-        // PriorityQueue<Integer> pq = new PriorityQueue<Integer>(30000, comparator);    
-    
-        // dist[va] = 0;
-        // pq.add(va);
+        int inf = 0x3f3f3f3f;
+        for(int i=0;i<30000;i++){
+            dist[i] = inf;
+            pai[i] = -1;
+        }
 
-        // while (pq.size() != 0){
-        //     int i = pq.remove();
+        Comparator<Integer> comparator = new DistComparator();
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(30000, comparator);    
+        
+        mapa1.put(va, cont);
+        mapa2.put(cont, va);
+        cont++;
 
-        //     List<Aresta> l = this.getArestasAdjacentes(i);
-        //     Iterator<Aresta> it = l.iterator();
+        dist[mapa1.get(va)] = 0;
+        pq.add(mapa1.get(va));
 
-        //     while(it.hasNext()){
-        //         Aresta aij = it.next();
-        //         int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
+        while (pq.size() != 0){
+            int i = pq.remove();
+            long idi = mapa2.get(i);
 
-        //         if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
-        //             dist[j] = dist[i] + aij.getPeso();
-        //             pq.add(j);
-        //         }
-        //     }
+            List<Aresta> l = this.getArestasAdjacentes(idi);
+            Iterator<Aresta> it = l.iterator();
 
-        //     // arestas adj de outros servers:
-        //     for(int k=1;k<this.numServers;k++){
-        //         l = getClient((this.id+k) % this.numServers).getArestasAdjacentes(i);
-        //         it = l.iterator();
-        //         while(it.hasNext()){
-        //             Aresta aij = it.next();
-        //             int j = (aij.getVa() == i) ? aij.getVb() : aij.getVa();
+            while(it.hasNext()){
+                Aresta aij = it.next();
+                long idj = (aij.getVa() == idi) ? aij.getVb() : aij.getVa();
 
-        //             if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
-        //                 dist[j] = dist[i] + aij.getPeso();
-        //                 pq.add(j);
-        //             }
-        //         }
-        //     }
+                if(!mapa1.containsKey(idj)){
+                    mapa1.put(idj, cont);
+                    mapa2.put(cont, idj);
+                    cont++;
+                }
+                int j = mapa1.get(idj);
 
-        // }
-    
-        // return (dist[vb] < inf) ? dist[vb] : -1.0;
-    
-        return 0.0;
+                if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
+                    dist[j] = dist[i] + 1; //aij.getPeso(); // vou contar a distancia como "pulos" ao inves do peso na aresta
+                    pai[j] = i;
+                    pq.add(j);
+                }
+            }
+
+            // arestas adj de outros servers:
+            for(int k=1;k<this.numServers;k++){
+                l = getClient((this.id+k) % this.numServers).getArestasAdjacentes(idi);
+                it = l.iterator();
+                while(it.hasNext()){
+                    Aresta aij = it.next();
+                    long idj = (aij.getVa() == idi) ? aij.getVb() : aij.getVa();
+
+                    if(!mapa1.containsKey(idj)){
+                        mapa1.put(idj, cont);
+                        mapa2.put(cont, idj);
+                        cont++;
+                    }
+                    int j = mapa1.get(idj);
+
+                    if(j != -1 && dist[j] > dist[i] + aij.getPeso()){
+                        dist[j] = dist[i] + 1; //aij.getPeso(); // vou contar a distancia como "pulos" ao inves do peso na aresta
+                        pai[j] = i;
+                        pq.add(j);
+                    }
+                }
+            }
+
+        }
+        
+        if(!mapa1.containsKey(vb) || dist[mapa1.get(vb)] == inf)
+            return "Nao ha nenhum caminho entre o par de vertices especificado.";
+
+        Stack<Long> p = new Stack<Long>();
+        int atu = mapa1.get(vb);
+        while(pai[atu] != -1){
+            p.push(mapa2.get(atu));
+            atu = pai[atu];
+        }
+
+        String s = "";
+        s += "Menor caminho entre " + String.valueOf(va) + " " + String.valueOf(vb) + ": " + String.valueOf(dist[mapa1.get(vb)]) + "\n";
+        s += "Percurso : " + this.getVertice(va, true).getDescricao();
+
+        while(!p.empty())
+            s += " -> " + this.getVertice(p.pop(), true).getDescricao();
+        s += "\n";
+
+        return s;
     }
 
     public List<Aresta> getArestasAdjacentes(long id){
@@ -534,9 +580,9 @@ public class Grafo implements sdEntrega1.Iface{
         return l;
     }
 
-    public static double getDist(long id){
-        return 0.0;
-        // return dist[id];
+
+    public static double getDist(int id){
+        return dist[id];
     }
 }
 

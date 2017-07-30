@@ -189,11 +189,11 @@ public class Aresta implements org.apache.thrift.TBase<Aresta, Aresta._Fields>, 
   public java.lang.String getInformacoes(){
       java.lang.String s = "";
       s += "Id: " + java.lang.String.valueOf(this.id) + "\n";
-      s += "Vertice 1: " + java.lang.String.valueOf(this.va) + "\n";
-      s += "Vertice 2: " + java.lang.String.valueOf(this.vb) + "\n";
-      s += "Peso: " + java.lang.String.valueOf(this.peso) + "\n";
-      s += "Bidirecional: " + (this.bidirecional ? "sim" : "nao") + "\n";
-      s += "Descricao: " + this.descricao + "\n";
+      s += "CPF Cliente: " + java.lang.String.valueOf(this.va) + "\n";
+      s += "IMDB ID Filme: " + java.lang.String.valueOf(this.vb) + "\n";
+      s += "Avaliacao: " + java.lang.String.valueOf(this.peso) + "\n";
+      // s += "Bidirecional: " + (this.bidirecional ? "sim" : "nao") + "\n";
+      // s += "Descricao: " + this.descricao + "\n";
 
       return s;
   }
