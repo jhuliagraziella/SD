@@ -471,6 +471,8 @@ public class Grafo implements sdEntrega1.Iface{
         if(!existeVertice(va, true) || !existeVertice(vb, true)) // nao existe um dos vertices
             return -2;
 
+        Map<TipoChave, TipoValor> map = new HashMap<>();
+
         // int inf = 0x3f3f3f3f;
         // for(int i=0;i<30000;i++)
         //     dist[i] = inf;
