@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fa0b73d-4e5a-403e-a844-468c0cd97a9f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/Main.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/copycat/Server.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/copycat/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/copycat/get/GetArestasAdjacentes.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/copycat/get/GetArestasAdjacentes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/DistComparator.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/DistComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/FilmeBook.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/FilmeBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/Grafo.class" afterPath="$PROJECT_DIR$/out/production/SdEntrega4/thrift/Grafo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/copycat/Server.java" afterPath="$PROJECT_DIR$/src/copycat/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java" afterPath="$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thrift/FilmeBook.java" afterPath="$PROJECT_DIR$/src/thrift/FilmeBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thrift/Grafo.java" afterPath="$PROJECT_DIR$/src/thrift/Grafo.java" />
     </list>
     <ignored path="SdEntrega4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,14 +38,20 @@
       <file leaf-file-name="MapStateMachine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/copycat/MapStateMachine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="612">
+              <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
               <folding>
                 <element signature="docComment;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#getVertice#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#getAresta#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#existeVertice#0;class#MapStateMachine#0" expanded="false" />
                 <element signature="method#existeAresta#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#addVertice#0;class#MapStateMachine#0" expanded="false" />
                 <element signature="method#addAresta#0;class#MapStateMachine#0" expanded="false" />
                 <element signature="method#getAvaliacaoMedia#0;class#MapStateMachine#0" expanded="false" />
-                <element signature="method#getFilmesDeCliente#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#getFilmesDeGrupo#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#setAvaliacaoFilme#0;class#MapStateMachine#0" expanded="false" />
+                <element signature="method#getMenorCaminho#0;class#MapStateMachine#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -52,22 +69,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Grafo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Grafo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thrift/Grafo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="470" column="37" selection-start-line="470" selection-start-column="37" selection-end-line="470" selection-end-column="37" />
               <folding>
-                <element signature="e#3368#3428#0" expanded="false" />
-                <element signature="e#4850#4931#0" expanded="false" />
+                <element signature="method#Grafo#0;class#Grafo#0" expanded="false" />
+                <element signature="method#existeAresta#0;class#Grafo#0" expanded="false" />
+                <element signature="method#addVertice#0;class#Grafo#0" expanded="false" />
+                <element signature="method#addAresta#0;class#Grafo#0" expanded="false" />
+                <element signature="e#3270#3330#0" expanded="false" />
+                <element signature="method#getVertice#0;class#Grafo#0" expanded="false" />
+                <element signature="method#getAresta#0;class#Grafo#0" expanded="false" />
+                <element signature="e#4762#4843#0" expanded="false" />
                 <element signature="method#listaFilmesDeCliente#0;class#Grafo#0" expanded="false" />
                 <element signature="method#listaFilmesDeGrupo#0;class#Grafo#0" expanded="false" />
-                <element signature="method#getAvaliacaoMedia#0;class#Grafo#0" expanded="false" />
-                <element signature="e#14235#14330#0" expanded="false" />
-                <element signature="e#16340#16449#0" expanded="false" />
-                <element signature="method#menorCaminho#0;class#Grafo#0" expanded="false" />
-                <element signature="method#getArestasAdjacentes#0;class#Grafo#0" expanded="false" />
+                <element signature="e#14021#14116#0" expanded="false" />
+                <element signature="method#setAvaliacaoFilme#0;class#Grafo#0" expanded="false" />
+                <element signature="e#16131#16240#0" expanded="false" />
+                <element signature="e#20586#20587#0" expanded="true" />
                 <element signature="class#DistComparator#0" expanded="false" />
+                <element signature="e#20735#20736#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilmeBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/thrift/FilmeBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="136" column="43" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +111,8 @@
       <file leaf-file-name="Servidor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/thrift/Servidor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+            <state relative-caret-position="252">
+              <caret line="27" column="56" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -86,8 +121,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/copycat/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+            <state relative-caret-position="320">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            <state relative-caret-position="0">
+              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -119,14 +154,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PutAddVertice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/copycat/put/PutAddVertice.java">
+      <file leaf-file-name="GetArestasAdjacentes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+            <state relative-caret-position="180">
+              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
               <folding>
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,19 +172,6 @@
             <state relative-caret-position="72">
               <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PutAddAresta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/copycat/put/PutAddAresta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-              <folding>
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#279#280#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -193,24 +214,24 @@
         <option value="$PROJECT_DIR$/src/copycat/put/ExisteAresta.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/ExisteAresta.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/ExisteVertice.java" />
-        <option value="$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetAvalicaoMedia.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetFilmesDeCliente.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetFilmesDeGrupo.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetMenorCaminho.java" />
-        <option value="$PROJECT_DIR$/src/copycat/MapStateMachine.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetExisteVertice.java" />
-        <option value="$PROJECT_DIR$/src/thrift/FilmeBook.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetExisteAresta.java" />
         <option value="$PROJECT_DIR$/src/copycat/put/PutAddVertice.java" />
         <option value="$PROJECT_DIR$/src/copycat/put/PutAddAresta.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetVertice.java" />
         <option value="$PROJECT_DIR$/src/copycat/get/GetAresta.java" />
         <option value="$PROJECT_DIR$/src/copycat/put/PutSetAvaliacaoFilme.java" />
-        <option value="$PROJECT_DIR$/src/copycat/Server.java" />
-        <option value="$PROJECT_DIR$/src/thrift/Grafo.java" />
         <option value="$PROJECT_DIR$/src/thrift/Servidor.java" />
+        <option value="$PROJECT_DIR$/src/copycat/Server.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java" />
+        <option value="$PROJECT_DIR$/src/thrift/FilmeBook.java" />
+        <option value="$PROJECT_DIR$/src/copycat/MapStateMachine.java" />
+        <option value="$PROJECT_DIR$/src/thrift/Grafo.java" />
       </list>
     </option>
   </component>
@@ -259,56 +280,7 @@
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SdEntrega4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thrift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
@@ -331,7 +303,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Servidor">
+  <component name="RunManager" selected="Application.FilmeBook">
     <configuration default="false" name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="thrift.Servidor" />
@@ -835,9 +807,9 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Servidor" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="Application.FilmeBook" />
+        <item index="0" class="java.lang.String" itemvalue="Application.FilmeBook" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Servidor" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
         <item index="3" class="java.lang.String" itemvalue="Application.Server" />
       </list>
     </recent_temporary>
@@ -858,12 +830,12 @@
       <workItem from="1501518353408" duration="917000" />
       <workItem from="1501519576304" duration="1165000" />
       <workItem from="1501529295725" duration="9403000" />
-      <workItem from="1501546973259" duration="6544000" />
+      <workItem from="1501546973259" duration="12922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18029000" />
+    <option name="totallyTimeSpent" value="24407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -885,12 +857,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7094595" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9780405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8260135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.235474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.235474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -947,38 +919,26 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/copycat/MapStateMachine.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/thrift/Grafo.java</url>
-          <line>59</line>
+          <line>56</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/thrift/FilmeBook.java</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/thrift/Grafo.java</url>
-          <line>46</line>
+          <line>43</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/thrift/Grafo.java</url>
-          <line>41</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/copycat/Server.java</url>
-          <line>40</line>
+          <line>43</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -998,10 +958,16 @@
           <caret line="197" column="22" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
           <folding>
             <element signature="docComment;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getVertice#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getAresta#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#existeVertice#0;class#MapStateMachine#0" expanded="false" />
             <element signature="method#existeAresta#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#addVertice#0;class#MapStateMachine#0" expanded="false" />
             <element signature="method#addAresta#0;class#MapStateMachine#0" expanded="false" />
             <element signature="method#getAvaliacaoMedia#0;class#MapStateMachine#0" expanded="false" />
-            <element signature="method#getFilmesDeCliente#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getFilmesDeGrupo#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#setAvaliacaoFilme#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getMenorCaminho#0;class#MapStateMachine#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,16 +977,22 @@
         <state relative-caret-position="954">
           <caret line="53" column="61" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
           <folding>
-            <element signature="e#3368#3428#0" expanded="false" />
-            <element signature="e#4850#4931#0" expanded="false" />
+            <element signature="method#Grafo#0;class#Grafo#0" expanded="false" />
+            <element signature="method#existeAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#3270#3330#0" expanded="false" />
+            <element signature="method#getVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#getAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#4762#4843#0" expanded="false" />
             <element signature="method#listaFilmesDeCliente#0;class#Grafo#0" expanded="false" />
             <element signature="method#listaFilmesDeGrupo#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getAvaliacaoMedia#0;class#Grafo#0" expanded="false" />
-            <element signature="e#14235#14330#0" expanded="false" />
-            <element signature="e#16340#16449#0" expanded="false" />
-            <element signature="method#menorCaminho#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getArestasAdjacentes#0;class#Grafo#0" expanded="false" />
+            <element signature="e#14021#14116#0" expanded="false" />
+            <element signature="method#setAvaliacaoFilme#0;class#Grafo#0" expanded="false" />
+            <element signature="e#16131#16240#0" expanded="false" />
+            <element signature="e#20586#20587#0" expanded="true" />
             <element signature="class#DistComparator#0" expanded="false" />
+            <element signature="e#20735#20736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1030,8 +1002,8 @@
         <state relative-caret-position="144">
           <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding>
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="false" />
+            <element signature="e#242#243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,9 +1021,9 @@
         <state relative-caret-position="216">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#216#217#0" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="false" />
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1061,10 +1033,10 @@
         <state relative-caret-position="216">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#250#251#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+            <element signature="e#340#341#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1074,9 +1046,9 @@
         <state relative-caret-position="216">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="false" />
+            <element signature="e#240#241#0" expanded="false" />
+            <element signature="e#292#293#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1094,10 +1066,10 @@
         <state relative-caret-position="216">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="false" />
+            <element signature="e#300#301#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="false" />
+            <element signature="e#357#358#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1173,16 +1145,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3368#3428#0" expanded="false" />
-            <element signature="e#4850#4931#0" expanded="false" />
+            <element signature="method#Grafo#0;class#Grafo#0" expanded="false" />
+            <element signature="method#existeAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#3270#3330#0" expanded="false" />
+            <element signature="method#getVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#getAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#4762#4843#0" expanded="false" />
             <element signature="method#listaFilmesDeCliente#0;class#Grafo#0" expanded="false" />
             <element signature="method#listaFilmesDeGrupo#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getAvaliacaoMedia#0;class#Grafo#0" expanded="false" />
-            <element signature="e#14235#14330#0" expanded="false" />
-            <element signature="e#16340#16449#0" expanded="false" />
-            <element signature="method#menorCaminho#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getArestasAdjacentes#0;class#Grafo#0" expanded="false" />
+            <element signature="e#14021#14116#0" expanded="false" />
+            <element signature="method#setAvaliacaoFilme#0;class#Grafo#0" expanded="false" />
+            <element signature="e#16131#16240#0" expanded="false" />
+            <element signature="e#20586#20587#0" expanded="true" />
             <element signature="class#DistComparator#0" expanded="false" />
+            <element signature="e#20735#20736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1217,27 +1195,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/copycat/get/GetAvalicaoMedia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="false" />
+            <element signature="e#240#241#0" expanded="false" />
+            <element signature="e#292#293#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1247,9 +1212,9 @@
         <state relative-caret-position="216">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#216#217#0" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="false" />
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1259,10 +1224,10 @@
         <state relative-caret-position="216">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#250#251#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+            <element signature="e#340#341#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1280,8 +1245,8 @@
         <state relative-caret-position="90">
           <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="false" />
+            <element signature="e#242#243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1294,23 +1259,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thrift/FilmeBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/copycat/get/GetExisteAresta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="false" />
+            <element signature="e#239#240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1320,8 +1275,8 @@
         <state relative-caret-position="108">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="false" />
+            <element signature="e#289#290#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1331,8 +1286,8 @@
         <state relative-caret-position="90">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="false" />
+            <element signature="e#279#280#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1345,16 +1300,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#225#226#0" expanded="true" />
             <element signature="e#253#254#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/copycat/get/GetAresta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1375,24 +1320,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/copycat/MapStateMachine.java">
+    <entry file="file://$PROJECT_DIR$/src/copycat/get/GetAresta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#MapStateMachine#0" expanded="false" />
-            <element signature="method#existeAresta#0;class#MapStateMachine#0" expanded="false" />
-            <element signature="method#addAresta#0;class#MapStateMachine#0" expanded="false" />
-            <element signature="method#getAvaliacaoMedia#0;class#MapStateMachine#0" expanded="false" />
-            <element signature="method#getFilmesDeCliente#0;class#MapStateMachine#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/copycat/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="144">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1401,36 +1332,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thrift/Servidor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+        <state relative-caret-position="252">
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thrift/Grafo.java">
+    <entry file="file://$PROJECT_DIR$/src/copycat/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="e#3368#3428#0" expanded="false" />
-            <element signature="e#4850#4931#0" expanded="false" />
-            <element signature="method#listaFilmesDeCliente#0;class#Grafo#0" expanded="false" />
-            <element signature="method#listaFilmesDeGrupo#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getAvaliacaoMedia#0;class#Grafo#0" expanded="false" />
-            <element signature="e#14235#14330#0" expanded="false" />
-            <element signature="e#16340#16449#0" expanded="false" />
-            <element signature="method#menorCaminho#0;class#Grafo#0" expanded="false" />
-            <element signature="method#getArestasAdjacentes#0;class#Grafo#0" expanded="false" />
-            <element signature="class#DistComparator#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/copycat/get/GetArestasAdjacentes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thrift/FilmeBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="136" column="43" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/copycat/MapStateMachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+          <folding>
+            <element signature="docComment;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getVertice#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getAresta#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#existeVertice#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#existeAresta#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#addVertice#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#addAresta#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getAvaliacaoMedia#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getFilmesDeGrupo#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#setAvaliacaoFilme#0;class#MapStateMachine#0" expanded="false" />
+            <element signature="method#getMenorCaminho#0;class#MapStateMachine#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thrift/Grafo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="470" column="37" selection-start-line="470" selection-start-column="37" selection-end-line="470" selection-end-column="37" />
+          <folding>
+            <element signature="method#Grafo#0;class#Grafo#0" expanded="false" />
+            <element signature="method#existeAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#addAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#3270#3330#0" expanded="false" />
+            <element signature="method#getVertice#0;class#Grafo#0" expanded="false" />
+            <element signature="method#getAresta#0;class#Grafo#0" expanded="false" />
+            <element signature="e#4762#4843#0" expanded="false" />
+            <element signature="method#listaFilmesDeCliente#0;class#Grafo#0" expanded="false" />
+            <element signature="method#listaFilmesDeGrupo#0;class#Grafo#0" expanded="false" />
+            <element signature="e#14021#14116#0" expanded="false" />
+            <element signature="method#setAvaliacaoFilme#0;class#Grafo#0" expanded="false" />
+            <element signature="e#16131#16240#0" expanded="false" />
+            <element signature="e#20586#20587#0" expanded="true" />
+            <element signature="class#DistComparator#0" expanded="false" />
+            <element signature="e#20735#20736#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,6 +5,8 @@ import io.atomix.catalyst.transport.Address;
 import io.atomix.copycat.server.storage.Storage;
 import io.atomix.copycat.server.storage.StorageLevel;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -25,6 +27,7 @@ public class Server {
         this.portLeader = portLeader;
         this.isLeader = isLeader;
     }
+
     public void run() {
         CopycatServer server;
 
