@@ -9,37 +9,25 @@ import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
 
 public class FilmeBook {
-    public static void imprimeMenu() {
-        System.out.println("\n\n ----------------------------------------------------------");
-        System.out.println("| Bem vindo ao thrift.FilmeBook!! :D                              |");
-        System.out.println(" ----------------------------------------------------------");
-        System.out.println("| 1 - Registrar um novo filme                              |");
-        System.out.println("| 2 - Registrar um novo cliente                            |");
-        System.out.println("| 3 - Registrar que um cliente assistiu um filme           |");
-        System.out.println("| 4 - Alterar avaliacao de um cliente para um filme        |");
-        System.out.println("| 5 - Consultar filmes assistidos por um cliente           |");
-        System.out.println("| 6 - Consultar filmes assistidos por um grupo de clientes |");
-        System.out.println("| 7 - Consultar a avaliacao media de um filme              |");
-        System.out.println("| 8 - Consultar o menor caminho entre 2 pontos             |");
-        System.out.println("| 0 - Finalizar o programa                                 |");
-        System.out.println(" ----------------------------------------------------------");
-    }
-
     public static void main(String[] args) {
         try {
-            TTransport transport;
-            TProtocol protocol;
-            sdEntrega1.Client client;
-
-            System.out.println("Id do servidor ao qual deseja conectar: "); // tem q mudar isso dps p falar em ql cluster vai conectar
             Scanner sc = new Scanner(System.in);
+            System.out.println("Id do servidor ao qual deseja conectar: "); // tem q mudar isso dps p falar em ql cluster vai conectar
             int porta = sc.nextInt();
 
-            transport = new TSocket("localhost", 9090 + porta);
+            run(porta);
+        } catch (Exception x) {
+            x.printStackTrace();
+        }
+    }
+
+    public static void run(int porta){
+        try{
+            TTransport transport = new TSocket("localhost", 9090 + porta);
             transport.open();
 
-            protocol = new TBinaryProtocol(transport);
-            client = new sdEntrega1.Client(protocol);
+            TProtocol protocol = new TBinaryProtocol(transport);
+            sdEntrega1.Client client = new sdEntrega1.Client(protocol);
 
             int op;
             do {
@@ -52,8 +40,8 @@ public class FilmeBook {
                 imprimeMenu();
 
                 System.out.print("Escolha uma opcao: ");
+                Scanner sc = new Scanner(System.in);
                 op = sc.nextInt();
-
 
                 switch (op) {
                     case 1: // registrar um novo filme -> novo vertice de tipo 1
@@ -202,7 +190,6 @@ public class FilmeBook {
                         System.out.println(client.getAvaliacaoMedia(id));
                         break;
 
-
                     case 8: // menor caminho entre 2 vertices
                         System.out.print("Digite o CPF do cliente ou o IMDB ID do filme: ");
                         va = sc.nextLong();
@@ -210,16 +197,7 @@ public class FilmeBook {
                         vb = sc.nextLong();
                         System.out.println("Solicitacao realizada em conjunto com outros servidores.");
 
-                        // precisa alterar o djikstra
                         System.out.println(client.menorCaminho(va, vb));
-
-                        // double ans = copycatClient.menorCaminho(va, vb);
-                        // if(ans == -2)
-                        //     System.put.println("Nao foi possivel encontrar o menor caminho entre o par de vertices especificado.");
-                        // else if(ans == -1)
-                        //     System.put.println("Nao ha nenhum caminho entre o par de vertices especificado.");
-                        // else 
-                        //     System.put.println("O menor caminho entre os vertices " + va + " e " + vb + " eh: " + ans);
                         break;
 
                     // end
@@ -231,8 +209,31 @@ public class FilmeBook {
                         System.out.println("Opcao invalida.");
                 }
             } while (op != 0);
-        } catch (TException x) {
-            x.printStackTrace();
         }
+        catch(Exception e){
+            System.out.println("Conexao perdida, tentando reconectar...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            run(porta);
+        }
+    }
+
+    public static void imprimeMenu() {
+        System.out.println("\n\n ----------------------------------------------------------");
+        System.out.println("| Bem vindo ao thrift.FilmeBook!! :D                       |");
+        System.out.println(" ----------------------------------------------------------");
+        System.out.println("| 1 - Registrar um novo filme                              |");
+        System.out.println("| 2 - Registrar um novo cliente                            |");
+        System.out.println("| 3 - Registrar que um cliente assistiu um filme           |");
+        System.out.println("| 4 - Alterar avaliacao de um cliente para um filme        |");
+        System.out.println("| 5 - Consultar filmes assistidos por um cliente           |");
+        System.out.println("| 6 - Consultar filmes assistidos por um grupo de clientes |");
+        System.out.println("| 7 - Consultar a avaliacao media de um filme              |");
+        System.out.println("| 8 - Consultar o menor caminho entre 2 pontos             |");
+        System.out.println("| 0 - Finalizar o programa                                 |");
+        System.out.println(" ----------------------------------------------------------");
     }
 }

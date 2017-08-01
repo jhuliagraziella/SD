@@ -18,8 +18,6 @@ import java.util.*;
 public class Grafo implements sdEntrega1.Iface {
 
     long id;
-    Set<Vertice> v;
-    Set<Aresta> a;
     static double dist[];
 
     long numServers;
@@ -29,8 +27,6 @@ public class Grafo implements sdEntrega1.Iface {
         this.id = id;
         this.numServers = q;
 
-        v = new HashSet<Vertice>();
-        a = new HashSet<Aresta>();
         dist = new double[30000];
         copycatClient = CopycatClient.builder(new Address(ip, port))
                 .withConnectionStrategy(ConnectionStrategies.FIBONACCI_BACKOFF)

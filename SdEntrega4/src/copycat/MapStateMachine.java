@@ -44,7 +44,6 @@ public class MapStateMachine extends StateMachine {
     }
 
     public boolean existeVertice(Commit<GetExisteVertice> commit) {
-        System.out.println("Passou aqui");
         try {
             return mapVertices.containsKey(commit.operation().getId());
         } finally {
@@ -90,7 +89,6 @@ public class MapStateMachine extends StateMachine {
     public List<Aresta> getArestaAdjacentes(Commit<GetArestasAdjacentes> commit) {
         try {
             return findArestasAdjacentes(commit.operation().getId());
-
         } finally {
             commit.close();
         }
@@ -171,14 +169,6 @@ public class MapStateMachine extends StateMachine {
         }
     }
 
-    public String getFilmesDeGrupo(Commit<GetFilmesDeGrupo> commit) {
-        try{
-            return null;
-        } finally {
-            commit.close();
-        }
-    }
-
     public int setAvaliacaoFilme(Commit<PutSetAvaliacaoFilme> commit) {
 
         try {
@@ -193,11 +183,4 @@ public class MapStateMachine extends StateMachine {
         }
     }
 
-    public String getMenorCaminho(Commit<GetMenorCaminho> commit) {
-        try {
-            return "";
-        } finally {
-            commit.close();
-        }
-    }
 }
